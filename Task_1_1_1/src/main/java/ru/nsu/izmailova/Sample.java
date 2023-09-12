@@ -1,22 +1,20 @@
-package ru.nsu.izmailova.heapsort;
-
+package ru.nsu.izmailova;
 
 public class Sample {
-
     public void swap(int[] arr, int i, int j) {
         arr[i] = (arr[i] + arr[j]) - (arr[j] = arr[i]);
     }
 
     public void heap(int[] arr, int n, int i) {
         int parent = i;
-        int l_child = 2*i + 1;
-        int r_child = 2*i + 2;
+        int lChild = 2*i + 1;
+        int rChild = 2*i + 2;
 
-        if (l_child < n && arr[l_child] > arr[parent])
-            parent = l_child;
+        if (lChild < n && arr[lChild] > arr[parent])
+            parent = lChild;
 
-        if (r_child < n && arr[r_child] > arr[parent])
-            parent = r_child;
+        if (rChild < n && arr[rChild] > arr[parent])
+            parent = rChild;
 
         if (parent != i) {
             swap(arr, i, parent);
@@ -24,7 +22,7 @@ public class Sample {
         }
     }
 
-    public void HeapSort(int arr[])
+    public void HeapSort(int[] arr)
     {
         int n = arr.length;
         int root = 0;
