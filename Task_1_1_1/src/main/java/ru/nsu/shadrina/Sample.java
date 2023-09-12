@@ -1,4 +1,4 @@
-package ru.nsu.shadrina;
+package ru.nsu.izmailova.heapsort;
 
 
 public class Sample {
