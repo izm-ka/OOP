@@ -2,7 +2,9 @@ package ru.nsu.izmailova;
 
 public class Sample {
     public static void swap(int[] arr, int i, int j) {
-        arr[i] = (arr[i] + arr[j]) - (arr[j] = arr[i]);
+        int temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
     }
 
     public static void heap(int[] arr, int n, int i) {
@@ -33,7 +35,6 @@ public class Sample {
         for (int i = n / 2 - 1; i >= 0; i--) {
             heap(arr, n, i);
         }
-
 
         for (int i = n - 1; i >= 0; i--) {
             swap(arr, i, root);

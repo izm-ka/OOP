@@ -1,9 +1,8 @@
 package ru.nsu.izmailova;
 
-import org.junit.jupiter.api.Test;
-
 import java.util.Arrays;
 import java.util.Random;
+import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -57,13 +56,13 @@ class SampleTest {
     void bigTest() {
         int n = 1000000;
         int[] testArr = new int[n];
-        int[] ansArr;
         Random r = new Random();
         testArr[0] = Integer.MAX_VALUE;
         testArr[1] = Integer.MIN_VALUE;
         for (int i = 2; i <= n; i++) {
             testArr[i] = r.nextInt();
         }
+        int[] ansArr;
         ansArr = testArr;
         Arrays.sort(ansArr);
         Sample.heapSort(testArr);
