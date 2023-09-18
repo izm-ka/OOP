@@ -7,14 +7,17 @@ public class Sample {
 
     public static void heap(int[] arr, int n, int i) {
         int parent = i;
-        int lChild = 2*i + 1;
-        int rChild = 2*i + 2;
+        int lChild = 2 * i + 1;
+        int rChild = 2 * i + 2;
 
-        if (lChild < n && arr[lChild] > arr[parent])
+        if (lChild < n && arr[lChild] > arr[parent]) {
             parent = lChild;
+        }
 
-        if (rChild < n && arr[rChild] > arr[parent])
+        if (rChild < n && arr[rChild] > arr[parent]) {
             parent = rChild;
+
+        }
 
         if (parent != i) {
             swap(arr, i, parent);
@@ -27,12 +30,13 @@ public class Sample {
         int n = arr.length;
         int root = 0;
 
-        for (int i = n/2 - 1; i >= 0; i--)
-            heap(arr,n,i);
+        for (int i = n / 2 - 1; i >= 0; i--) {
+            heap(arr, n, i);
+        }
+
 
         for (int i = n - 1; i >= 0; i--) {
             swap(arr, i, root);
-
             heap(arr, i, root);
         }
 
