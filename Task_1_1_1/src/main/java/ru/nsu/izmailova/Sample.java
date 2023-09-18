@@ -1,11 +1,11 @@
 package ru.nsu.izmailova;
 
 public class Sample {
-    public void swap(int[] arr, int i, int j) {
+    public static void swap(int[] arr, int i, int j) {
         arr[i] = (arr[i] + arr[j]) - (arr[j] = arr[i]);
     }
 
-    public void heap(int[] arr, int n, int i) {
+    public static void heap(int[] arr, int n, int i) {
         int parent = i;
         int lChild = 2*i + 1;
         int rChild = 2*i + 2;
@@ -22,7 +22,7 @@ public class Sample {
         }
     }
 
-    public void HeapSort(int[] arr)
+    public static void heapSort(int[] arr)
     {
         int n = arr.length;
         int root = 0;
