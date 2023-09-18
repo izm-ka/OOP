@@ -6,6 +6,7 @@ package ru.nsu.izmailova;
 public class Sample {
     /**
      * method to swap two elements.
+     *
      * @param arr the array that elements are swapping
      * @param i index of the first element
      * @param j index of the second element
@@ -18,6 +19,7 @@ public class Sample {
 
     /**
      * method to create a max heap
+     *
      * @param arr heap
      * @param n the size of the heap
      * @param i index of the root of the subtree
@@ -44,6 +46,7 @@ public class Sample {
 
     /**
      * main method to sort an array
+     *
      * @param arr array to be sorted
      */
     public static void heapSort(int[] arr)
