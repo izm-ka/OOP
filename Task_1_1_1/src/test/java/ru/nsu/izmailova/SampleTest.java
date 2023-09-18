@@ -7,7 +7,6 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class SampleTest {
-
     @Test
     void basicTest() {
         int[] testArr;
@@ -59,7 +58,7 @@ class SampleTest {
         Random r = new Random();
         testArr[0] = Integer.MAX_VALUE;
         testArr[1] = Integer.MIN_VALUE;
-        for (int i = 2; i <= n; i++) {
+        for (int i = 2; i < n; i++) {
             testArr[i] = r.nextInt();
         }
         int[] ansArr;

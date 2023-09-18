@@ -23,7 +23,7 @@ public class Sample {
 
         if (parent != i) {
             swap(arr, i, parent);
-            heap(arr, n, i);
+            heap(arr, n, parent);
         }
     }
 
