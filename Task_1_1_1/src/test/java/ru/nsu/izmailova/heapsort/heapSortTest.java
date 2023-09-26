@@ -1,4 +1,4 @@
-package ru.nsu.izmailova;
+package ru.nsu.izmailova.heapsort;
 
 import java.util.Arrays;
 import java.util.Random;
@@ -6,14 +6,14 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class SampleTest {
+class heapsortTest {
     @Test
     void basicTest() {
         int[] testArr;
         int[] ansArr;
         testArr = new int[] {5, 4, 3, 2, 1};
         ansArr = new int[] {1, 2, 3, 4, 5};
-        Sample.heapSort(testArr);
+        heapsort.heapSort(testArr);
         assertArrayEquals(testArr, ansArr);
     }
 
@@ -23,7 +23,7 @@ class SampleTest {
         int[] ansArr;
         testArr = new int[] {0};
         ansArr = new int[] {0};
-        Sample.heapSort(testArr);
+        heapsort.heapSort(testArr);
         assertArrayEquals(testArr, ansArr);
     }
 
@@ -33,21 +33,21 @@ class SampleTest {
         int[] ansArr;
         testArr = new int[] {};
         ansArr = new int[] {};
-        Sample.heapSort(testArr);
+        heapsort.heapSort(testArr);
         assertArrayEquals(testArr, ansArr);
     }
 
     @Test
     void randomTest() {
         int[] randArr = new int[1000];
-        int[] ansArr;
+        int[] ansArr = new int[1000];
         Random r = new Random();
         for (int i = 0; i < randArr.length; i++) {
             randArr[i] = r.nextInt();
+            ansArr[i] = randArr[i];
         }
-        ansArr = randArr;
         Arrays.sort(ansArr);
-        Sample.heapSort(randArr);
+        heapsort.heapSort(randArr);
         assertArrayEquals(randArr, ansArr);
     }
 
@@ -58,13 +58,13 @@ class SampleTest {
         Random r = new Random();
         testArr[0] = Integer.MAX_VALUE;
         testArr[1] = Integer.MIN_VALUE;
+        int[] ansArr = new int[n];
         for (int i = 2; i < n; i++) {
             testArr[i] = r.nextInt();
+            ansArr[i] = testArr[i];
         }
-        int[] ansArr;
-        ansArr = testArr;
         Arrays.sort(ansArr);
-        Sample.heapSort(testArr);
+        heapsort.heapSort(testArr);
         assertArrayEquals(testArr, ansArr);
     }
 
@@ -74,7 +74,7 @@ class SampleTest {
         int[] ansArr;
         testArr = new int[] {-5, 2, 3, -4, -1, 1, -2, 0, -3};
         ansArr = new int[] {-5, -4, -3, -2, -1, 0, 1, 2, 3};
-        Sample.heapSort(testArr);
+        heapsort.heapSort(testArr);
         assertArrayEquals(testArr, ansArr);
     }
 }

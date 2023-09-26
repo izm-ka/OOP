@@ -1,9 +1,9 @@
-package ru.nsu.izmailova;
+package ru.nsu.izmailova.heapsort;
 
 /**
  * this class contains the heap sort algorithm
  */
-public class Sample {
+public class heapsort {
     /**
      * method to swap two elements.
      *
@@ -24,7 +24,7 @@ public class Sample {
      * @param n the size of the heap
      * @param i index of the root of the subtree
      */
-    public static void heap(int[] arr, int n, int i) {
+    private static void heap(int[] arr, int n, int i) {
         int parent = i;
         int lChild = 2 * i + 1;
         int rChild = 2 * i + 2;
@@ -49,8 +49,7 @@ public class Sample {
      *
      * @param arr array to be sorted
      */
-    public static void heapSort(int[] arr)
-    {
+    public static void heapSort(int[] arr) {
         int n = arr.length;
         int root = 0;
 
@@ -66,4 +65,10 @@ public class Sample {
         }
 
     }
+
+    public static void main(String[] args) {
+
+    }
 }
+
+/** script dir убрать и док*/
