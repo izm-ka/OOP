@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class heapTest {
+class heapSortTest {
     @Test
     void basicTest() {
         int[] testArr;
@@ -59,6 +59,8 @@ class heapTest {
         testArr[0] = Integer.MAX_VALUE;
         testArr[1] = Integer.MIN_VALUE;
         int[] ansArr = new int[n];
+        ansArr[0] = testArr[0];
+        ansArr[1] = testArr[1];
         for (int i = 2; i < n; i++) {
             testArr[i] = r.nextInt();
             ansArr[i] = testArr[i];
