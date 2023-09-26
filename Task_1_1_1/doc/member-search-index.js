@@ -1,1 +1,0 @@
-memberSearchIndex = [{"p":"ru.nsu.izmailova","c":"Sample","l":"heap(int[], int, int)","u":"heap(int[],int,int)"},{"p":"ru.nsu.izmailova","c":"Sample","l":"heapSort(int[])"},{"p":"ru.nsu.izmailova","c":"Sample","l":"Sample()","u":"%3Cinit%3E()"},{"p":"ru.nsu.izmailova","c":"Sample","l":"swap(int[], int, int)","u":"swap(int[],int,int)"}];updateSearchResults();
