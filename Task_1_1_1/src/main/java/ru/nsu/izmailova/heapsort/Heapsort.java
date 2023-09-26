@@ -70,5 +70,3 @@ public class Heapsort {
 
     }
 }
-
-/** script dir убрать и док*/
