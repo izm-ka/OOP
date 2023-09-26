@@ -1,9 +1,9 @@
 package ru.nsu.izmailova.heapsort;
 
-/**
+/** .
  * this class contains the heap sort algorithm
  */
-public class heapsort {
+public class heapSort {
     /**
      * method to swap two elements.
      *
@@ -49,7 +49,7 @@ public class heapsort {
      *
      * @param arr array to be sorted
      */
-    public static void heapSort(int[] arr) {
+    public static void heapify(int[] arr) {
         int n = arr.length;
         int root = 0;
 
