@@ -26,15 +26,15 @@ public class Heapsort {
      */
     private static void heap(int[] arr, int n, int i) {
         int parent = i;
-        int lChild = 2 * i + 1;
-        int rChild = 2 * i + 2;
+        int leftChild = 2 * i + 1;
+        int rightChild = 2 * i + 2;
 
-        if (lChild < n && arr[lChild] > arr[parent]) {
-            parent = lChild;
+        if (leftChild < n && arr[leftChild] > arr[parent]) {
+            parent = leftChild;
         }
 
-        if (rChild < n && arr[rChild] > arr[parent]) {
-            parent = rChild;
+        if (rightChild < n && arr[rightChild] > arr[parent]) {
+            parent = rightChild;
 
         }
 

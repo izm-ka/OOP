@@ -1,6 +1,6 @@
 package ru.nsu.izmailova.heapsort;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
 import java.util.Arrays;
 import java.util.Random;
