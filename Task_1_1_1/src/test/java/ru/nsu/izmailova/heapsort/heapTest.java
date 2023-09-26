@@ -1,19 +1,21 @@
 package ru.nsu.izmailova.heapsort;
 
+import static org.junit.jupiter.api.Assertions.*;
+
 import java.util.Arrays;
 import java.util.Random;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
 
-class heapSortTest {
+
+class HeapSortTest {
     @Test
     void basicTest() {
         int[] testArr;
         int[] ansArr;
         testArr = new int[] {5, 4, 3, 2, 1};
         ansArr = new int[] {1, 2, 3, 4, 5};
-        heapSort.heapify(testArr);
+        Heapsort.heapify(testArr);
         assertArrayEquals(testArr, ansArr);
     }
 
@@ -23,7 +25,7 @@ class heapSortTest {
         int[] ansArr;
         testArr = new int[] {0};
         ansArr = new int[] {0};
-        heapSort.heapify(testArr);
+        Heapsort.heapify(testArr);
         assertArrayEquals(testArr, ansArr);
     }
 
@@ -33,7 +35,7 @@ class heapSortTest {
         int[] ansArr;
         testArr = new int[] {};
         ansArr = new int[] {};
-        heapSort.heapify(testArr);
+        Heapsort.heapify(testArr);
         assertArrayEquals(testArr, ansArr);
     }
 
@@ -47,7 +49,7 @@ class heapSortTest {
             ansArr[i] = randArr[i];
         }
         Arrays.sort(ansArr);
-        heapSort.heapify(randArr);
+        Heapsort.heapify(randArr);
         assertArrayEquals(randArr, ansArr);
     }
 
@@ -66,7 +68,7 @@ class heapSortTest {
             ansArr[i] = testArr[i];
         }
         Arrays.sort(ansArr);
-        heapSort.heapify(testArr);
+        Heapsort.heapify(testArr);
         assertArrayEquals(testArr, ansArr);
     }
 
@@ -76,7 +78,7 @@ class heapSortTest {
         int[] ansArr;
         testArr = new int[] {-5, 2, 3, -4, -1, 1, -2, 0, -3};
         ansArr = new int[] {-5, -4, -3, -2, -1, 0, 1, 2, 3};
-        heapSort.heapify(testArr);
+        Heapsort.heapify(testArr);
         assertArrayEquals(testArr, ansArr);
     }
 }

@@ -3,8 +3,8 @@ package ru.nsu.izmailova.heapsort;
 /** .
  * this class contains the heap sort algorithm
  */
-public class heapSort {
-    /**
+public class Heapsort {
+    /** .
      * method to swap two elements.
      *
      * @param arr the array that elements are swapping
@@ -17,7 +17,7 @@ public class heapSort {
         arr[j] = temp;
     }
 
-    /**
+    /** .
      * method to create a max heap
      *
      * @param arr heap
@@ -44,7 +44,7 @@ public class heapSort {
         }
     }
 
-    /**
+    /** .
      * main method to sort an array
      *
      * @param arr array to be sorted
