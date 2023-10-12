@@ -272,6 +272,10 @@ public class Tree<T> implements Iterable<T> {
         /** Use depth-first search algorithm to traverse the tree. */
         DEPTH
     }
+
+    public static void main(String[] args) {
+
+    }
 }
 
 
