@@ -1,9 +1,5 @@
 package ru.nsu.izmailova.tree;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNull;
-import static org.junit.jupiter.api.Assertions.assertThrows;
-
 import java.util.ArrayList;
 import java.util.ConcurrentModificationException;
 import java.util.Iterator;
@@ -12,9 +8,14 @@ import java.util.NoSuchElementException;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.*;
+
 /** A set of tests for the Tree class. */
 public class TreeTest {
     public static Tree<Integer> expected;
+
+    public static Tree<Integer> oneTree;
+    public static Tree<Integer> twoTree;
     public static Tree<Integer> branch;
     public static List<Integer> breadth =
             List.of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17);
@@ -40,6 +41,16 @@ public class TreeTest {
 
         assertEquals(breadth, actual);
     }
+
+    @Test
+    public void testEquals() {
+        oneTree = new Tree<>(1);
+        oneTree.add(2).add(4).add(5).add(6).add(7).add(8).add(9).add(10).add(11);
+        twoTree = new Tree<>(1);
+        twoTree.add(2).add(4).add(5).add(6).add(7).add(8).add(9).add(10).add(11);
+        assertTrue(oneTree.equals(twoTree));
+    }
+
 
     @Test
     public void testDepthTraverse() {

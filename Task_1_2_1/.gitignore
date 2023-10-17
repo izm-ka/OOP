@@ -125,13 +125,11 @@ fabric.properties
 !.idea/codeStyles
 !.idea/runConfigurations
 
-gradle/
 index-files/
 legal/
 resources/
 ru/
 script-dir/
-gradlew
 build
 settings
 

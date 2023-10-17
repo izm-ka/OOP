@@ -60,7 +60,7 @@ public class Tree<T> implements Iterable<T> {
         modificationCount++;
     }
 
-    private void modificate() {
+    private void modify() {
         Tree<T> node = this;
 
         while (node.parent != null) {
@@ -83,13 +83,14 @@ public class Tree<T> implements Iterable<T> {
             throw new NullPointerException();
         }
 
-        modificate();
+        modify();
 
         this.mode = mode;
         children.forEach(t -> t.with(mode));
 
         return this;
     }
+
 
     /**
      * Get the quantity of nodes in this tree, including the head.
@@ -100,6 +101,33 @@ public class Tree<T> implements Iterable<T> {
         return children.stream().mapToInt(Tree::size).sum() + 1;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+
+        Tree<?> other = (Tree<?>) obj;
+
+        if (!value.equals(other.value)) {
+            return false;
+        }
+
+        if (children.size() != other.children.size()) {
+            return false;
+        }
+
+        for (int i = 0; i < children.size(); i++) {
+            if (!children.get(i).equals(other.children.get(i))) {
+                return false;
+            }
+        }
+        return true;
+    }
     /**
      * Add a new value to the tree as a new branch.
      *
@@ -112,7 +140,7 @@ public class Tree<T> implements Iterable<T> {
             throw new NullPointerException();
         }
 
-        modificate();
+        modify();
 
         Tree<T> child = new Tree<>(val);
         child.parent = this;
@@ -133,7 +161,7 @@ public class Tree<T> implements Iterable<T> {
             throw new NullPointerException();
         }
 
-        modificate();
+        modify();
 
         branch.parent = this;
         children.add(branch);
@@ -182,7 +210,7 @@ public class Tree<T> implements Iterable<T> {
             throw new NullPointerException();
         }
 
-        modificate();
+        modify();
 
         value = val;
         return this;
@@ -199,7 +227,7 @@ public class Tree<T> implements Iterable<T> {
         Tree<T> child = children.remove(index);
         child.parent = null;
 
-        modificate();
+        modify();
 
         return child;
     }
