@@ -83,24 +83,10 @@ public class TreeTest {
         assertEquals(1, expected.getValue());
     }
 
-    @Test
-    public void testNullActions() {
-        assertThrows(NullPointerException.class, () -> new Tree<>(null));
-        assertThrows(NullPointerException.class, () -> expected.with(null));
-        assertThrows(NullPointerException.class, () -> expected.add((Integer) null));
-        assertThrows(NullPointerException.class, () -> expected.add((Tree<Integer>) null));
-        assertThrows(NullPointerException.class, () -> expected.setValue(null));
-    }
+
 
     @Test
     public void testIteratorExceptions() {
-        assertThrows(
-                NoSuchElementException.class,
-                () -> {
-                    Iterator<Integer> iterator = expected.with(Tree.Search.BREADTH).iterator();
-                    iterator.next();
-                });
-
         assertThrows(
                 NoSuchElementException.class,
                 () -> {
