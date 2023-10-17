@@ -1,6 +1,8 @@
 package ru.nsu.izmailova.tree;
 
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.ConcurrentModificationException;
@@ -46,14 +48,11 @@ public class Tree<T> implements Iterable<T> {
      * @return an iterator over the elements
      */
     @Override
-    public Iterator<T> iterator() {
-        if (mode == Search.BREADTH) {
-            return new BreadthIterator();
-        } else if (mode == Search.DEPTH) {
-            return new DepthIterator();
-        } else {
-            throw new IllegalStateException();
-        }
+    public @NotNull Iterator<T> iterator() {
+        return switch (mode) {
+            case BREADTH -> new BreadthIterator();
+            case DEPTH -> new DepthIterator();
+        };
     }
 
     private void update() {
@@ -78,10 +77,7 @@ public class Tree<T> implements Iterable<T> {
      * @return this
      * @throws NullPointerException if mode is null
      */
-    public Tree<T> with(Search mode) throws NullPointerException {
-        if (mode == null) {
-            throw new NullPointerException();
-        }
+    public Tree<T> with(@NotNull Search mode) {
 
         modify();
 
@@ -100,6 +96,17 @@ public class Tree<T> implements Iterable<T> {
     public int size() {
         return children.stream().mapToInt(Tree::size).sum() + 1;
     }
+
+
+    /**
+     * Compares this tree to another tree for equality.
+     *
+     * This method checks if the two trees have the same structure
+     * and if the elements at corresponding positions in the trees are equal.
+     *
+     * @param obj the object to compare to
+     * @return true if the trees are equal, false otherwise
+     */
 
     @Override
     public boolean equals(Object obj) {
@@ -121,12 +128,22 @@ public class Tree<T> implements Iterable<T> {
             return false;
         }
 
-        for (int i = 0; i < children.size(); i++) {
-            if (!children.get(i).equals(other.children.get(i))) {
-                return false;
-            }
+        List<Integer> thisSequence = new ArrayList<>();
+        List<Integer> otherSequence = new ArrayList<>();
+
+        Iterator<T> thisIterator = with(Tree.Search.BREADTH).iterator();
+        while (thisIterator.hasNext()) {
+            thisSequence.add((Integer) thisIterator.next());
         }
-        return true;
+
+        Iterator<T> otherIterator = (Iterator<T>) other.with(Search.BREADTH).iterator();
+        while (otherIterator.hasNext()) {
+            otherSequence.add((Integer) otherIterator.next());
+        }
+        //Iterator<T> thisIterator = with(Search.BREADTH).iterator().forEachRemaining(thisSequence::add);
+        //Iterator<T> otherIterator = other.with(Search.BREADTH).iterator().forEachRemaining(otherSequence::add);
+
+        return thisSequence.equals(otherSequence);
     }
     /**
      * Add a new value to the tree as a new branch.
@@ -299,10 +316,6 @@ public class Tree<T> implements Iterable<T> {
 
         /** Use depth-first search algorithm to traverse the tree. */
         DEPTH
-    }
-
-    public static void main(String[] args) {
-
     }
 }
 

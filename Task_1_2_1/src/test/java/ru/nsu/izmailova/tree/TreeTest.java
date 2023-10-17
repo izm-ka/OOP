@@ -43,22 +43,23 @@ public class TreeTest {
     }
 
     @Test
-    public void testEquals() {
-        oneTree = new Tree<>(1);
-        oneTree.add(2).add(4).add(5).add(6).add(7).add(8).add(9).add(10).add(11);
-        twoTree = new Tree<>(1);
-        twoTree.add(2).add(4).add(5).add(6).add(7).add(8).add(9).add(10).add(11);
-        assertTrue(oneTree.equals(twoTree));
-    }
-
-
-    @Test
     public void testDepthTraverse() {
         List<Integer> actual = new ArrayList<>();
         expected.with(Tree.Search.DEPTH).iterator().forEachRemaining(actual::add);
 
         assertEquals(depth, actual);
     }
+
+    @Test
+    public void testEquals() {
+        oneTree = new Tree<>(1);
+        oneTree.add(2).add(3);
+        twoTree = new Tree<>(1);
+        twoTree.add(3).add(2);
+
+        assertFalse(oneTree.equals(twoTree));
+    }
+
 
     @Test
     public void testSize() {
@@ -97,9 +98,7 @@ public class TreeTest {
                 NoSuchElementException.class,
                 () -> {
                     Iterator<Integer> iterator = expected.with(Tree.Search.BREADTH).iterator();
-                    while (true) {
-                        iterator.next();
-                    }
+                    iterator.next();
                 });
 
         assertThrows(
