@@ -1,14 +1,13 @@
 package ru.nsu.izmailova.tree;
 
-
-import org.jetbrains.annotations.NotNull;
-
 import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.ConcurrentModificationException;
 import java.util.Iterator;
 import java.util.List;
 import java.util.NoSuchElementException;
+
+import org.jetbrains.annotations.NotNull;
 
 /**
  * Generic tree class. Each node contains a value and a list of its children.
@@ -49,10 +48,11 @@ public class Tree<T> implements Iterable<T> {
      */
     @Override
     public @NotNull Iterator<T> iterator() {
-        return switch (mode) {
-            case BREADTH -> new BreadthIterator();
-            case DEPTH -> new DepthIterator();
-        };
+        if (mode == Search.BREADTH) {
+            return new BreadthIterator();
+        } else {
+            return new DepthIterator();
+        }
     }
 
     private void update() {
@@ -87,7 +87,6 @@ public class Tree<T> implements Iterable<T> {
         return this;
     }
 
-
     /**
      * Get the quantity of nodes in this tree, including the head.
      *
@@ -97,17 +96,12 @@ public class Tree<T> implements Iterable<T> {
         return children.stream().mapToInt(Tree::size).sum() + 1;
     }
 
-
     /**
      * Compares this tree to another tree for equality.
-     *
-     * This method checks if the two trees have the same structure
-     * and if the elements at corresponding positions in the trees are equal.
      *
      * @param obj the object to compare to
      * @return true if the trees are equal, false otherwise
      */
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -145,6 +139,7 @@ public class Tree<T> implements Iterable<T> {
 
         return thisSequence.equals(otherSequence);
     }
+
     /**
      * Add a new value to the tree as a new branch.
      *
