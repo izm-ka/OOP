@@ -27,8 +27,8 @@
     catch(err) {
     }
 //-->
-var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":9,"i8":10,"i9":10,"i10":10,"i11":10};
-var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
+var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
 var tableTab = "tableTab";
@@ -204,7 +204,7 @@ implements java.lang.Iterable&lt;T&gt;</pre>
 </a>
 <h3>Method Summary</h3>
 <table class="memberSummary">
-<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t1" class="tableTab"><span><a href="javascript:show(1);">Static Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
 <tr>
 <th class="colFirst" scope="col">Modifier and Type</th>
 <th class="colSecond" scope="col">Method</th>
@@ -227,7 +227,9 @@ implements java.lang.Iterable&lt;T&gt;</pre>
 <tr id="i2" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#equals(java.lang.Object)">equals</a></span>&#8203;(java.lang.Object&nbsp;obj)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Compares this tree to another tree for equality.</div>
+</td>
 </tr>
 <tr id="i3" class="rowColor">
 <td class="colFirst"><code><a href="Tree.html" title="class in ru.nsu.izmailova.tree">Tree</a>&lt;<a href="Tree.html" title="type parameter in Tree">T</a>&gt;</code></td>
@@ -251,41 +253,36 @@ implements java.lang.Iterable&lt;T&gt;</pre>
 </td>
 </tr>
 <tr id="i6" class="altColor">
-<td class="colFirst"><code>java.util.Iterator&lt;<a href="Tree.html" title="type parameter in Tree">T</a>&gt;</code></td>
+<td class="colFirst"><code>@NotNull java.util.Iterator&lt;<a href="Tree.html" title="type parameter in Tree">T</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#iterator()">iterator</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns an iterator over the elements in this tree in proper sequence.</div>
 </td>
 </tr>
 <tr id="i7" class="rowColor">
-<td class="colFirst"><code>static void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#main(java.lang.String%5B%5D)">main</a></span>&#8203;(java.lang.String[]&nbsp;args)</code></th>
-<td class="colLast">&nbsp;</td>
-</tr>
-<tr id="i8" class="altColor">
 <td class="colFirst"><code><a href="Tree.html" title="class in ru.nsu.izmailova.tree">Tree</a>&lt;<a href="Tree.html" title="type parameter in Tree">T</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#remove(int)">remove</a></span>&#8203;(int&nbsp;index)</code></th>
 <td class="colLast">
 <div class="block">Remove a branch from this tree.</div>
 </td>
 </tr>
-<tr id="i9" class="rowColor">
+<tr id="i8" class="altColor">
 <td class="colFirst"><code><a href="Tree.html" title="class in ru.nsu.izmailova.tree">Tree</a>&lt;<a href="Tree.html" title="type parameter in Tree">T</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#setValue(T)">setValue</a></span>&#8203;(<a href="Tree.html" title="type parameter in Tree">T</a>&nbsp;val)</code></th>
 <td class="colLast">
 <div class="block">Set the value in this node.</div>
 </td>
 </tr>
-<tr id="i10" class="altColor">
+<tr id="i9" class="rowColor">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#size()">size</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Get the quantity of nodes in this tree, including the head.</div>
 </td>
 </tr>
-<tr id="i11" class="rowColor">
+<tr id="i10" class="altColor">
 <td class="colFirst"><code><a href="Tree.html" title="class in ru.nsu.izmailova.tree">Tree</a>&lt;<a href="Tree.html" title="type parameter in Tree">T</a>&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#with(ru.nsu.izmailova.tree.Tree.Search)">with</a></span>&#8203;(<a href="Tree.Search.html" title="enum in ru.nsu.izmailova.tree">Tree.Search</a>&nbsp;mode)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#with(ru.nsu.izmailova.tree.Tree.Search)">with</a></span>&#8203;(@NotNull <a href="Tree.Search.html" title="enum in ru.nsu.izmailova.tree">Tree.Search</a>&nbsp;mode)</code></th>
 <td class="colLast">
 <div class="block">Change the traverse mode of tree.</div>
 </td>
@@ -356,7 +353,8 @@ implements java.lang.Iterable&lt;T&gt;</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>iterator</h4>
-<pre class="methodSignature">public&nbsp;java.util.Iterator&lt;<a href="Tree.html" title="type parameter in Tree">T</a>&gt;&nbsp;iterator()</pre>
+<pre class="methodSignature">@NotNull
+public&nbsp;@NotNull java.util.Iterator&lt;<a href="Tree.html" title="type parameter in Tree">T</a>&gt;&nbsp;iterator()</pre>
 <div class="block">Returns an iterator over the elements in this tree in proper sequence.
  Order of the elements will be defined by mode field;
  use with() method to specify needed traverse option.</div>
@@ -374,8 +372,8 @@ implements java.lang.Iterable&lt;T&gt;</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>with</h4>
-<pre class="methodSignature">public&nbsp;<a href="Tree.html" title="class in ru.nsu.izmailova.tree">Tree</a>&lt;<a href="Tree.html" title="type parameter in Tree">T</a>&gt;&nbsp;with&#8203;(<a href="Tree.Search.html" title="enum in ru.nsu.izmailova.tree">Tree.Search</a>&nbsp;mode)
-             throws java.lang.NullPointerException</pre>
+<pre class="methodSignature">public&nbsp;<a href="Tree.html" title="class in ru.nsu.izmailova.tree">Tree</a>&lt;<a href="Tree.html" title="type parameter in Tree">T</a>&gt;&nbsp;with&#8203;(@NotNull
+                    @NotNull <a href="Tree.Search.html" title="enum in ru.nsu.izmailova.tree">Tree.Search</a>&nbsp;mode)</pre>
 <div class="block">Change the traverse mode of tree.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -408,9 +406,14 @@ implements java.lang.Iterable&lt;T&gt;</pre>
 <li class="blockList">
 <h4>equals</h4>
 <pre class="methodSignature">public&nbsp;boolean&nbsp;equals&#8203;(java.lang.Object&nbsp;obj)</pre>
+<div class="block">Compares this tree to another tree for equality.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code>equals</code>&nbsp;in class&nbsp;<code>java.lang.Object</code></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>obj</code> - the object to compare to</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>true if the trees are equal, false otherwise</dd>
 </dl>
 </li>
 </ul>
@@ -525,7 +528,7 @@ implements java.lang.Iterable&lt;T&gt;</pre>
 <a id="remove(int)">
 <!--   -->
 </a>
-<ul class="blockList">
+<ul class="blockListLast">
 <li class="blockList">
 <h4>remove</h4>
 <pre class="methodSignature">public&nbsp;<a href="Tree.html" title="class in ru.nsu.izmailova.tree">Tree</a>&lt;<a href="Tree.html" title="type parameter in Tree">T</a>&gt;&nbsp;remove&#8203;(int&nbsp;index)
@@ -539,15 +542,6 @@ implements java.lang.Iterable&lt;T&gt;</pre>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code>java.lang.IndexOutOfBoundsException</code> - if the index is out of range</dd>
 </dl>
-</li>
-</ul>
-<a id="main(java.lang.String[])">
-<!--   -->
-</a>
-<ul class="blockListLast">
-<li class="blockList">
-<h4>main</h4>
-<pre class="methodSignature">public static&nbsp;void&nbsp;main&#8203;(java.lang.String[]&nbsp;args)</pre>
 </li>
 </ul>
 </li>
