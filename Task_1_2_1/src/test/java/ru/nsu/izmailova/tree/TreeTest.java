@@ -1,5 +1,10 @@
 package ru.nsu.izmailova.tree;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+
 import java.util.ArrayList;
 import java.util.ConcurrentModificationException;
 import java.util.Iterator;
@@ -7,8 +12,6 @@ import java.util.List;
 import java.util.NoSuchElementException;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 /** A set of tests for the Tree class. */
 public class TreeTest {
@@ -58,6 +61,14 @@ public class TreeTest {
         twoTree.add(3).add(2);
 
         assertFalse(oneTree.equals(twoTree));
+
+        oneTree = new Tree<>(1);
+        oneTree.add(2).add(4).add(5).add(6).add(7).add(8).add(9).add(10).add(11);
+
+        twoTree = new Tree<>(1);
+        twoTree.add(2).add(4).add(5).add(6).add(7).add(8).add(9).add(10).add(11);
+
+        assertEquals(oneTree, twoTree);
     }
 
 
@@ -83,10 +94,8 @@ public class TreeTest {
         assertEquals(1, expected.getValue());
     }
 
-
-
     @Test
-    public void testIteratorExceptions() {
+    public void testNoSuchElementException() {
         assertThrows(
                 NoSuchElementException.class,
                 () -> {
@@ -95,7 +104,10 @@ public class TreeTest {
                         iterator.next();
                     }
                 });
+    }
 
+    @Test
+    public void testConcurrentModificationException() {
         assertThrows(
                 ConcurrentModificationException.class,
                 () -> {

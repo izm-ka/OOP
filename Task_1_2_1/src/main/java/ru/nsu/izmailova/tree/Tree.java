@@ -6,7 +6,6 @@ import java.util.ConcurrentModificationException;
 import java.util.Iterator;
 import java.util.List;
 import java.util.NoSuchElementException;
-
 import org.jetbrains.annotations.NotNull;
 
 /**
@@ -134,8 +133,6 @@ public class Tree<T> implements Iterable<T> {
         while (otherIterator.hasNext()) {
             otherSequence.add((Integer) otherIterator.next());
         }
-        //Iterator<T> thisIterator = with(Search.BREADTH).iterator().forEachRemaining(thisSequence::add);
-        //Iterator<T> otherIterator = other.with(Search.BREADTH).iterator().forEachRemaining(otherSequence::add);
 
         return thisSequence.equals(otherSequence);
     }
@@ -147,11 +144,7 @@ public class Tree<T> implements Iterable<T> {
      * @return this
      * @throws NullPointerException if val is null
      */
-    public Tree<T> add(T val) throws NullPointerException {
-        if (val == null) {
-            throw new NullPointerException();
-        }
-
+    public Tree<T> add(@NotNull T val) {
         modify();
 
         Tree<T> child = new Tree<>(val);
@@ -168,11 +161,7 @@ public class Tree<T> implements Iterable<T> {
      * @return this
      * @throws NullPointerException if branch is null
      */
-    public Tree<T> add(Tree<T> branch) throws NullPointerException {
-        if (branch == null) {
-            throw new NullPointerException();
-        }
-
+    public Tree<T> add(@NotNull Tree<T> branch) {
         modify();
 
         branch.parent = this;
@@ -217,11 +206,7 @@ public class Tree<T> implements Iterable<T> {
      * @return this
      * @throws NullPointerException if val is null
      */
-    public Tree<T> setValue(T val) throws NullPointerException {
-        if (val == null) {
-            throw new NullPointerException();
-        }
-
+    public Tree<T> setValue(@NotNull T val) {
         modify();
 
         value = val;
