@@ -11,7 +11,7 @@ import java.util.List;
 
 /**
  * Class for searching substrings using the Rabin-Karp algorithm.
- *
+ * <p></p>
  * D is a number of accepted symbols,
  * Q is a prime number for mod operations,
  * p - hash of pattern,
@@ -28,7 +28,9 @@ public class SubstringSearcher {
      *
      * @param stream text to find matches
      */
-    public SubstringSearcher(InputStream stream) { this.stream = stream; }
+    public SubstringSearcher(InputStream stream) {
+        this.stream = stream;
+    }
 
     /**
      * Rabin-Karp algorithm.
@@ -40,8 +42,7 @@ public class SubstringSearcher {
     public List<Integer> rabinKarp(String pattern) throws IOException {
         try (Reader reader = new BufferedReader(
                 new InputStreamReader(stream, StandardCharsets.UTF_8))) {
-            List<Integer> result = new ArrayList<>(); // List to store the indices of pattern occurrences
-
+            List<Integer> result = new ArrayList<>();
             int patLen = pattern.length(); // Length of the pattern
             int p = 0; // Hash value for pattern
             int t = -1; // Hash value for the text window

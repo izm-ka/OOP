@@ -6,7 +6,6 @@ import java.io.RandomAccessFile;
 import java.nio.channels.Channels;
 import java.util.Arrays;
 import java.util.List;
-
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -52,7 +51,7 @@ public class SubstringSearcherTest {
         try (InputStream stream =
                      getClass().getClassLoader().getResourceAsStream("repeatTest.txt")) {
             SubstringSearcher alg = new SubstringSearcher(stream);
-            List<Integer> expected = List.of(0,2,4,6,8,10);
+            List<Integer> expected = List.of(0, 2, 4, 6, 8, 10);
             List<Integer> actual = alg.rabinKarp("ahaha");
 
             Assertions.assertEquals(expected, actual);
@@ -64,7 +63,7 @@ public class SubstringSearcherTest {
         try (InputStream stream =
                      getClass().getClassLoader().getResourceAsStream("codingTest.txt")) {
             SubstringSearcher alg = new SubstringSearcher(stream);
-            List<Integer> expected = List.of(0,8, 16);
+            List<Integer> expected = List.of(0, 8, 16);
             List<Integer> actual = alg.rabinKarp("ィ");
 
             Assertions.assertEquals(expected, actual);
