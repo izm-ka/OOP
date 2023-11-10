@@ -9,6 +9,9 @@ import java.util.List;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+/**
+ * Test class for the SubstringSearcher using JUnit assertions.
+ */
 public class SubstringSearcherTest {
     @Test
     public void simpleTest() throws IOException {
