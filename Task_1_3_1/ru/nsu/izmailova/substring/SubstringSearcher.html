@@ -132,6 +132,12 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <hr>
 <pre>public class <span class="typeNameLabel">SubstringSearcher</span>
 extends java.lang.Object</pre>
+<div class="block">Class for searching substrings using the Rabin-Karp algorithm.
+
+ D is a number of accepted symbols,
+ Q is a prime number for mod operations,
+ p - hash of pattern,
+ t - hash of text</div>
 </li>
 </ul>
 </div>
@@ -153,7 +159,9 @@ extends java.lang.Object</pre>
 </tr>
 <tr class="altColor">
 <th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(java.io.InputStream)">SubstringSearcher</a></span>&#8203;(java.io.InputStream&nbsp;stream)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Constructor for SubstringSearcher.</div>
+</td>
 </tr>
 </table>
 </li>
@@ -176,7 +184,9 @@ extends java.lang.Object</pre>
 <tr id="i0" class="altColor">
 <td class="colFirst"><code>java.util.List&lt;java.lang.Integer&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#rabinKarp(java.lang.String)">rabinKarp</a></span>&#8203;(java.lang.String&nbsp;pattern)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Rabin-Karp algorithm.</div>
+</td>
 </tr>
 </table>
 <ul class="blockList">
@@ -209,6 +219,11 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>SubstringSearcher</h4>
 <pre>public&nbsp;SubstringSearcher&#8203;(java.io.InputStream&nbsp;stream)</pre>
+<div class="block">Constructor for SubstringSearcher.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>stream</code> - text to find matches</dd>
+</dl>
 </li>
 </ul>
 </li>
@@ -229,9 +244,14 @@ extends java.lang.Object</pre>
 <h4>rabinKarp</h4>
 <pre class="methodSignature">public&nbsp;java.util.List&lt;java.lang.Integer&gt;&nbsp;rabinKarp&#8203;(java.lang.String&nbsp;pattern)
                                             throws java.io.IOException</pre>
+<div class="block">Rabin-Karp algorithm.</div>
 <dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>pattern</code> - the pattern to search for</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>result is a list of indexes in the text where patterns start</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code>java.io.IOException</code></dd>
+<dd><code>java.io.IOException</code> - If an I/O error occurs</dd>
 </dl>
 </li>
 </ul>
