@@ -72,4 +72,16 @@ public class SubstringSearcherTest {
             Assertions.assertEquals(expected, actual);
         }
     }
+
+    @Test
+    public void emptyTest() throws IOException {
+        try (InputStream stream =
+                     getClass().getClassLoader().getResourceAsStream("emptyTest.txt")) {
+            SubstringSearcher alg = new SubstringSearcher(stream);
+            List<Integer> expected = List.of();
+            List<Integer> actual = alg.rabinKarp("a");
+
+            Assertions.assertEquals(expected, actual);
+        }
+    }
 }

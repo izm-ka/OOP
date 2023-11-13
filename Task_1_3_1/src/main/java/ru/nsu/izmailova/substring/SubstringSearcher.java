@@ -45,7 +45,7 @@ public class SubstringSearcher {
             List<Integer> result = new ArrayList<>();
             int patLen = pattern.length(); // Length of the pattern
             int p = 0; // Hash value for pattern
-            int t = -1; // Hash value for the text window
+            int t = -1; // Hash value for the text
             int h = 1; // Hash multiplier
             int i;
 
@@ -60,10 +60,11 @@ public class SubstringSearcher {
             int start = 0; // Start index of the current text window
             int end = 0; // End index of the current text window
             int count = 0; // Counter for stream end handling
-            StringBuilder text = new StringBuilder(); // Buffer for the text window
+            StringBuilder text = new StringBuilder(); // Buffer for the text
 
             // Iterate through the input stream to find matches
             while (true) {
+                //check if the end of the file has been reached
                 if ((nextChar = reader.read()) == -1) {
                     count++;
                     if (count == 2) {
