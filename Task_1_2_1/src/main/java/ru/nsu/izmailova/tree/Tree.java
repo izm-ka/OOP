@@ -291,10 +291,10 @@ public class Tree<T> implements Iterable<T> {
 
     /** Search algorithm options. */
     public enum Search {
-        /** Use breadth-first search algorithm to traverse the tree. */
+        /** Use BFS algorithm to traverse the tree. */
         BREADTH,
 
-        /** Use depth-first search algorithm to traverse the tree. */
+        /** Use DFS algorithm to traverse the tree. */
         DEPTH
     }
 }
