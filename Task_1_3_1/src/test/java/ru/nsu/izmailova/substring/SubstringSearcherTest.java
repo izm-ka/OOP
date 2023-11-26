@@ -1,5 +1,6 @@
 package ru.nsu.izmailova.substring;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.RandomAccessFile;
@@ -28,7 +29,7 @@ public class SubstringSearcherTest {
     @Test
     public void hugeTest() throws IOException {
         try (RandomAccessFile f =
-                     new RandomAccessFile("./src/test/resources/HugeTest.txt", "rw")) {
+                     new RandomAccessFile("HugeTest.txt", "rw")) {
             f.setLength(2000000L);
             f.seek(2341);
             f.writeBytes("test");
@@ -46,6 +47,9 @@ public class SubstringSearcherTest {
             List<Integer> exp = Arrays.asList(2341, 12312, 1558188);
 
             Assertions.assertEquals(exp, act);
+        } finally {
+            File fileToDelete = new File("HugeTest.txt");
+            fileToDelete.delete();
         }
     }
 
