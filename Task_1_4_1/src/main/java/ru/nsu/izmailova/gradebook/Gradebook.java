@@ -30,10 +30,10 @@ public class Gradebook {
     }
 
     private Marks qualifTask;
-    private final String NAME;
-    private final String SURNAME;
-    private final String PATRONYMIC;
-    private final int GROUP;
+    private final String name;
+    private final String surname;
+    private final String patronymic;
+    private final int group;
     private final int SEMESTERS_AMOUNT = 9;
     private int semesterNum;
 
@@ -44,10 +44,10 @@ public class Gradebook {
      * Constructor to initialize Gradebook.
      */
     public Gradebook(String name, String surname, String patronymic, int group, int semesterNum) {
-        this.NAME = name;
-        this.SURNAME = surname;
-        this.PATRONYMIC = patronymic;
-        this.GROUP = group;
+        this.name = name;
+        this.surname = surname;
+        this.patronymic = patronymic;
+        this.group = group;
         this.semesterNum = semesterNum;
         qualifTask = Marks.Poor;
         // initializing semesters with an empty list of subjects
@@ -208,8 +208,8 @@ public class Gradebook {
      * group, semesters, subjects, and corresponding marks.
      */
     public void showRecordBook() {
-        System.out.println("Full name: " + NAME + " " + SURNAME + " " + PATRONYMIC);
-        System.out.println("Group: " + GROUP);
+        System.out.println("Full name: " + name + " " + surname + " " + patronymic);
+        System.out.println("Group: " + group);
 
         for (int i = 1; i < SEMESTERS_AMOUNT; i++) {
             Semester currentSemester = semester.get(i);
