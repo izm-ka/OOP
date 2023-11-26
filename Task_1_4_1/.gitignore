@@ -1,4 +1,4 @@
-.gradle/
+.gradle
 build/
 !gradle/wrapper/gradle-wrapper.jar
 !**/src/main/**/build/
@@ -16,7 +16,6 @@ build/
 out/
 !**/src/main/**/out/
 !**/src/test/**/out/
-*/.idea
 
 ### Eclipse ###
 .apt_generated
@@ -125,9 +124,4 @@ fabric.properties
 !.idea/codeStyles
 !.idea/runConfigurations
 
-index-files/
-legal/
-script-dir/
-settings
-
-
+doc/

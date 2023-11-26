@@ -10,6 +10,7 @@ import java.util.Map;
  */
 public class Gradebook {
 
+    // Enumeration to represent different marks
     public enum Marks {
         Excellent(5),
         Good(4),
@@ -36,24 +37,12 @@ public class Gradebook {
     private final int SEMESTERS_AMOUNT = 9;
     private int semesterNum;
 
-    private static class Semester {
-        private final Map<String, Marks> subjects;
-
-        public Semester() {
-            this.subjects = new HashMap<>();
-        }
-
-        public void addMark(String subject, Marks mark) {
-            subjects.put(subject, mark);
-        }
-
-        public Map<String, Marks> getSubjects() {
-            return subjects;
-        }
-    }
-    //private final List<Map<String, Marks>> semester; //красиво хранилище класс, без лист и мап
+    // List to store semesters
     private final List<Semester> semester;
 
+    /**
+     * Constructor to initialize Gradebook.
+     */
     public Gradebook(String name, String surname, String patronymic, int group, int semesterNum) {
         this.NAME = name;
         this.SURNAME = surname;
@@ -61,11 +50,56 @@ public class Gradebook {
         this.GROUP = group;
         this.semesterNum = semesterNum;
         qualifTask = Marks.Poor;
+        // initializing semesters with an empty list of subjects
         semester = new ArrayList<>(SEMESTERS_AMOUNT);
         for (int i = 0; i < SEMESTERS_AMOUNT; i++) {
             semester.add(new Semester());
         }
     }
+
+    /**
+     * Private inner class representing a Semester.
+     */
+    private static class Semester {
+        private final Map<String, Marks> subjects;
+
+        /**
+         * Constructor to initialize the semester with an empty list of subjects.
+         */
+        public Semester() {
+            this.subjects = new HashMap<>();
+        }
+
+        /**
+         * Method to add a subject and its mark to the semester.
+         *
+         *  @param subject The name of the subject.
+         *  @param mark The grade for this subject.
+         */
+        public void addMark(String subject, Marks mark) {
+            subjects.put(subject, mark);
+        }
+
+        /**
+         * Method to get the subjects of the semester.
+         *
+         * @return A map containing subjects and their corresponding marks.
+         */
+        public Map<String, Marks> getSubjects() {
+            return subjects;
+        }
+    }
+
+    /**
+     * Method to get the current semester.
+     *
+     * @return The current semester.
+     * @throws IndexOutOfBoundsException If the semester number is out of bounds.
+     */
+    private Semester getCurrentSemester() throws IndexOutOfBoundsException {
+        return semester.get(semesterNum);
+    }
+
 
     /**
      * Allows you to add a new Semester to gradebook
@@ -103,15 +137,12 @@ public class Gradebook {
         int iter;
         int cnt = 0;
         double avg = 0;
-        if (semesterNum >= 0 && semesterNum < semester.size()) {
-            Map<String, Marks> currentSemester = semester.get(semesterNum).getSubjects();
-
-            for (Marks num : currentSemester.values()) {
-                iter = num.getMark();
-                if (iter > 0) {
-                    avg += iter;
-                    cnt++;
-                }
+        Semester currentSemester = getCurrentSemester();
+        for (Marks num : currentSemester.getSubjects().values()) {
+            iter = num.getMark();
+            if (iter > 0) {
+                avg += iter;
+                cnt++;
             }
         }
         return avg / cnt;
@@ -123,10 +154,12 @@ public class Gradebook {
      * @return thue if you can get the red diploma, false if not
      */
     public boolean redDiploma() {
-        Map<String, Marks> currentSemester = semester.get(semesterNum);
+        Semester currentSemester = getCurrentSemester();
 
-        if (currentSemester.containsValue(Marks.Satisfactory) || currentSemester.containsValue(Marks.Poor)) {
-            return false;
+        for (Marks mark : currentSemester.getSubjects().values()) {
+            if (mark == Marks.Satisfactory || mark == Marks.Poor) {
+                return false;
+            }
         }
 
         if (average() < 4.75) {
@@ -142,9 +175,14 @@ public class Gradebook {
      * @return true if you can, false if not
      */
     public boolean scholarship() {
-        Map<String, Marks> currentSemester = semester.get(semesterNum);
+        Semester currentSemester = getCurrentSemester();
 
-        return !currentSemester.containsValue(Marks.Satisfactory) && !currentSemester.containsValue(Marks.Poor);
+        for (Marks mark : currentSemester.getSubjects().values()) {
+            if (mark == Marks.Satisfactory || mark == Marks.Poor) {
+                return false;
+            }
+        }
+        return true;
     }
 
     /**
@@ -153,11 +191,11 @@ public class Gradebook {
      * @return true if you can, false if not
      */
     public boolean heightenedScholarship() {
-        Map<String, Marks> currentSemester = semester.get(semesterNum);
+        Semester currentSemester = getCurrentSemester();
 
         int cnt = 0;
-        for (Marks num : currentSemester.values()) {
-            if (num == Marks.Good) {
+        for (Marks mark : currentSemester.getSubjects().values()) {
+            if (mark == Marks.Good) {
                 cnt++;
             }
         }
@@ -165,31 +203,26 @@ public class Gradebook {
         return scholarship() && cnt < 3;
     }
 
+    /**
+     * Displays the record book information on the console, including full name,
+     * group, semesters, subjects, and corresponding marks.
+     */
     public void showRecordBook() {
-        StringBuilder str = new StringBuilder("Full name: ");
-        str.append(NAME);
-        str.append(" ");
-        str.append(SURNAME);
-        str.append(" ");
-        str.append(PATRONYMIC);
-        System.out.println(str);
+        System.out.println("Full name: " + NAME + " " + SURNAME + " " + PATRONYMIC);
+        System.out.println("Group: " + GROUP);
 
-        str = new StringBuilder("Group: ");
-        str.append(GROUP);
-        System.out.println(str);
         for (int i = 1; i < SEMESTERS_AMOUNT; i++) {
-            if (!semester.get(i).isEmpty()) {
-                str = new StringBuilder("Semester: ");
-                str.append(i);
-                System.out.println(str);
+            Semester currentSemester = semester.get(i);
+            if (!currentSemester.getSubjects().isEmpty()) {
+                System.out.println("Semester: " + i);
                 System.out.println("========================================================");
-                semester.get(semesterNum).entrySet().stream().map(grade -> grade.getKey() + ": " + grade.getValue()).forEach(System.out::println);
+                currentSemester.getSubjects().forEach((subject, mark) -> {
+                    System.out.println(subject + ": " + mark);
+                });
                 System.out.println("========================================================");
             }
         }
-        str = new StringBuilder("Qualification task: ");
-        str.append(qualifTask);
-        System.out.println(str);
+        System.out.println("Qualification task: " + qualifTask);
         System.out.println();
     }
 }
