@@ -220,6 +220,9 @@ public class Gradebook {
                 currentSemester.getSubjects().forEach((subject, mark) -> {
                     System.out.println(subject + ": " + mark);
                 });
+                double semesterAverage = average();
+                String averageResult = String.format("%.2f", semesterAverage);
+                System.out.println("Average Grade for Semester: " + averageResult);
                 System.out.println("========================================================");
             }
         }

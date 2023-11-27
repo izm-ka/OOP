@@ -21,11 +21,6 @@ public class GradebookTest {
         gb.addMark("Differential Equations", Gradebook.Marks.Good);
     }
 
-    @AfterEach
-    public void showTheGrades() {
-        gb.showRecordBook();
-    }
-
     @Test
     public void redDiploma_noQualifTask() {
         assertFalse(gb.redDiploma());
@@ -34,6 +29,7 @@ public class GradebookTest {
     @Test
     public void redDiploma_giveQualifTask() {
         gb.setQualifTask(Gradebook.Marks.Excellent);
+        gb.showRecordBook();
         assertTrue(gb.redDiploma());
     }
 
@@ -41,7 +37,7 @@ public class GradebookTest {
     public void redDiploma_badMark() {
         gb.setQualifTask(Gradebook.Marks.Excellent);
         gb.addMark("Operating Systems", Gradebook.Marks.Satisfactory);
-
+        gb.showRecordBook();
         assertFalse(gb.redDiploma());
     }
 
@@ -53,6 +49,7 @@ public class GradebookTest {
     @Test
     public void scholarship_badMark() {
         gb.addMark("Operating Systems", Gradebook.Marks.Satisfactory);
+        gb.showRecordBook();
         assertFalse(gb.scholarship());
     }
 
@@ -65,19 +62,21 @@ public class GradebookTest {
     public void heightenedScholarship_theeGood() {
         gb.addMark("Operating Systems", Gradebook.Marks.Good);
         gb.addMark("PE 2.0", Gradebook.Marks.Good);
-
+        gb.showRecordBook();
         assertFalse(gb.heightenedScholarship());
     }
 
     @Test
     public void average_test() {
         gb.addMark("Operating Systems", Gradebook.Marks.Satisfactory);
+        gb.showRecordBook();
         assertEquals(32.0 / 7.0, gb.average());
     }
 
     @Test
     public void average_withPassed() {
         gb.addMark("Operating Systems", Gradebook.Marks.Passed);
+        gb.showRecordBook();
         assertEquals(29.0 / 6.0, gb.average());
     }
 
@@ -91,6 +90,7 @@ public class GradebookTest {
         gb.addMark("Introduction to AI 2.0", Gradebook.Marks.Excellent);
         gb.addMark("Computing Systems 2.0", Gradebook.Marks.Excellent);
         gb.addMark("Differential Equations 2.0", Gradebook.Marks.Good);
+        gb.showRecordBook();
         assertFalse(gb.heightenedScholarship());
     }
 }
