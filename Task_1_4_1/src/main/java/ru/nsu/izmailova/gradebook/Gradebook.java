@@ -10,7 +10,6 @@ import java.util.Map;
  */
 public class Gradebook {
 
-    // Enumeration to represent different marks
     public enum Marks {
         Excellent(5),
         Good(4),
