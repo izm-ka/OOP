@@ -9,7 +9,6 @@ import java.util.Map;
  * This class allows you to create a record book for student.
  */
 public class Gradebook {
-
     public enum Marks {
         Excellent(5),
         Good(4),

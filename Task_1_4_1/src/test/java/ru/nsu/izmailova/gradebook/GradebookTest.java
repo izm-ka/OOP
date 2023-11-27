@@ -1,15 +1,14 @@
 package ru.nsu.izmailova.gradebook;
 
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
 /**
  * A set of tests for the Gradebook class.
- *
  */
 public class GradebookTest {
     Gradebook gb = new Gradebook("Karina", "Izmailova", "Renatovna", 22213, 1);
