@@ -34,7 +34,7 @@ public class Gradebook {
     private final String surname;
     private final String patronymic;
     private final int group;
-    private final int SEMESTERS_AMOUNT = 9;
+    private final int semestersAmount = 9;
     private int semesterNum;
 
     // List to store semesters
@@ -51,8 +51,8 @@ public class Gradebook {
         this.semesterNum = semesterNum;
         qualifTask = Marks.Poor;
         // initializing semesters with an empty list of subjects
-        semester = new ArrayList<>(SEMESTERS_AMOUNT);
-        for (int i = 0; i < SEMESTERS_AMOUNT; i++) {
+        semester = new ArrayList<>(semestersAmount);
+        for (int i = 0; i < semestersAmount; i++) {
             semester.add(new Semester());
         }
     }
@@ -102,7 +102,7 @@ public class Gradebook {
 
 
     /**
-     * Allows you to add a new Semester to gradebook
+     * Allows you to add a new Semester to gradebook.
      *
      * @param newSemester - new semester, which you want to change or work with
      */
@@ -121,7 +121,8 @@ public class Gradebook {
     }
 
     /**
-     * Allows you to change the grade for the Qualification task
+     * Allows you to change the grade for the Qualification task.
+     *
      * @param qualifTask - mark for the Qualification task
      */
     public void setQualifTask(Marks qualifTask) {
@@ -129,7 +130,7 @@ public class Gradebook {
     }
 
     /**
-     * allows you to count average score for the chosen semester
+     * Allows you to count average score for the chosen semester.
      *
      * @return average grade for the semester
      */
@@ -149,7 +150,7 @@ public class Gradebook {
     }
 
     /**
-     * allows you to find out is there is a possibility of getting the red diploma
+     * Allows you to find out is there is a possibility of getting the red diploma.
      *
      * @return thue if you can get the red diploma, false if not
      */
@@ -170,7 +171,7 @@ public class Gradebook {
     }
 
     /**
-     * allows you to find out if you can get the scholarship in the chosen semester
+     * Allows you to find out if you can get the scholarship in the chosen semester.
      *
      * @return true if you can, false if not
      */
@@ -186,7 +187,7 @@ public class Gradebook {
     }
 
     /**
-     * Allows you to find out can you get the heightened scholarship in the chosen semester
+     * Allows you to find out can you get the heightened scholarship in the chosen semester.
      *
      * @return true if you can, false if not
      */
@@ -211,7 +212,7 @@ public class Gradebook {
         System.out.println("Full name: " + name + " " + surname + " " + patronymic);
         System.out.println("Group: " + group);
 
-        for (int i = 1; i < SEMESTERS_AMOUNT; i++) {
+        for (int i = 1; i < semestersAmount; i++) {
             Semester currentSemester = semester.get(i);
             if (!currentSemester.getSubjects().isEmpty()) {
                 System.out.println("Semester: " + i);
