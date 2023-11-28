@@ -9,6 +9,10 @@ import java.util.Map;
  * This class allows you to create a record book for student.
  */
 public class Gradebook {
+    /**
+     * Enumeration representing different marks.
+     * Each mark has an associated numeric value.
+     */
     public enum Marks {
         Excellent(5),
         Good(4),
@@ -109,7 +113,7 @@ public class Gradebook {
     }
 
     /**
-     * Allows you to add new subject with a mark
+     * Allows you to add new subject with a mark.
      *
      * @param subject - name of subject
      * @param mark - grade for this subject
@@ -133,18 +137,13 @@ public class Gradebook {
      * @return average grade for the semester
      */
     public double average() {
-        int iter;
-        int cnt = 0;
-        double avg = 0;
         Semester currentSemester = getCurrentSemester();
-        for (Marks num : currentSemester.getSubjects().values()) {
-            iter = num.getMark();
-            if (iter > 0) {
-                avg += iter;
-                cnt++;
-            }
-        }
-        return avg / cnt;
+
+        return currentSemester.getSubjects().values().stream()
+                .mapToDouble(Marks::getMark)
+                .filter(mark -> mark > 0)
+                .average()
+                .orElse(0.0);  // Если поток пуст, возвращаем 0.0
     }
 
     /**
@@ -156,8 +155,8 @@ public class Gradebook {
         Semester currentSemester = getCurrentSemester();
 
         return (currentSemester.getSubjects().values().stream()
-                .noneMatch(mark -> mark == Marks.Satisfactory || mark == Marks.Poor)) &&
-                (average() >= 4.75) && (qualifTask == Marks.Excellent);
+                .noneMatch(mark -> mark == Marks.Satisfactory || mark == Marks.Poor))
+                && (average() >= 4.75) && (qualifTask == Marks.Excellent);
     }
 
     /**
