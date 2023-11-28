@@ -155,17 +155,9 @@ public class Gradebook {
     public boolean redDiploma() {
         Semester currentSemester = getCurrentSemester();
 
-        for (Marks mark : currentSemester.getSubjects().values()) {
-            if (mark == Marks.Satisfactory || mark == Marks.Poor) {
-                return false;
-            }
-        }
-
-        if (average() < 4.75) {
-            return false;
-        }
-
-        return qualifTask == Marks.Excellent;
+        return (currentSemester.getSubjects().values().stream()
+                .noneMatch(mark -> mark == Marks.Satisfactory || mark == Marks.Poor)) &&
+                (average() >= 4.75) && (qualifTask == Marks.Excellent);
     }
 
     /**
@@ -176,12 +168,8 @@ public class Gradebook {
     public boolean scholarship() {
         Semester currentSemester = getCurrentSemester();
 
-        for (Marks mark : currentSemester.getSubjects().values()) {
-            if (mark == Marks.Satisfactory || mark == Marks.Poor) {
-                return false;
-            }
-        }
-        return true;
+        return currentSemester.getSubjects().values().stream()
+                .noneMatch(mark -> mark == Marks.Satisfactory || mark == Marks.Poor);
     }
 
     /**
@@ -192,12 +180,8 @@ public class Gradebook {
     public boolean heightenedScholarship() {
         Semester currentSemester = getCurrentSemester();
 
-        int cnt = 0;
-        for (Marks mark : currentSemester.getSubjects().values()) {
-            if (mark == Marks.Good) {
-                cnt++;
-            }
-        }
+        long cnt = currentSemester.getSubjects().values().stream()
+                .filter(mark -> mark == Marks.Good).count();
 
         return scholarship() && cnt < 3;
     }

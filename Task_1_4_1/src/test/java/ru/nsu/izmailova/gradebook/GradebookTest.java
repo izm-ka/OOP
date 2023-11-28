@@ -69,7 +69,7 @@ public class GradebookTest {
     }
 
     @Test
-    public void average_test() {
+    public void averageTest() {
         gb.addMark("Operating Systems", Gradebook.Marks.Satisfactory);
         gb.showRecordBook();
         assertEquals(32.0 / 7.0, gb.average());
