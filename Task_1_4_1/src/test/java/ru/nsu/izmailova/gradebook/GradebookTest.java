@@ -14,7 +14,8 @@ public class GradebookTest {
     Gradebook gb = new Gradebook("Karina", "Izmailova", "Renatovna", 22213, 1);
 
     /**
-     * This method is executed before each test and is used to set up the initial grades in the gradebook.
+     * This method is executed before each test and is used to set up the
+     * initial grades in the gradebook.
      */
     @BeforeEach
     public void myBook() {
