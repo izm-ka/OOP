@@ -32,25 +32,25 @@ public class Calculator {
             double a;
             double b;
             switch (expression.get(i)) {
-                case ("+") -> {
+                case ("+"):
                     a = result.pop();
                     b = result.pop();
                     a += b;
                     result.add(a);
-                }
-                case ("-") -> {
+                    break;
+                case ("-"):
                     a = result.pop();
                     b = result.pop();
                     a -= b;
                     result.add(a);
-                }
-                case ("*") -> {
+                    break;
+                case ("*"):
                     a = result.pop();
                     b = result.pop();
                     a *= b;
                     result.add(a);
-                }
-                case ("/") -> {
+                    break;
+                case ("/"):
                     a = result.pop();
                     b = result.pop();
                     if (b == 0) {
@@ -58,41 +58,41 @@ public class Calculator {
                     }
                     a /= b;
                     result.add(a);
-                }
-                case ("pow") -> {
+                    break;
+                case ("pow"):
                     a = result.pop();
                     b = result.pop();
                     a = Math.pow(a, b);
                     result.add(a);
-                }
-                case ("log") -> {
+                    break;
+                case ("log"):
                     a = result.pop();
                     if (a <= 0) {
                         throw new Exception("Argument of logarithm should be positive!");
                     }
                     a = Math.log(a);
                     result.add(a);
-                }
-                case ("sqrt") -> {
+                    break;
+                case ("sqrt"):
                     a = result.pop();
                     if (a < 0) {
                         throw new Exception("The sqrt of negative number is not defined");
                     }
                     a = Math.sqrt(a);
                     result.add(a);
-                }
-                case ("sin") -> {
+                    break;
+                case ("sin"):
                     a = result.pop();
                     a = Math.sin(a);
                     result.add(a);
-                }
-                case ("cos") -> {
+                    break;
+                case ("cos"):
                     a = result.pop();
                     a = Math.cos(a);
                     result.add(a);
-                }
-                default -> {
-                    // flag to track if the current element is numeric or not
+                    break;
+// flag to track if the current element is numeric or not
+                default:
                     boolean numeric = true;
                     double num = 0;
                     try {
@@ -106,7 +106,7 @@ public class Calculator {
                     } else { // otherwise, throw an exception indicating incorrect input
                         throw new Exception("Incorrect input");
                     }
-                }
+                    break;
             }
         }
         return result.pop();
