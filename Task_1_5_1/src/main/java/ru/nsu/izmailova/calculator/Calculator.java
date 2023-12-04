@@ -91,9 +91,8 @@ public class Calculator {
                     a = Math.cos(a);
                     result.add(a);
                     break;
-// flag to track if the current element is numeric or not
                 default:
-                    boolean numeric = true;
+                    boolean numeric = true; // flag to track if the current element is numeric or not
                     double num = 0;
                     try {
                         num = Double.parseDouble(expression.get(i));

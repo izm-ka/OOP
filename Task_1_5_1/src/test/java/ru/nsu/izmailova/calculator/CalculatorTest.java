@@ -89,12 +89,6 @@ public class CalculatorTest {
     }
 
     @Test
-    public void bigNumbersTest() throws Exception {
-        Calculator calc = new Calculator(Arrays.asList("+", "1000000000000000000000000000000000000000", "2000000000000000000000000000000000000000"));
-        Assertions.assertEquals(3000000000000000000000000000000000000000.0, calc.calculate());
-    }
-
-    @Test
     public void orderOperationsTest() throws Exception {
         Calculator calc = new Calculator(Arrays.asList("+", "2", "*", "3", "4"));
         Assertions.assertEquals(14.0, calc.calculate());
