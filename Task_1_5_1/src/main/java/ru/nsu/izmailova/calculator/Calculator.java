@@ -92,7 +92,7 @@ public class Calculator {
                     result.add(a);
                     break;
                 default:
-                    boolean numeric = true; // flag to track if the current element is numeric or not
+                    boolean numeric = true; // flag to track if the current element is numeric
                     double num = 0;
                     try {
                         num = Double.parseDouble(expression.get(i));
