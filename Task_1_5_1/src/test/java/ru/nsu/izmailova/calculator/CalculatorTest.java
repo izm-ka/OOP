@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 /**
- * Tests for my calculator realization.
+ * Tests for calculator.
  */
 public class CalculatorTest {
     @Test
@@ -81,11 +81,25 @@ public class CalculatorTest {
         Assertions.assertEquals("Incorrect input", thrown.getMessage());
     }
 
-    //complex test
     @Test
     public void complexTest() throws Exception {
         Calculator exp = new Calculator(Arrays.asList("sin", "cos", "+", "+", "sqrt", "2", "2", "-",
                 "pow", "6", "4", "log", "5"));
         Assertions.assertEquals(-0.8116709407298298, exp.calculate());
+    }
+
+    @Test
+    public void bigNumbersTest() throws Exception {
+        Calculator calc = new Calculator(Arrays.asList("+", "1000000000000000000000000000000000000000", "2000000000000000000000000000000000000000"));
+        Assertions.assertEquals(3000000000000000000000000000000000000000.0, calc.calculate());
+    }
+
+    @Test
+    public void orderOperationsTest() throws Exception {
+        Calculator calc = new Calculator(Arrays.asList("+", "2", "*", "3", "4"));
+        Assertions.assertEquals(14.0, calc.calculate());
+
+        calc = new Calculator(Arrays.asList("-", "10", "/", "20", "4"));
+        Assertions.assertEquals(5.0, calc.calculate());
     }
 }

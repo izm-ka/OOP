@@ -14,8 +14,8 @@ public class Main {
      * Main static method to start calculator.
      */
     public static void main(String[] args) {
-        System.out.println("CALCULATOR");
-        System.out.println("Use Q to exit.");
+        System.out.println("================== CALCULATOR ==================");
+        System.out.println("Use q to exit.");
 
         try (BufferedReader input = new BufferedReader(
                 new InputStreamReader(System.in))) {
@@ -23,7 +23,7 @@ public class Main {
             while (true) {
                 System.out.print("Enter your expression: ");
                 List<String> expression = List.of(input.readLine().split(" "));
-                if (expression.get(0).equals("Q")) {
+                if (expression.get(0).equals("q")) {
                     break;
                 }
                 try {
