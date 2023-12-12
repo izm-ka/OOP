@@ -3,10 +3,10 @@ package ru.nsu.izmailova.calculator;
 import java.util.Deque;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Stack;
+
 
 /**
- * Class to define a logic of calculator.
+ * Class to define the logic of calculator.
  */
 public class Calculator {
     List<String> expression;
@@ -87,24 +87,49 @@ public class Calculator {
         }
         return result.pop();
     }
+
+    /**
+     * Checks for division by zero.
+     *
+     * @param divisor to check.
+     * @throws ArithmeticException if division by zero is detected.
+     */
     private void checkDivisionByZero(double divisor) {
         if (divisor == 0) {
             throw new ArithmeticException("Division by zero is not allowed");
         }
     }
 
+    /**
+     * Checks the argument of the logarithm for positivity.
+     *
+     * @param argument to check.
+     * @throws IllegalArgumentException if the argument is not positive.
+     */
     private void checkLogArgument(double argument) {
         if (argument <= 0) {
             throw new IllegalArgumentException("Argument of logarithm should be positive!");
         }
     }
 
+    /**
+     * Checks the argument for square root for negativity.
+     *
+     * @param argument The argument to check.
+     * @throws IllegalArgumentException if the argument is negative.
+     */
     private void checkSqrtArgument(double argument) {
         if (argument < 0) {
             throw new IllegalArgumentException("The sqrt of negative number is not defined");
         }
     }
 
+    /**
+     * Checks if the value is a valid numeric input.
+     *
+     * @param value The value to check.
+     * @throws IllegalArgumentException if the input is not a valid number.
+     */
     private void checkNumericValue(String value) {
         try {
             Double.parseDouble(value);
