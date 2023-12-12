@@ -22,16 +22,21 @@ public class Main {
 
             while (true) {
                 System.out.print("Enter your expression: ");
-                List<String> expression = List.of(input.readLine().split(" "));
-                if (expression.get(0).equals("q")) {
+                String userInput = input.readLine().trim();
+                if (userInput.equals("q")) {
                     break;
                 }
-                try {
-                    var calc = new Calculator(expression);
-                    double result = calc.calculate();
-                    System.out.println("Result: " + result);
-                } catch (Exception e) {
-                    System.out.println(e.getMessage());
+
+                if (!userInput.isEmpty()) {
+                    try {
+                        var calc = new Calculator(userInput);
+                        double result = calc.calculate();
+                        System.out.println("Result: " + result);
+                    } catch (Exception e) {
+                        System.out.println(e.getMessage());
+                    }
+                } else {
+                    System.out.println("Empty expression");
                 }
             }
         } catch (IOException e) {

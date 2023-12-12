@@ -9,7 +9,7 @@ import java.util.List;
  * Class to define the logic of calculator.
  */
 public class Calculator {
-    List<String> expression;
+    String expression;
     Deque<Double> result = new LinkedList<>();
 
 
@@ -18,7 +18,7 @@ public class Calculator {
      *
      * @param input expression to calculate
      */
-    public Calculator(List<String> input) {
+    public Calculator(String input) {
         expression = input;
     }
 
@@ -29,61 +29,62 @@ public class Calculator {
      * @return result of calculation
      */
     public Double calculate() {
+        String[] tokens = expression.split(" ");
 
-        for (int i = expression.size() - 1; i >= 0; i--) {
+        for (int i = tokens.length - 1; i >= 0; i--) {
 
             double a;
             double b;
-            switch (expression.get(i)) {
-                case ("+"):
-                    a = result.pop();
-                    b = result.pop();
-                    result.push(a + b);
-                    break;
-                case ("-"):
-                    a = result.pop();
-                    b = result.pop();
-                    result.push(a - b);
-                    break;
-                case ("*"):
-                    a = result.pop();
-                    b = result.pop();
-                    result.push(a * b);
-                    break;
-                case ("/"):
-                    a = result.pop();
-                    b = result.pop();
-                    checkDivisionByZero(b);
-                    result.push(a / b);
-                    break;
-                case ("pow"):
-                    a = result.pop();
-                    b = result.pop();
-                    result.push(Math.pow(a, b));
-                    break;
-                case ("log"):
-                    a = result.pop();
-                    checkLogArgument(a);
-                    result.push(Math.log(a));
-                    break;
-                case ("sqrt"):
-                    a = result.pop();
-                    checkSqrtArgument(a);
-                    result.push(Math.sqrt(a));
-                    break;
-                case ("sin"):
-                    a = result.pop();
-                    result.push(Math.sin(a));
-                    break;
-                case ("cos"):
-                    a = result.pop();
-                    result.push(Math.cos(a));
-                    break;
-                default:
-                    checkNumericValue(expression.get(i));
-                    result.push(Double.parseDouble(expression.get(i)));
-                    break;
-            }
+                switch (tokens[i]) {
+                    case ("+"):
+                        a = result.pop();
+                        b = result.pop();
+                        result.push(a + b);
+                        break;
+                    case ("-"):
+                        a = result.pop();
+                        b = result.pop();
+                        result.push(a - b);
+                        break;
+                    case ("*"):
+                        a = result.pop();
+                        b = result.pop();
+                        result.push(a * b);
+                        break;
+                    case ("/"):
+                        a = result.pop();
+                        b = result.pop();
+                        checkDivisionByZero(b);
+                        result.push(a / b);
+                        break;
+                    case ("pow"):
+                        a = result.pop();
+                        b = result.pop();
+                        result.push(Math.pow(a, b));
+                        break;
+                    case ("log"):
+                        a = result.pop();
+                        checkLogArgument(a);
+                        result.push(Math.log(a));
+                        break;
+                    case ("sqrt"):
+                        a = result.pop();
+                        checkSqrtArgument(a);
+                        result.push(Math.sqrt(a));
+                        break;
+                    case ("sin"):
+                        a = result.pop();
+                        result.push(Math.sin(a));
+                        break;
+                    case ("cos"):
+                        a = result.pop();
+                        result.push(Math.cos(a));
+                        break;
+                    default:
+                        checkNumericValue(tokens[i]);
+                        result.push(Double.parseDouble(tokens[i]));
+                        break;
+                }
         }
         return result.pop();
     }
