@@ -30,7 +30,7 @@ public class CalculatorTest {
     public void divisionTest() throws Exception {
         Calculator exp = new Calculator(Arrays.asList("/", "2", "0"));
         Exception thrown = Assertions.assertThrows(Exception.class, exp::calculate);
-        Assertions.assertEquals("The zero division is not defined", thrown.getMessage());
+        Assertions.assertEquals("Division by zero is not allowed", thrown.getMessage());
 
         exp = new Calculator(Arrays.asList("/", "2", "2"));
         Assertions.assertEquals(1, exp.calculate());
@@ -78,7 +78,7 @@ public class CalculatorTest {
     public void incorrectInputTest() throws Exception {
         Calculator exp = new Calculator(Arrays.asList("asddedd", "asededd"));
         Exception thrown = Assertions.assertThrows(Exception.class, exp::calculate);
-        Assertions.assertEquals("Incorrect input", thrown.getMessage());
+        Assertions.assertEquals("Incorrect input: asededd", thrown.getMessage());
     }
 
     @Test

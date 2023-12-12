@@ -1,5 +1,7 @@
 package ru.nsu.izmailova.calculator;
 
+import java.util.Deque;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Stack;
 
@@ -8,7 +10,8 @@ import java.util.Stack;
  */
 public class Calculator {
     List<String> expression;
-    Stack<Double> result = new Stack<>();
+    Deque<Double> result = new LinkedList<>();
+
 
     /**
      * Constructor for calculator.
@@ -19,13 +22,13 @@ public class Calculator {
         expression = input;
     }
 
+
     /**
      * Method to calculate an expression.
      *
      * @return result of calculation
-     * @throws Exception in exceptional situations
      */
-    public Double calculate() throws Exception {
+    public Double calculate() {
 
         for (int i = expression.size() - 1; i >= 0; i--) {
 
@@ -35,79 +38,78 @@ public class Calculator {
                 case ("+"):
                     a = result.pop();
                     b = result.pop();
-                    a += b;
-                    result.add(a);
+                    result.push(a + b);
                     break;
                 case ("-"):
                     a = result.pop();
                     b = result.pop();
-                    a -= b;
-                    result.add(a);
+                    result.push(a - b);
                     break;
                 case ("*"):
                     a = result.pop();
                     b = result.pop();
-                    a *= b;
-                    result.add(a);
+                    result.push(a * b);
                     break;
                 case ("/"):
                     a = result.pop();
                     b = result.pop();
-                    if (b == 0) {
-                        throw new Exception("The zero division is not defined");
-                    }
-                    a /= b;
-                    result.add(a);
+                    checkDivisionByZero(b);
+                    result.push(a / b);
                     break;
                 case ("pow"):
                     a = result.pop();
                     b = result.pop();
-                    a = Math.pow(a, b);
-                    result.add(a);
+                    result.push(Math.pow(a, b));
                     break;
                 case ("log"):
                     a = result.pop();
-                    if (a <= 0) {
-                        throw new Exception("Argument of logarithm should be positive!");
-                    }
-                    a = Math.log(a);
-                    result.add(a);
+                    checkLogArgument(a);
+                    result.push(Math.log(a));
                     break;
                 case ("sqrt"):
                     a = result.pop();
-                    if (a < 0) {
-                        throw new Exception("The sqrt of negative number is not defined");
-                    }
-                    a = Math.sqrt(a);
-                    result.add(a);
+                    checkSqrtArgument(a);
+                    result.push(Math.sqrt(a));
                     break;
                 case ("sin"):
                     a = result.pop();
-                    a = Math.sin(a);
-                    result.add(a);
+                    result.push(Math.sin(a));
                     break;
                 case ("cos"):
                     a = result.pop();
-                    a = Math.cos(a);
-                    result.add(a);
+                    result.push(Math.cos(a));
                     break;
                 default:
-                    boolean numeric = true; // flag to track if the current element is numeric
-                    double num = 0;
-                    try {
-                        num = Double.parseDouble(expression.get(i));
-                    } catch (NumberFormatException e) {
-                        numeric = false;
-                    }
-                    if (numeric) { // if the current element is numeric, add it to the result stack
-
-                        result.add(num);
-                    } else { // otherwise, throw an exception indicating incorrect input
-                        throw new Exception("Incorrect input");
-                    }
+                    checkNumericValue(expression.get(i));
+                    result.push(Double.parseDouble(expression.get(i)));
                     break;
             }
         }
         return result.pop();
+    }
+    private void checkDivisionByZero(double divisor) {
+        if (divisor == 0) {
+            throw new ArithmeticException("Division by zero is not allowed");
+        }
+    }
+
+    private void checkLogArgument(double argument) {
+        if (argument <= 0) {
+            throw new IllegalArgumentException("Argument of logarithm should be positive!");
+        }
+    }
+
+    private void checkSqrtArgument(double argument) {
+        if (argument < 0) {
+            throw new IllegalArgumentException("The sqrt of negative number is not defined");
+        }
+    }
+
+    private void checkNumericValue(String value) {
+        try {
+            Double.parseDouble(value);
+        } catch (NumberFormatException e) {
+            throw new IllegalArgumentException("Incorrect input: " + value);
+        }
     }
 }
