@@ -1,6 +1,8 @@
-gradle
+.gradle
 build/
 !gradle/wrapper/gradle-wrapper.jar
+!**/src/main/**/build/
+!**/src/test/**/build/
 
 ### IntelliJ IDEA ###
 .idea/modules.xml
@@ -11,7 +13,6 @@ build/
 *.iws
 *.iml
 *.ipr
-out/
 
 ### Eclipse ###
 .apt_generated
@@ -64,7 +65,7 @@ bin/
 .idea/**/uiDesigner.xml
 .idea/**/dbnavigator.xml
 
-.idea/**/libraries
+.idea/**/gradle.xml
 
 # Gradle and Maven with auto-import
 # When using Gradle or Maven with auto-import, you should exclude module files,
