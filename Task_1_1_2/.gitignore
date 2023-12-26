@@ -1,8 +1,6 @@
 .gradle
-build/
 !gradle/wrapper/gradle-wrapper.jar
-!**/src/main/**/build/
-!**/src/test/**/build/
+
 
 ### IntelliJ IDEA ###
 .idea/modules.xml
@@ -121,6 +119,4 @@ fabric.properties
 
 .idea/*
 
-!.idea/codeStyles
-!.idea/runConfigurations
 
