@@ -132,6 +132,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <hr>
 <pre>public class <span class="typeNameLabel">Polynomial</span>
 extends java.lang.Object</pre>
+<div class="block">Represents a polynomial with integer coefficients.</div>
 </li>
 </ul>
 </div>
@@ -153,7 +154,9 @@ extends java.lang.Object</pre>
 </tr>
 <tr class="altColor">
 <th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(int%5B%5D)">Polynomial</a></span>&#8203;(int[]&nbsp;coefficients)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Constructs a polynomial with the given coefficients.</div>
+</td>
 </tr>
 </table>
 </li>
@@ -176,52 +179,72 @@ extends java.lang.Object</pre>
 <tr id="i0" class="altColor">
 <td class="colFirst"><code><a href="Polynomial.html" title="class in ru.nsu.izmailova.polynom">Polynomial</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#add(ru.nsu.izmailova.polynom.Polynomial)">add</a></span>&#8203;(<a href="Polynomial.html" title="class in ru.nsu.izmailova.polynom">Polynomial</a>&nbsp;other)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Adds another polynomial to this polynomial.</div>
+</td>
 </tr>
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code><a href="Polynomial.html" title="class in ru.nsu.izmailova.polynom">Polynomial</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#differentiate(int)">differentiate</a></span>&#8203;(int&nbsp;order)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Differentiates the polynomial with respect to x for a given order.</div>
+</td>
 </tr>
 <tr id="i2" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#equals(java.lang.Object)">equals</a></span>&#8203;(java.lang.Object&nbsp;other)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Checks if the polynomial is equal to another object.</div>
+</td>
 </tr>
 <tr id="i3" class="rowColor">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#evaluate(int)">evaluate</a></span>&#8203;(int&nbsp;x)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Evaluates the polynomial at a given value of x.</div>
+</td>
 </tr>
 <tr id="i4" class="altColor">
 <td class="colFirst"><code>int[]</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getCoefficients()">getCoefficients</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Gets the array of coefficients of the polynomial.</div>
+</td>
 </tr>
 <tr id="i5" class="rowColor">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#hashCode()">hashCode</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Generates a hash code for the polynomial.</div>
+</td>
 </tr>
 <tr id="i6" class="altColor">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#length()">length</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Returns the degree of the polynomial.</div>
+</td>
 </tr>
 <tr id="i7" class="rowColor">
 <td class="colFirst"><code><a href="Polynomial.html" title="class in ru.nsu.izmailova.polynom">Polynomial</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#multiply(ru.nsu.izmailova.polynom.Polynomial)">multiply</a></span>&#8203;(<a href="Polynomial.html" title="class in ru.nsu.izmailova.polynom">Polynomial</a>&nbsp;other)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Multiplies this polynomial by another polynomial.</div>
+</td>
 </tr>
 <tr id="i8" class="altColor">
 <td class="colFirst"><code><a href="Polynomial.html" title="class in ru.nsu.izmailova.polynom">Polynomial</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#subtract(ru.nsu.izmailova.polynom.Polynomial)">subtract</a></span>&#8203;(<a href="Polynomial.html" title="class in ru.nsu.izmailova.polynom">Polynomial</a>&nbsp;other)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Subtracts another polynomial from this polynomial.</div>
+</td>
 </tr>
 <tr id="i9" class="rowColor">
 <td class="colFirst"><code>java.lang.String</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#toString()">toString</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Converts the polynomial to its string representation.</div>
+</td>
 </tr>
 </table>
 <ul class="blockList">
@@ -254,6 +277,11 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>Polynomial</h4>
 <pre>public&nbsp;Polynomial&#8203;(int[]&nbsp;coefficients)</pre>
+<div class="block">Constructs a polynomial with the given coefficients.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>coefficients</code> - An array of integer coefficients.</dd>
+</dl>
 </li>
 </ul>
 </li>
@@ -273,6 +301,13 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>evaluate</h4>
 <pre class="methodSignature">public&nbsp;int&nbsp;evaluate&#8203;(int&nbsp;x)</pre>
+<div class="block">Evaluates the polynomial at a given value of x.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>x</code> - The value at which to evaluate the polynomial.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>The result of the polynomial evaluation.</dd>
+</dl>
 </li>
 </ul>
 <a id="length()">
@@ -282,6 +317,11 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>length</h4>
 <pre class="methodSignature">public&nbsp;int&nbsp;length()</pre>
+<div class="block">Returns the degree of the polynomial.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>The degree of the polynomial.</dd>
+</dl>
 </li>
 </ul>
 <a id="getCoefficients()">
@@ -291,6 +331,11 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>getCoefficients</h4>
 <pre class="methodSignature">public&nbsp;int[]&nbsp;getCoefficients()</pre>
+<div class="block">Gets the array of coefficients of the polynomial.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>An array of coefficients.</dd>
+</dl>
 </li>
 </ul>
 <a id="add(ru.nsu.izmailova.polynom.Polynomial)">
@@ -300,6 +345,13 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>add</h4>
 <pre class="methodSignature">public&nbsp;<a href="Polynomial.html" title="class in ru.nsu.izmailova.polynom">Polynomial</a>&nbsp;add&#8203;(<a href="Polynomial.html" title="class in ru.nsu.izmailova.polynom">Polynomial</a>&nbsp;other)</pre>
+<div class="block">Adds another polynomial to this polynomial.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>other</code> - The polynomial to add.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>A new polynomial representing the sum.</dd>
+</dl>
 </li>
 </ul>
 <a id="subtract(ru.nsu.izmailova.polynom.Polynomial)">
@@ -309,6 +361,13 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>subtract</h4>
 <pre class="methodSignature">public&nbsp;<a href="Polynomial.html" title="class in ru.nsu.izmailova.polynom">Polynomial</a>&nbsp;subtract&#8203;(<a href="Polynomial.html" title="class in ru.nsu.izmailova.polynom">Polynomial</a>&nbsp;other)</pre>
+<div class="block">Subtracts another polynomial from this polynomial.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>other</code> - The polynomial to subtract.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>A new polynomial representing the difference.</dd>
+</dl>
 </li>
 </ul>
 <a id="multiply(ru.nsu.izmailova.polynom.Polynomial)">
@@ -318,6 +377,13 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>multiply</h4>
 <pre class="methodSignature">public&nbsp;<a href="Polynomial.html" title="class in ru.nsu.izmailova.polynom">Polynomial</a>&nbsp;multiply&#8203;(<a href="Polynomial.html" title="class in ru.nsu.izmailova.polynom">Polynomial</a>&nbsp;other)</pre>
+<div class="block">Multiplies this polynomial by another polynomial.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>other</code> - The polynomial to multiply by.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>A new polynomial representing the product.</dd>
+</dl>
 </li>
 </ul>
 <a id="differentiate(int)">
@@ -327,6 +393,13 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>differentiate</h4>
 <pre class="methodSignature">public&nbsp;<a href="Polynomial.html" title="class in ru.nsu.izmailova.polynom">Polynomial</a>&nbsp;differentiate&#8203;(int&nbsp;order)</pre>
+<div class="block">Differentiates the polynomial with respect to x for a given order.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>order</code> - The order of differentiation.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>A new polynomial representing the result of differentiation.</dd>
+</dl>
 </li>
 </ul>
 <a id="equals(java.lang.Object)">
@@ -336,9 +409,14 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>equals</h4>
 <pre class="methodSignature">public&nbsp;boolean&nbsp;equals&#8203;(java.lang.Object&nbsp;other)</pre>
+<div class="block">Checks if the polynomial is equal to another object.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code>equals</code>&nbsp;in class&nbsp;<code>java.lang.Object</code></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>other</code> - The object to compare.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>True if the objects are equal, false otherwise.</dd>
 </dl>
 </li>
 </ul>
@@ -349,9 +427,12 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>hashCode</h4>
 <pre class="methodSignature">public&nbsp;int&nbsp;hashCode()</pre>
+<div class="block">Generates a hash code for the polynomial.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code>hashCode</code>&nbsp;in class&nbsp;<code>java.lang.Object</code></dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>The hash code for the polynomial.</dd>
 </dl>
 </li>
 </ul>
@@ -362,9 +443,12 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>toString</h4>
 <pre class="methodSignature">public&nbsp;java.lang.String&nbsp;toString()</pre>
+<div class="block">Converts the polynomial to its string representation.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code>toString</code>&nbsp;in class&nbsp;<code>java.lang.Object</code></dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>The string representation of the polynomial.</dd>
 </dl>
 </li>
 </ul>
