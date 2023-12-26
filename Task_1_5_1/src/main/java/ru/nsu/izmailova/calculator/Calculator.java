@@ -28,7 +28,7 @@ public class Calculator {
      *
      * @return result of calculation
      */
-    public Double calculate() {
+    public Double calculate() throws Exception {
         String[] tokens = expression.split(" ");
         for (int i = tokens.length - 1; i >= 0; i--) {
             double a;
@@ -52,8 +52,11 @@ public class Calculator {
                 case ("/"):
                     a = result.pop();
                     b = result.pop();
-                    checkDivisionByZero(b);
-                    result.push(a / b);
+                    if (b == 0) {
+                        throw new Exception("Division by zero is not allowed");
+                    }
+                    a /= b;
+                    result.push(a);
                     break;
                 case ("pow"):
                     a = result.pop();
