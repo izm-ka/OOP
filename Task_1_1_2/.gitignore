@@ -1,6 +1,8 @@
 .gradle
+build/
 !gradle/wrapper/gradle-wrapper.jar
-
+!**/src/main/**/build/
+!**/src/test/**/build/
 
 ### IntelliJ IDEA ###
 .idea/modules.xml
@@ -14,6 +16,7 @@
 out/
 !**/src/main/**/out/
 !**/src/test/**/out/
+*/.idea
 
 ### Eclipse ###
 .apt_generated
@@ -117,6 +120,7 @@ fabric.properties
 # Ignore everything but code style settings and run configurations
 # that are supposed to be shared within teams.
 
-*/.idea
+.idea/*
 
-
+!.idea/codeStyles
+!.idea/runConfigurations
