@@ -6,10 +6,11 @@ public class Polynomial {
     private int[] coefficients;
 
     public Polynomial(int[] coefficients) {
-        if (coefficients == null || coefficients.length == 0) {
+        if (coefficients.length == 0) {
             this.coefficients = new int[]{0};
+        } else {
+            this.coefficients = coefficients;
         }
-        this.coefficients = coefficients;
     }
 
     public int evaluate(int x) {
