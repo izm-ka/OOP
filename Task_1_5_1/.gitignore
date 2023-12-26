@@ -1,4 +1,4 @@
-gradle
+.gradle
 build/
 !gradle/wrapper/gradle-wrapper.jar
 
@@ -64,6 +64,8 @@ bin/
 .idea/**/uiDesigner.xml
 .idea/**/dbnavigator.xml
 
+# Gradle
+#.idea/**/gradle.xml
 .idea/**/libraries
 
 # Gradle and Maven with auto-import
@@ -117,3 +119,5 @@ fabric.properties
 
 !.idea/codeStyles
 !.idea/runConfigurations
+
+doc/
