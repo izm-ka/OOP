@@ -34,57 +34,54 @@ public class Calculator {
             double a;
             double b;
             switch (tokens[i]) {
-                case ("+"):
+                case "+" -> {
                     a = result.pop();
                     b = result.pop();
                     result.push(a + b);
-                    break;
-                case ("-"):
+                }
+                case ("-") -> {
                     a = result.pop();
                     b = result.pop();
                     result.push(a - b);
-                    break;
-                case ("*"):
+                }
+                case ("*") -> {
                     a = result.pop();
                     b = result.pop();
                     result.push(a * b);
-                    break;
-                case ("/"):
+                }
+                case ("/") -> {
                     a = result.pop();
                     b = result.pop();
-                    if (b == 0) {
-                        throw new Exception("Division by zero is not allowed");
-                    }
-                    a /= b;
-                    result.push(a);
-                    break;
-                case ("pow"):
+                    checkDivisionByZero(b);
+                    result.push(a / b);
+                }
+                case ("pow") -> {
                     a = result.pop();
                     b = result.pop();
                     result.push(Math.pow(a, b));
-                    break;
-                case ("log"):
+                }
+                case ("log") -> {
                     a = result.pop();
                     checkLogArgument(a);
                     result.push(Math.log(a));
-                    break;
-                case ("sqrt"):
+                }
+                case ("sqrt") -> {
                     a = result.pop();
                     checkSqrtArgument(a);
                     result.push(Math.sqrt(a));
-                    break;
-                case ("sin"):
+                }
+                case ("sin") -> {
                     a = result.pop();
                     result.push(Math.sin(a));
-                    break;
-                case ("cos"):
+                }
+                case ("cos") -> {
                     a = result.pop();
                     result.push(Math.cos(a));
-                    break;
-                default:
+                }
+                default -> {
                     checkNumericValue(tokens[i]);
                     result.push(Double.parseDouble(tokens[i]));
-                    break;
+                }
             }
         }
         return result.pop();
