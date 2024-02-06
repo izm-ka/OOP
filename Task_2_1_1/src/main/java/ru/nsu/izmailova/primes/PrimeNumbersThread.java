@@ -9,6 +9,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 public class PrimeNumbersThread {
 
     AtomicBoolean compositeNumber = new AtomicBoolean(false);
+
     /**
      * Class for creating threads.
      */
