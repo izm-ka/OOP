@@ -1,9 +1,19 @@
-package ru.nsu.izmailova.primeNumbers;
+package ru.nsu.izmailova.primes;
 
 import java.util.List;
 import java.util.ArrayList;
+
+/**
+ * Complex tests for time measuring.
+ */
 public class PerfomanceTest {
     private final List<Integer> primeList = initPrimeList();
+
+    /**
+     * Initialization of list contains only prime numbers.
+     *
+     * @return list with prime numbers
+     */
     private List<Integer> initPrimeList() {
         List<Integer> result = new ArrayList<>();
         long size = 10000000;

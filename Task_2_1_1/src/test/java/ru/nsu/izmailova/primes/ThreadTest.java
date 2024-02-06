@@ -1,4 +1,4 @@
-package ru.nsu.izmailova.primeNumbers;
+package ru.nsu.izmailova.primes;
 
 import java.util.Arrays;
 import java.util.List;
@@ -6,22 +6,22 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 /**
- * Tests that checks the correctness of ThreadSolve class.
+ * Tests that checks the correctness of PrimeNumbersThread class.
  */
 public class ThreadTest {
     @Test
     public void primeTest1() throws InterruptedException {
-        List<Integer> list = Arrays.asList(1, 2, 3);
+        List<Integer> list = Arrays.asList(6, 8, 7, 13, 5, 9, 4);
         PrimeNumbersThread test = new PrimeNumbersThread();
         boolean act = test.threadSolve(list, 1);
-        boolean exp = false;
+        boolean exp = true;
         Assertions.assertEquals(exp, act);
     }
 
     @Test
     public void primeTest2() throws InterruptedException {
-        List<Integer> list = Arrays.asList(999917, 999931, 999953, 999959,
-                999961, 999979, 999983);
+        List<Integer> list = Arrays.asList(20319251, 6997901, 6997927, 6997937, 17858849, 6997967,
+                6998009, 6998029, 6998039, 20165149, 6998051, 6998053);
         PrimeNumbersThread test = new PrimeNumbersThread();
         boolean act = test.threadSolve(list, 2);
         boolean exp = false;

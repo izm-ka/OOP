@@ -1,4 +1,4 @@
-package ru.nsu.izmailova.primeNumbers;
+package ru.nsu.izmailova.primes;
 
 /**
  * NotPrime class used for finding composite number.

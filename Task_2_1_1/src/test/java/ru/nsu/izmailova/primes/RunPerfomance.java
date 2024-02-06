@@ -1,4 +1,4 @@
-package ru.nsu.izmailova.primeNumbers;
+package ru.nsu.izmailova.primes;
 
 import java.util.Arrays;
 
