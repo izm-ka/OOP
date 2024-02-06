@@ -1,7 +1,7 @@
 package ru.nsu.izmailova.primes;
 
 import java.util.List;
-import java.util.concurrent.atomic.AtomicBoolean
+import java.util.concurrent.atomic.AtomicBoolean;
 
 /**
  * Multithreading class used for finding composite number in the list of numbers.
