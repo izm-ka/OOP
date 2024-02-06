@@ -1,7 +1,7 @@
 package ru.nsu.izmailova.primes;
 
-import java.util.List;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Complex tests for time measuring.
@@ -23,6 +23,11 @@ public class PerfomanceTest {
         return result;
     }
 
+    /**
+     * Test.
+     *
+     * @return timeFinish
+     */
     public long sequentialTest() {
         long timeStart = System.currentTimeMillis();
         PrimeNumbersSequential.sequentialSolve(primeList);
@@ -31,6 +36,11 @@ public class PerfomanceTest {
         return timeFinish;
     }
 
+    /**
+     * Test.
+     *
+     * @return timeFinish
+     */
     public long parallelStreamTest() {
         long timeStart = System.currentTimeMillis();
         PrimeNumbersParallelStream.parallelStreamSolve(primeList);
@@ -39,6 +49,11 @@ public class PerfomanceTest {
         return timeFinish;
     }
 
+    /**
+     * Test.
+     *
+     * @return timeFinish
+     */
     public long threadsTest() throws InterruptedException {
         long timeStart = System.currentTimeMillis();
         PrimeNumbersThread test = new PrimeNumbersThread();
@@ -48,6 +63,11 @@ public class PerfomanceTest {
         return timeFinish;
     }
 
+    /**
+     * Test.
+     *
+     * @return timeFinish
+     */
     public long threadsTest4() throws InterruptedException {
         long timeStart = System.currentTimeMillis();
         PrimeNumbersThread test = new PrimeNumbersThread();
@@ -57,6 +77,11 @@ public class PerfomanceTest {
         return timeFinish;
     }
 
+    /**
+     * Test.
+     *
+     * @return timeFinish
+     */
     public long threadsTest8() throws InterruptedException {
         long timeStart = System.currentTimeMillis();
         PrimeNumbersThread test = new PrimeNumbersThread();
@@ -66,6 +91,11 @@ public class PerfomanceTest {
         return timeFinish;
     }
 
+    /**
+     * Test.
+     *
+     * @return timeFinish
+     */
     public long threadsTest16() throws InterruptedException {
         long timeStart = System.currentTimeMillis();
         PrimeNumbersThread test = new PrimeNumbersThread();
@@ -75,6 +105,11 @@ public class PerfomanceTest {
         return timeFinish;
     }
 
+    /**
+     * Test.
+     *
+     * @return timeFinish
+     */
     public long threadsTest32() throws InterruptedException {
         long timeStart = System.currentTimeMillis();
         PrimeNumbersThread test = new PrimeNumbersThread();
@@ -84,6 +119,11 @@ public class PerfomanceTest {
         return timeFinish;
     }
 
+    /**
+     * Test.
+     *
+     * @return timeFinish
+     */
     public long threadsTest64() throws InterruptedException {
         long timeStart = System.currentTimeMillis();
         PrimeNumbersThread test = new PrimeNumbersThread();
@@ -93,6 +133,11 @@ public class PerfomanceTest {
         return timeFinish;
     }
 
+    /**
+     * Test.
+     *
+     * @return timeFinish
+     */
     public long threadsTest128() throws InterruptedException {
         long timeStart = System.currentTimeMillis();
         PrimeNumbersThread test = new PrimeNumbersThread();
@@ -102,6 +147,11 @@ public class PerfomanceTest {
         return timeFinish;
     }
 
+    /**
+     * Test.
+     *
+     * @return timeFinish
+     */
     public long threadsTest256() throws InterruptedException {
         long timeStart = System.currentTimeMillis();
         PrimeNumbersThread test = new PrimeNumbersThread();
