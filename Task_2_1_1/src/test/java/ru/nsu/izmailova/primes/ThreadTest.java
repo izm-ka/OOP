@@ -65,4 +65,13 @@ public class ThreadTest {
         boolean exp = true;
         Assertions.assertEquals(exp, act);
     }
+
+    @Test
+    public void elementsLessThanThreads() throws InterruptedException {
+        List<Integer> list = Arrays.asList(2, 3, 5);
+        PrimeNumbersThread test = new PrimeNumbersThread();
+        boolean act = test.threadSolve(list, 5);
+        boolean exp = false;
+        Assertions.assertEquals(exp, act);
+    }
 }

@@ -1,13 +1,11 @@
 package ru.nsu.izmailova.primes;
 
 /**
- * Abstract class for determining if a number is not prime.
+ * Class for solving whether a number is prime or not.
  */
-public abstract class NotPrime {
-
-    public abstract boolean isNotPrime(int n);
-
-    public static boolean notPrime(int n) {
+public class NotPrimeSolver extends NotPrime {
+    @Override
+    public boolean isNotPrime(int n) {
         if (n == 1) {
             return true;
         }
@@ -19,4 +17,3 @@ public abstract class NotPrime {
         return false;
     }
 }
-

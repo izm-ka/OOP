@@ -5,7 +5,7 @@ import java.util.List;
 /**
  * Sequential class used for finding composite number in the list of numbers.
  */
-public class PrimeNumbersSequential {
+public class PrimeNumbersSequential extends NotPrimeSolver {
     /**
      * Function to find if there is a composite numbers in the list.
      *
@@ -15,4 +15,5 @@ public class PrimeNumbersSequential {
     public static boolean sequentialSolve(List<Integer> numbers) {
         return numbers.stream().anyMatch(NotPrime::notPrime);
     }
+
 }
