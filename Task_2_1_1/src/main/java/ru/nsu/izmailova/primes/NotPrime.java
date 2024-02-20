@@ -1,12 +1,18 @@
 package ru.nsu.izmailova.primes;
 
 /**
- * Abstract class for determining if a number is not prime.
+ * Abstract class for determining if number is not prime.
  */
 public abstract class NotPrime {
 
     public abstract boolean isNotPrime(int n);
 
+    /**
+     * Checks whether the number is not prime.
+     *
+     * @param n the number to check
+     * @return true if the number is composite
+     */
     public static boolean notPrime(int n) {
         if (n == 1) {
             return true;

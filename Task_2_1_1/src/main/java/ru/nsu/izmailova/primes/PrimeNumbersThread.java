@@ -6,7 +6,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 /**
  * Multithreading class used for finding composite number in the list of numbers.
  */
-class PrimeNumbersThread extends NotPrimeSolver{
+class PrimeNumbersThread extends NotPrimeSolver {
 
     AtomicBoolean compositeNumber = new AtomicBoolean(false);
 

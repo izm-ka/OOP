@@ -5,7 +5,7 @@ import java.util.List;
 /**
  * Parallel streaming class used for finding composite number in the list of numbers.
  */
-public class PrimeNumbersParallelStream extends NotPrimeSolver{
+public class PrimeNumbersParallelStream extends NotPrimeSolver {
     /**
      * Function to find if there is a composite numbers in the list.
      *
