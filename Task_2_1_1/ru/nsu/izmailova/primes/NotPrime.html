@@ -131,7 +131,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <li class="blockList">
 <dl>
 <dt>Direct Known Subclasses:</dt>
-<dd><code><a href="NotPrimeSolver.html" title="class in ru.nsu.izmailova.primes">NotPrimeSolver</a></code></dd>
+<dd><code><a href="PrimeNumbersParallelStream.html" title="class in ru.nsu.izmailova.primes">PrimeNumbersParallelStream</a></code>, <code><a href="PrimeNumbersSequential.html" title="class in ru.nsu.izmailova.primes">PrimeNumbersSequential</a></code></dd>
 </dl>
 <hr>
 <pre>public abstract class <span class="typeNameLabel">NotPrime</span>
@@ -180,7 +180,7 @@ extends java.lang.Object</pre>
 </tr>
 <tr id="i0" class="altColor">
 <td class="colFirst"><code>abstract boolean</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#isNotPrime(int)">isNotPrime</a></span>&#8203;(int&nbsp;n)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#hasNotPrime(java.util.List)">hasNotPrime</a></span>&#8203;(java.util.List&lt;java.lang.Integer&gt;&nbsp;numbers)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr id="i1" class="rowColor">
@@ -233,13 +233,18 @@ extends java.lang.Object</pre>
 <!--   -->
 </a>
 <h3>Method Detail</h3>
-<a id="isNotPrime(int)">
+<a id="hasNotPrime(java.util.List)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>isNotPrime</h4>
-<pre class="methodSignature">public abstract&nbsp;boolean&nbsp;isNotPrime&#8203;(int&nbsp;n)</pre>
+<h4>hasNotPrime</h4>
+<pre class="methodSignature">public abstract&nbsp;boolean&nbsp;hasNotPrime&#8203;(java.util.List&lt;java.lang.Integer&gt;&nbsp;numbers)
+                             throws java.lang.InterruptedException</pre>
+<dl>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code>java.lang.InterruptedException</code></dd>
+</dl>
 </li>
 </ul>
 <a id="notPrime(int)">

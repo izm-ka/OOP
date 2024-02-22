@@ -1,1 +1,1 @@
-typeSearchIndex = [{"l":"All Classes","url":"allclasses-index.html"},{"p":"ru.nsu.izmailova.primes","l":"NotPrime"},{"p":"ru.nsu.izmailova.primes","l":"NotPrimeSolver"},{"p":"ru.nsu.izmailova.primes","l":"PrimeNumbersParallelStream"},{"p":"ru.nsu.izmailova.primes","l":"PrimeNumbersSequential"}]
+typeSearchIndex = [{"l":"All Classes","url":"allclasses-index.html"},{"p":"ru.nsu.izmailova.primes","l":"NotPrime"},{"p":"ru.nsu.izmailova.primes","l":"PrimeNumbersParallelStream"},{"p":"ru.nsu.izmailova.primes","l":"PrimeNumbersSequential"}]
