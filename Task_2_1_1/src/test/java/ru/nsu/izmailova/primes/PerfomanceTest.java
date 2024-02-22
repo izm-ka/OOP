@@ -29,8 +29,9 @@ public class PerfomanceTest {
      * @return timeFinish
      */
     public long sequentialTest() {
+        PrimeNumbersSequential testStream = new PrimeNumbersSequential();
         long timeStart = System.currentTimeMillis();
-        PrimeNumbersSequential.sequentialSolve(primeList);
+        testStream.hasNotPrime(primeList);
         long timeFinish = System.currentTimeMillis() - timeStart;
         System.out.println("Sequential test: " + timeFinish);
         return timeFinish;
@@ -42,8 +43,9 @@ public class PerfomanceTest {
      * @return timeFinish
      */
     public long parallelStreamTest() {
+        PrimeNumbersParallelStream testStream = new PrimeNumbersParallelStream();
         long timeStart = System.currentTimeMillis();
-        PrimeNumbersParallelStream.parallelStreamSolve(primeList);
+        testStream.hasNotPrime(primeList);
         long timeFinish = System.currentTimeMillis() - timeStart;
         System.out.println("ParallelStream test: " + timeFinish);
         return timeFinish;
@@ -56,8 +58,8 @@ public class PerfomanceTest {
      */
     public long threadsTest() throws InterruptedException {
         long timeStart = System.currentTimeMillis();
-        PrimeNumbersThread test = new PrimeNumbersThread();
-        test.threadSolve(primeList, 1);
+        PrimeNumbersThread test = new PrimeNumbersThread(1);
+        test.hasNotPrime(primeList);
         long timeFinish = System.currentTimeMillis() - timeStart;
         System.out.println("1 thread test: " + timeFinish);
         return timeFinish;
@@ -70,8 +72,8 @@ public class PerfomanceTest {
      */
     public long threadsTest4() throws InterruptedException {
         long timeStart = System.currentTimeMillis();
-        PrimeNumbersThread test = new PrimeNumbersThread();
-        test.threadSolve(primeList, 4);
+        PrimeNumbersThread test = new PrimeNumbersThread(4);
+        test.hasNotPrime(primeList);
         long timeFinish = System.currentTimeMillis() - timeStart;
         System.out.println("4 threads test: " + timeFinish);
         return timeFinish;
@@ -84,8 +86,8 @@ public class PerfomanceTest {
      */
     public long threadsTest8() throws InterruptedException {
         long timeStart = System.currentTimeMillis();
-        PrimeNumbersThread test = new PrimeNumbersThread();
-        test.threadSolve(primeList, 8);
+        PrimeNumbersThread test = new PrimeNumbersThread(8);
+        test.hasNotPrime(primeList);
         long timeFinish = System.currentTimeMillis() - timeStart;
         System.out.println("8 threads test: " + timeFinish);
         return timeFinish;
@@ -98,8 +100,8 @@ public class PerfomanceTest {
      */
     public long threadsTest16() throws InterruptedException {
         long timeStart = System.currentTimeMillis();
-        PrimeNumbersThread test = new PrimeNumbersThread();
-        test.threadSolve(primeList, 16);
+        PrimeNumbersThread test = new PrimeNumbersThread(16);
+        test.hasNotPrime(primeList);
         long timeFinish = System.currentTimeMillis() - timeStart;
         System.out.println("16 threads test: " + timeFinish);
         return timeFinish;
@@ -112,8 +114,8 @@ public class PerfomanceTest {
      */
     public long threadsTest32() throws InterruptedException {
         long timeStart = System.currentTimeMillis();
-        PrimeNumbersThread test = new PrimeNumbersThread();
-        test.threadSolve(primeList, 32);
+        PrimeNumbersThread test = new PrimeNumbersThread(32);
+        test.hasNotPrime(primeList);
         long timeFinish = System.currentTimeMillis() - timeStart;
         System.out.println("32 threads test: " + timeFinish);
         return timeFinish;
@@ -126,8 +128,8 @@ public class PerfomanceTest {
      */
     public long threadsTest64() throws InterruptedException {
         long timeStart = System.currentTimeMillis();
-        PrimeNumbersThread test = new PrimeNumbersThread();
-        test.threadSolve(primeList, 64);
+        PrimeNumbersThread test = new PrimeNumbersThread(64);
+        test.hasNotPrime(primeList);
         long timeFinish = System.currentTimeMillis() - timeStart;
         System.out.println("64 threads test: " + timeFinish);
         return timeFinish;
@@ -140,8 +142,8 @@ public class PerfomanceTest {
      */
     public long threadsTest128() throws InterruptedException {
         long timeStart = System.currentTimeMillis();
-        PrimeNumbersThread test = new PrimeNumbersThread();
-        test.threadSolve(primeList, 128);
+        PrimeNumbersThread test = new PrimeNumbersThread(128);
+        test.hasNotPrime(primeList);
         long timeFinish = System.currentTimeMillis() - timeStart;
         System.out.println("128 threads test: " + timeFinish);
         return timeFinish;
@@ -154,8 +156,8 @@ public class PerfomanceTest {
      */
     public long threadsTest256() throws InterruptedException {
         long timeStart = System.currentTimeMillis();
-        PrimeNumbersThread test = new PrimeNumbersThread();
-        test.threadSolve(primeList, 256);
+        PrimeNumbersThread test = new PrimeNumbersThread(256);
+        test.hasNotPrime(primeList);
         long timeFinish = System.currentTimeMillis() - timeStart;
         System.out.println("256 threads test: " + timeFinish);
         return timeFinish;

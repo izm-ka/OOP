@@ -6,20 +6,24 @@ import java.util.concurrent.atomic.AtomicBoolean;
 /**
  * Multithreading class used for finding composite number in the list of numbers.
  */
-class PrimeNumbersThread extends NotPrimeSolver {
+class PrimeNumbersThread extends NotPrime {
 
     AtomicBoolean compositeNumber = new AtomicBoolean(false);
+    private final int threadsNum;
+
+    public PrimeNumbersThread(int threadsNum) {
+        this.threadsNum = threadsNum;
+    }
 
     /**
      * Class for creating threads.
      */
-    private final class CurrentThread extends Thread {
+    final class CurrentThread extends Thread {
         List<Integer> numbers;
-
         /**
          * CurrentThread constructor.
          *
-         * @param numbers list of numbers
+         * @param numbers    list of numbers
          */
         CurrentThread(List<Integer> numbers) {
             this.numbers = numbers;
@@ -33,17 +37,19 @@ class PrimeNumbersThread extends NotPrimeSolver {
             compositeNumber.compareAndSet(false,
                     compositeNumber.get() || numbers.stream().anyMatch(NotPrime::notPrime));
         }
+
     }
 
     /**
      * Function to find if there is a composite numbers in the list.
      *
      * @param numbers    list of numbers to check
-     * @param threadsNum number of threads to use
      * @return true if there is composite number, and false otherwise
      * @throws InterruptedException when threads conflict
      */
-    public boolean threadSolve(List<Integer> numbers, int threadsNum) throws InterruptedException {
+    @Override
+    public boolean hasNotPrime(List<Integer> numbers) throws InterruptedException{
+        int threadsNum = this.threadsNum;
         int len = numbers.size();
         int part;
         if (numbers.size() >= threadsNum) {

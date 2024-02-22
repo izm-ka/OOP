@@ -1,11 +1,13 @@
 package ru.nsu.izmailova.primes;
 
+import java.util.List;
+
 /**
  * Abstract class for determining if number is not prime.
  */
 public abstract class NotPrime {
 
-    public abstract boolean isNotPrime(int n);
+    public abstract boolean hasNotPrime(List<Integer> numbers) throws InterruptedException;
 
     /**
      * Checks whether the number is not prime.
