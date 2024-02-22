@@ -21,7 +21,7 @@ class PrimeNumbersThread extends NotPrimeSolver {
          *
          * @param numbers list of numbers
          */
-        public CurrentThread(List<Integer> numbers) {
+        CurrentThread(List<Integer> numbers) {
             this.numbers = numbers;
         }
 
