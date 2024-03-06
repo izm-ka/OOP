@@ -3,6 +3,9 @@ package ru.nsu.izmailova.pizzeria;
 import java.util.ArrayDeque;
 import java.util.Random;
 
+/**
+ * Represents a delivery person who delivers pizzas.
+ */
 public class DeliveryGuy implements Consumer {
     private final DataQueue deliveryQueue;
     private final String orderConsumeStatus;
@@ -14,7 +17,7 @@ public class DeliveryGuy implements Consumer {
     private int processingTime = 0;
 
     /**
-     * Takes as many pizzas from storage, as his trunk could afford
+     * Takes as many pizzas from storage, as his trunk could afford.
      *
      * @param deliveryQueue - queue of cooked pizzas
      * @param trunkSize     - amount of pizzas that deliverer can take once
@@ -27,7 +30,7 @@ public class DeliveryGuy implements Consumer {
     }
 
     /**
-     * Starts consuming orders from the storage
+     * Starts consuming orders from the storage.
      */
     @Override
     public void run() {
@@ -37,7 +40,7 @@ public class DeliveryGuy implements Consumer {
     }
 
     /**
-     * The consuming process itself
+     * Delivery person takes pizzas from the queue and delivers them.
      */
     @SuppressWarnings("BusyWait")
     @Override
@@ -80,7 +83,7 @@ public class DeliveryGuy implements Consumer {
     }
 
     /**
-     * Stops delivering the pizzas
+     * Stops delivering the pizzas.
      */
     @Override
     public void stopConsume() {
@@ -89,7 +92,8 @@ public class DeliveryGuy implements Consumer {
     }
 
     /**
-     * This method can be used to change the maximum amount of time, that deliverer can spend on pizza delivery
+     * This method can be used to change the maximum amount of time,
+     * that deliverer can spend on pizza delivery.
      *
      * @param time - how long it takes to deliver the pizza
      */
@@ -98,7 +102,7 @@ public class DeliveryGuy implements Consumer {
     }
 
     /**
-     * This method can be used to change the status of an order
+     * This method can be used to change the status of an order.
      *
      * @param order  - the order you want to change
      * @param status - the new status you want to set

@@ -1,7 +1,6 @@
 package ru.nsu.izmailova.pizzeria;
 
 import com.google.gson.Gson;
-
 import java.io.IOException;
 import java.io.Reader;
 import java.nio.file.Files;
@@ -15,7 +14,7 @@ public class JsonHandler {
      * Find "PizzeriaDara.json" file and takes data from it.
      *
      * @return pizzeria structure that contains all necessary parameters to make the pizzeria work
-     * @throws IOException
+     * @throws IOException if an I/O error occurs while reading the file
      */
     public JsonPizzeria jsonHandle() throws IOException {
         Gson gson = new Gson();

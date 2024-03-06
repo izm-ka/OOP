@@ -1,7 +1,7 @@
 package ru.nsu.izmailova.pizzeria;
 
 /**
- * Structure for taking baker's data from json
+ * Structure for taking baker's data from json.
  */
 public class JsonBaker {
     private int cookingTime;

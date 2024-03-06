@@ -16,7 +16,7 @@ public class DataQueue {
      * DataQueue without an upper limit on its size.
      */
     DataQueue() {
-       this.maxSize = Integer.MAX_VALUE;
+        this.maxSize = Integer.MAX_VALUE;
     }
 
     /**
@@ -49,7 +49,7 @@ public class DataQueue {
     }
 
     /**
-     * Waits until queue will be available to interact
+     * Waits until queue will be available to interact.
      *
      * @throws InterruptedException can be thrown if the thread is interrupted while waiting
      */

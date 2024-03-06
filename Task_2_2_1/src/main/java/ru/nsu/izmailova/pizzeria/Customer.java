@@ -104,7 +104,7 @@ public class Customer implements Producer {
     }
 
     /**
-     * Stops producing new orders
+     * Stops producing new orders.
      */
     @Override
     public void stopProduce() {
