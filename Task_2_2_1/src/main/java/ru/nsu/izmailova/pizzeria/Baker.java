@@ -2,6 +2,9 @@ package ru.nsu.izmailova.pizzeria;
 
 import java.util.Random;
 
+/**
+ * Represents a baker in the pizzeria who acts as a consumer of user's orders and as a producer of pizzas.
+ */
 public class Baker implements Consumer, Producer {
     private final DataQueue orderQueue;
     private final String orderProduceStatus;
@@ -39,6 +42,9 @@ public class Baker implements Consumer, Producer {
         }
     }
 
+    /**
+     * Consumes orders from the order queue.
+     */
     @Override
     public void consumer() {
         while (orderQueue.isEmpty()) {
@@ -58,6 +64,11 @@ public class Baker implements Consumer, Producer {
         orderQueue.notifyAllForFull();
     }
 
+    /**
+     * Generates a pizza delivery order.
+     *
+     * @return the generated delivery order
+     */
     public Order generateDelivery() {
         Order order = new Order();
         order.setOrderStatus(orderConsumeStatus);
@@ -66,16 +77,27 @@ public class Baker implements Consumer, Producer {
         return order;
     }
 
+    /**
+     * Gets the value of the run flag.
+     *
+     * @return true if the baker should continue running, otherwise false
+     */
     public boolean getFlag() {
         return runFlag;
     }
 
+    /**
+     * Stops consuming orders from the queue.
+     */
     @Override
     public void stopConsume() {
         runFlag = false;
         orderQueue.notifyAllForEmpty();
     }
 
+    /**
+     * Produces pizzas and put them in the delivery queue.
+     */
     @Override
     public void producer() {
         while (deliveryQueue.isFull()) {
@@ -100,13 +122,20 @@ public class Baker implements Consumer, Producer {
         deliveryQueue.add(delivery);
         deliveryQueue.notifyAllForEmpty();
     }
+
+    /**
+     * Changes the status of an order.
+     *
+     * @param order  the order whose status is to be changed
+     * @param status the new status of the order
+     */
     public void changeOrderStatus(Order order, String status) {
         order.setOrderStatus(status);
         System.out.println("Order[" + order.getOrderNumber() + "] is " + status);
     }
 
     /**
-     * Change the maximum amount of time that baker can spend on making pizza
+     * Change the maximum amount of time that baker can spend on making pizza.
      *
      * @param time how long making pizza takes
      */

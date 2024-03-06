@@ -4,13 +4,24 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Pizzeria produces pizzas.
+ * Represents a pizzeria that produces pizzas.
  */
 public class Pizzeria {
     private final List<Baker> bakers;
     private final List<DeliveryGuy> deliverers;
     private final Customer customers;
 
+    /**
+     * Constructs a new pizzeria with the specified parameters.
+     *
+     * @param bakersAmount           the number of bakers in the pizzeria
+     * @param bakersProductivity     the productivity of each baker
+     * @param deliverersAmount       the number of delivery guys in the pizzeria
+     * @param deliverersProductivity the productivity of each delivery guy
+     * @param storageSize            the size of the storage from which deliverers take orders
+     * @param trunkSizes             the sizes of the trunks of deliverer's cars
+     * @param ordersDelay            the maximum delay between two orders
+     */
     public Pizzeria(int bakersAmount, int[] bakersProductivity, int deliverersAmount, int[] deliverersProductivity,
                     int storageSize, int[] trunkSizes, int ordersDelay) {
         DataQueue deliveryQueue = new DataQueue(storageSize);
@@ -32,6 +43,9 @@ public class Pizzeria {
         customers.changeProcessingTime(ordersDelay);
     }
 
+    /**
+     * Starts the pizzeria.
+     */
     public void pizzeriaStart() {
         Thread customersThread = new Thread(customers);
         customersThread.start();
@@ -40,6 +54,11 @@ public class Pizzeria {
         deliverers.stream().map(Thread::new).forEach(Thread::start);
     }
 
+    /**
+     * Stops the pizzeria.
+     *
+     * @throws InterruptedException if any thread is interrupted while sleeping
+     */
     public void pizzeriaStop() throws InterruptedException {
         customers.stopProduce();
         Thread.sleep(15 * 1000);

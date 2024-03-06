@@ -13,13 +13,17 @@ public class DataQueue {
     private final Object EMPTY_QUEUE = new Object();
 
     /**
-     * Maximum size of the queue.
-     *
+     * DataQueue without an upper limit on its size.
      */
     DataQueue() {
-       this.maxSize = 30;
+       this.maxSize = Integer.MAX_VALUE;
     }
 
+    /**
+     * DataQueue with the specified maximum size.
+     *
+     * @param maxSize the maximum allowed number of elements in the queue
+     */
     DataQueue(int maxSize) {
         this.maxSize = maxSize;
     }

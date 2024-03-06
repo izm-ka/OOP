@@ -1,5 +1,8 @@
 package ru.nsu.izmailova.pizzeria;
 
+/**
+ * Represents an order in the pizzeria.
+ */
 public class Order {
     private int orderNumber;
     private String orderStatus;
