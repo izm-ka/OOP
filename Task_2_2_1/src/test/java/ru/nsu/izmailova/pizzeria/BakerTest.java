@@ -1,6 +1,7 @@
 package ru.nsu.izmailova.pizzeria;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import org.junit.jupiter.api.Test;
 
 /**
@@ -11,12 +12,12 @@ public class BakerTest {
     void bakerTest() throws InterruptedException {
         Order order = new Order();
         DataQueue ordersQueue = new DataQueue(3);
-        DataQueue deliveryQueue = new DataQueue(3);
         order.setOrderStatus("in process");
         order.setOrderNumber(15);
         while (!ordersQueue.isFull()) {
             ordersQueue.add(order);
         }
+        DataQueue deliveryQueue = new DataQueue(3);
         Baker baker = new Baker(ordersQueue, deliveryQueue);
         baker.changeProcessingTime(1000);
         Thread bakerThread = new Thread(baker);

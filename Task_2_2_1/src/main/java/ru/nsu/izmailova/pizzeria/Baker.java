@@ -3,7 +3,8 @@ package ru.nsu.izmailova.pizzeria;
 import java.util.Random;
 
 /**
- * Represents a baker in the pizzeria who acts as a consumer of user's orders and as a producer of pizzas.
+ * Represents a baker in the pizzeria who acts as a consumer of user's
+ * orders and as a producer of pizzas.
  */
 public class Baker implements Consumer, Producer {
     private final DataQueue orderQueue;
