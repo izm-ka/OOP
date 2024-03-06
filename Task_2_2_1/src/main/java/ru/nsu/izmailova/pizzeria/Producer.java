@@ -5,6 +5,8 @@ package ru.nsu.izmailova.pizzeria;
  */
 public interface Producer extends Runnable{
     void run();
+
     void producer();
+
     void stopProduce();
 }

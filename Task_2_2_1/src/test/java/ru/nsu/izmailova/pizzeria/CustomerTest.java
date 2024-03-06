@@ -1,9 +1,11 @@
 package ru.nsu.izmailova.pizzeria;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
-
+/**
+ * Test for Customer class.
+ */
 class CustomerTest {
 
     @Test

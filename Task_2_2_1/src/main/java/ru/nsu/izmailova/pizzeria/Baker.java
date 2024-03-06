@@ -53,7 +53,8 @@ public class Baker implements Consumer, Producer {
             }
             try {
                 orderQueue.waitOnEmpty();
-            } catch (InterruptedException ignored) {
+            } catch (InterruptedException e) {
+                e.printStackTrace();
             }
         }
         if (!runFlag) {

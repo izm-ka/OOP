@@ -1,15 +1,18 @@
 package ru.nsu.izmailova.pizzeria;
 
-import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import org.junit.jupiter.api.Test;
 
+/**
+ * Test for Baker class.
+ */
 public class BakerTest {
     @Test
     void bakerTest() throws InterruptedException {
+        Order order = new Order();
         DataQueue ordersQueue = new DataQueue(3);
         DataQueue deliveryQueue = new DataQueue(3);
-        Order order = new Order();
-        order.setOrderStatus("mem");
+        order.setOrderStatus("in process");
         order.setOrderNumber(15);
         while (!ordersQueue.isFull()) {
             ordersQueue.add(order);

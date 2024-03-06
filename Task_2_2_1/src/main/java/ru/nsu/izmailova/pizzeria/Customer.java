@@ -64,7 +64,8 @@ public class Customer implements Producer {
         orderQueue.notifyAllForEmpty();
         try {
             Thread.sleep(random.nextInt(processingTime));
-        } catch (InterruptedException ignored) {
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         }
     }
 
