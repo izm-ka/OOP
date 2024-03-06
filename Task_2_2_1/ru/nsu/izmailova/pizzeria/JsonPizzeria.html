@@ -132,6 +132,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <hr>
 <pre>public class <span class="typeNameLabel">JsonPizzeria</span>
 extends java.lang.Object</pre>
+<div class="block">Represents a JSON structure for storing data about a pizzeria.</div>
 </li>
 </ul>
 </div>
@@ -158,7 +159,9 @@ extends java.lang.Object</pre>
             int&nbsp;ordersDelay,
             <a href="JsonBaker.html" title="class in ru.nsu.izmailova.pizzeria">JsonBaker</a>[]&nbsp;bakers,
             <a href="JsonDeliverer.html" title="class in ru.nsu.izmailova.pizzeria">JsonDeliverer</a>[]&nbsp;deliverers)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Constructs a JsonPizzeria with the specified parameters.</div>
+</td>
 </tr>
 </table>
 </li>
@@ -181,37 +184,51 @@ extends java.lang.Object</pre>
 <tr id="i0" class="altColor">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getBakersAmount()">getBakersAmount</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Gets the number of bakers in the pizzeria.</div>
+</td>
 </tr>
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code>int[]</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getBakersSpeed()">getBakersSpeed</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Gets the array of cooking times for the bakers.</div>
+</td>
 </tr>
 <tr id="i2" class="altColor">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getDeliverersAmount()">getDeliverersAmount</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Gets the number of deliverers in the pizzeria.</div>
+</td>
 </tr>
 <tr id="i3" class="rowColor">
 <td class="colFirst"><code>int[]</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getDeliverersSpeed()">getDeliverersSpeed</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Gets the array of delivery speeds for the deliverers.</div>
+</td>
 </tr>
 <tr id="i4" class="altColor">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getOrdersDelay()">getOrdersDelay</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Gets the maximum delay between two orders.</div>
+</td>
 </tr>
 <tr id="i5" class="rowColor">
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getStorageSize()">getStorageSize</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Gets the size of the storage from which deliverers take their orders.</div>
+</td>
 </tr>
 <tr id="i6" class="altColor">
 <td class="colFirst"><code>int[]</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getTrunkSize()">getTrunkSize</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Gets the array of trunk sizes for the deliverers.</div>
+</td>
 </tr>
 </table>
 <ul class="blockList">
@@ -249,6 +266,16 @@ extends java.lang.Object</pre>
                     int&nbsp;ordersDelay,
                     <a href="JsonBaker.html" title="class in ru.nsu.izmailova.pizzeria">JsonBaker</a>[]&nbsp;bakers,
                     <a href="JsonDeliverer.html" title="class in ru.nsu.izmailova.pizzeria">JsonDeliverer</a>[]&nbsp;deliverers)</pre>
+<div class="block">Constructs a JsonPizzeria with the specified parameters.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>bakersAmount</code> - the number of bakers in the pizzeria</dd>
+<dd><code>deliverersAmount</code> - the number of deliverers in the pizzeria</dd>
+<dd><code>storageSize</code> - the size of the storage from which deliverers take their orders</dd>
+<dd><code>ordersDelay</code> - the maximum delay between two orders</dd>
+<dd><code>bakers</code> - an array of JsonBaker objects representing bakers' data</dd>
+<dd><code>deliverers</code> - an array of JsonDeliverer objects representing deliverers' data</dd>
+</dl>
 </li>
 </ul>
 </li>
@@ -268,6 +295,11 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>getBakersSpeed</h4>
 <pre class="methodSignature">public&nbsp;int[]&nbsp;getBakersSpeed()</pre>
+<div class="block">Gets the array of cooking times for the bakers.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>an array containing the cooking times for the bakers</dd>
+</dl>
 </li>
 </ul>
 <a id="getDeliverersSpeed()">
@@ -277,6 +309,11 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>getDeliverersSpeed</h4>
 <pre class="methodSignature">public&nbsp;int[]&nbsp;getDeliverersSpeed()</pre>
+<div class="block">Gets the array of delivery speeds for the deliverers.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>an array containing the delivery speeds for the deliverers</dd>
+</dl>
 </li>
 </ul>
 <a id="getTrunkSize()">
@@ -286,6 +323,11 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>getTrunkSize</h4>
 <pre class="methodSignature">public&nbsp;int[]&nbsp;getTrunkSize()</pre>
+<div class="block">Gets the array of trunk sizes for the deliverers.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>an array containing the trunk sizes for the deliverers</dd>
+</dl>
 </li>
 </ul>
 <a id="getBakersAmount()">
@@ -295,6 +337,11 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>getBakersAmount</h4>
 <pre class="methodSignature">public&nbsp;int&nbsp;getBakersAmount()</pre>
+<div class="block">Gets the number of bakers in the pizzeria.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the number of bakers</dd>
+</dl>
 </li>
 </ul>
 <a id="getDeliverersAmount()">
@@ -304,6 +351,11 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>getDeliverersAmount</h4>
 <pre class="methodSignature">public&nbsp;int&nbsp;getDeliverersAmount()</pre>
+<div class="block">Gets the number of deliverers in the pizzeria.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the number of deliverers</dd>
+</dl>
 </li>
 </ul>
 <a id="getStorageSize()">
@@ -313,6 +365,11 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>getStorageSize</h4>
 <pre class="methodSignature">public&nbsp;int&nbsp;getStorageSize()</pre>
+<div class="block">Gets the size of the storage from which deliverers take their orders.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the storage size</dd>
+</dl>
 </li>
 </ul>
 <a id="getOrdersDelay()">
@@ -322,6 +379,11 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>getOrdersDelay</h4>
 <pre class="methodSignature">public&nbsp;int&nbsp;getOrdersDelay()</pre>
+<div class="block">Gets the maximum delay between two orders.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the orders delay</dd>
+</dl>
 </li>
 </ul>
 </li>

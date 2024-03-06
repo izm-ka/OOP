@@ -137,6 +137,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <pre>public class <span class="typeNameLabel">Baker</span>
 extends java.lang.Object
 implements <a href="Consumer.html" title="interface in ru.nsu.izmailova.pizzeria">Consumer</a>, <a href="Producer.html" title="interface in ru.nsu.izmailova.pizzeria">Producer</a></pre>
+<div class="block">Represents a baker in the pizzeria who acts as a consumer of user's orders and as a producer of pizzas.</div>
 </li>
 </ul>
 </div>
@@ -185,34 +186,44 @@ implements <a href="Consumer.html" title="interface in ru.nsu.izmailova.pizzeria
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#changeOrderStatus(ru.nsu.izmailova.pizzeria.Order,java.lang.String)">changeOrderStatus</a></span>&#8203;(<a href="Order.html" title="class in ru.nsu.izmailova.pizzeria">Order</a>&nbsp;order,
                  java.lang.String&nbsp;status)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Changes the status of an order.</div>
+</td>
 </tr>
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#changeProcessingTime(int)">changeProcessingTime</a></span>&#8203;(int&nbsp;time)</code></th>
 <td class="colLast">
-<div class="block">Change the maximum amount of time that baker can spend on making pizza</div>
+<div class="block">Change the maximum amount of time that baker can spend on making pizza.</div>
 </td>
 </tr>
 <tr id="i2" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#consumer()">consumer</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Consumes orders from the order queue.</div>
+</td>
 </tr>
 <tr id="i3" class="rowColor">
 <td class="colFirst"><code><a href="Order.html" title="class in ru.nsu.izmailova.pizzeria">Order</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#generateDelivery()">generateDelivery</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Generates a pizza delivery order.</div>
+</td>
 </tr>
 <tr id="i4" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getFlag()">getFlag</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Gets the value of the run flag.</div>
+</td>
 </tr>
 <tr id="i5" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#producer()">producer</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Produces pizzas and put them in the delivery queue.</div>
+</td>
 </tr>
 <tr id="i6" class="altColor">
 <td class="colFirst"><code>void</code></td>
@@ -224,7 +235,9 @@ implements <a href="Consumer.html" title="interface in ru.nsu.izmailova.pizzeria
 <tr id="i7" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#stopConsume()">stopConsume</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Stops consuming orders from the queue.</div>
+</td>
 </tr>
 <tr id="i8" class="altColor">
 <td class="colFirst"><code>void</code></td>
@@ -308,6 +321,7 @@ implements <a href="Consumer.html" title="interface in ru.nsu.izmailova.pizzeria
 <li class="blockList">
 <h4>consumer</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;consumer()</pre>
+<div class="block">Consumes orders from the order queue.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="Consumer.html#consumer()">consumer</a></code>&nbsp;in interface&nbsp;<code><a href="Consumer.html" title="interface in ru.nsu.izmailova.pizzeria">Consumer</a></code></dd>
@@ -321,6 +335,11 @@ implements <a href="Consumer.html" title="interface in ru.nsu.izmailova.pizzeria
 <li class="blockList">
 <h4>generateDelivery</h4>
 <pre class="methodSignature">public&nbsp;<a href="Order.html" title="class in ru.nsu.izmailova.pizzeria">Order</a>&nbsp;generateDelivery()</pre>
+<div class="block">Generates a pizza delivery order.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the generated delivery order</dd>
+</dl>
 </li>
 </ul>
 <a id="getFlag()">
@@ -330,6 +349,11 @@ implements <a href="Consumer.html" title="interface in ru.nsu.izmailova.pizzeria
 <li class="blockList">
 <h4>getFlag</h4>
 <pre class="methodSignature">public&nbsp;boolean&nbsp;getFlag()</pre>
+<div class="block">Gets the value of the run flag.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>true if the baker should continue running, otherwise false</dd>
+</dl>
 </li>
 </ul>
 <a id="stopConsume()">
@@ -339,6 +363,7 @@ implements <a href="Consumer.html" title="interface in ru.nsu.izmailova.pizzeria
 <li class="blockList">
 <h4>stopConsume</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;stopConsume()</pre>
+<div class="block">Stops consuming orders from the queue.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="Consumer.html#stopConsume()">stopConsume</a></code>&nbsp;in interface&nbsp;<code><a href="Consumer.html" title="interface in ru.nsu.izmailova.pizzeria">Consumer</a></code></dd>
@@ -352,6 +377,7 @@ implements <a href="Consumer.html" title="interface in ru.nsu.izmailova.pizzeria
 <li class="blockList">
 <h4>producer</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;producer()</pre>
+<div class="block">Produces pizzas and put them in the delivery queue.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="Producer.html#producer()">producer</a></code>&nbsp;in interface&nbsp;<code><a href="Producer.html" title="interface in ru.nsu.izmailova.pizzeria">Producer</a></code></dd>
@@ -366,6 +392,12 @@ implements <a href="Consumer.html" title="interface in ru.nsu.izmailova.pizzeria
 <h4>changeOrderStatus</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;changeOrderStatus&#8203;(<a href="Order.html" title="class in ru.nsu.izmailova.pizzeria">Order</a>&nbsp;order,
                               java.lang.String&nbsp;status)</pre>
+<div class="block">Changes the status of an order.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>order</code> - the order whose status is to be changed</dd>
+<dd><code>status</code> - the new status of the order</dd>
+</dl>
 </li>
 </ul>
 <a id="changeProcessingTime(int)">
@@ -375,7 +407,7 @@ implements <a href="Consumer.html" title="interface in ru.nsu.izmailova.pizzeria
 <li class="blockList">
 <h4>changeProcessingTime</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;changeProcessingTime&#8203;(int&nbsp;time)</pre>
-<div class="block">Change the maximum amount of time that baker can spend on making pizza</div>
+<div class="block">Change the maximum amount of time that baker can spend on making pizza.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>time</code> - how long making pizza takes</dd>

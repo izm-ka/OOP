@@ -132,7 +132,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <hr>
 <pre>public class <span class="typeNameLabel">Pizzeria</span>
 extends java.lang.Object</pre>
-<div class="block">Pizzeria produces pizzas.</div>
+<div class="block">Represents a pizzeria that produces pizzas.</div>
 </li>
 </ul>
 </div>
@@ -160,7 +160,9 @@ extends java.lang.Object</pre>
         int&nbsp;storageSize,
         int[]&nbsp;trunkSizes,
         int&nbsp;ordersDelay)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Constructs a new pizzeria with the specified parameters.</div>
+</td>
 </tr>
 </table>
 </li>
@@ -183,12 +185,16 @@ extends java.lang.Object</pre>
 <tr id="i0" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#pizzeriaStart()">pizzeriaStart</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Starts the pizzeria.</div>
+</td>
 </tr>
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#pizzeriaStop()">pizzeriaStop</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Stops the pizzeria.</div>
+</td>
 </tr>
 </table>
 <ul class="blockList">
@@ -227,6 +233,17 @@ extends java.lang.Object</pre>
                 int&nbsp;storageSize,
                 int[]&nbsp;trunkSizes,
                 int&nbsp;ordersDelay)</pre>
+<div class="block">Constructs a new pizzeria with the specified parameters.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>bakersAmount</code> - the number of bakers in the pizzeria</dd>
+<dd><code>bakersProductivity</code> - the productivity of each baker</dd>
+<dd><code>deliverersAmount</code> - the number of delivery guys in the pizzeria</dd>
+<dd><code>deliverersProductivity</code> - the productivity of each delivery guy</dd>
+<dd><code>storageSize</code> - the size of the storage from which deliverers take orders</dd>
+<dd><code>trunkSizes</code> - the sizes of the trunks of deliverer's cars</dd>
+<dd><code>ordersDelay</code> - the maximum delay between two orders</dd>
+</dl>
 </li>
 </ul>
 </li>
@@ -246,6 +263,7 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>pizzeriaStart</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;pizzeriaStart()</pre>
+<div class="block">Starts the pizzeria.</div>
 </li>
 </ul>
 <a id="pizzeriaStop()">
@@ -256,9 +274,10 @@ extends java.lang.Object</pre>
 <h4>pizzeriaStop</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;pizzeriaStop()
                   throws java.lang.InterruptedException</pre>
+<div class="block">Stops the pizzeria.</div>
 <dl>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code>java.lang.InterruptedException</code></dd>
+<dd><code>java.lang.InterruptedException</code> - if any thread is interrupted while sleeping</dd>
 </dl>
 </li>
 </ul>
