@@ -137,6 +137,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <pre>public class <span class="typeNameLabel">DeliveryGuy</span>
 extends java.lang.Object
 implements <a href="Consumer.html" title="interface in ru.nsu.izmailova.pizzeria">Consumer</a></pre>
+<div class="block">Represents a delivery person who delivers pizzas.</div>
 </li>
 </ul>
 </div>
@@ -160,7 +161,7 @@ implements <a href="Consumer.html" title="interface in ru.nsu.izmailova.pizzeria
 <th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(ru.nsu.izmailova.pizzeria.DataQueue,int)">DeliveryGuy</a></span>&#8203;(<a href="DataQueue.html" title="class in ru.nsu.izmailova.pizzeria">DataQueue</a>&nbsp;deliveryQueue,
            int&nbsp;trunkSize)</code></th>
 <td class="colLast">
-<div class="block">Takes as many pizzas from storage, as his trunk could afford</div>
+<div class="block">Takes as many pizzas from storage, as his trunk could afford.</div>
 </td>
 </tr>
 </table>
@@ -186,21 +187,22 @@ implements <a href="Consumer.html" title="interface in ru.nsu.izmailova.pizzeria
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#changeOrderStatus(ru.nsu.izmailova.pizzeria.Order,java.lang.String)">changeOrderStatus</a></span>&#8203;(<a href="Order.html" title="class in ru.nsu.izmailova.pizzeria">Order</a>&nbsp;order,
                  java.lang.String&nbsp;status)</code></th>
 <td class="colLast">
-<div class="block">This method can be used to change the status of an order</div>
+<div class="block">This method can be used to change the status of an order.</div>
 </td>
 </tr>
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#changeProcessingTime(int)">changeProcessingTime</a></span>&#8203;(int&nbsp;time)</code></th>
 <td class="colLast">
-<div class="block">This method can be used to change the maximum amount of time, that deliverer can spend on pizza delivery</div>
+<div class="block">This method can be used to change the maximum amount of time,
+ that deliverer can spend on pizza delivery.</div>
 </td>
 </tr>
 <tr id="i2" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#consumer()">consumer</a></span>()</code></th>
 <td class="colLast">
-<div class="block">The consuming process itself</div>
+<div class="block">Delivery person takes pizzas from the queue and delivers them.</div>
 </td>
 </tr>
 <tr id="i3" class="rowColor">
@@ -214,14 +216,14 @@ implements <a href="Consumer.html" title="interface in ru.nsu.izmailova.pizzeria
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#run()">run</a></span>()</code></th>
 <td class="colLast">
-<div class="block">Starts consuming orders from the storage</div>
+<div class="block">Starts consuming orders from the storage.</div>
 </td>
 </tr>
 <tr id="i5" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#stopConsume()">stopConsume</a></span>()</code></th>
 <td class="colLast">
-<div class="block">Stops delivering the pizzas</div>
+<div class="block">Stops delivering the pizzas.</div>
 </td>
 </tr>
 </table>
@@ -256,7 +258,7 @@ implements <a href="Consumer.html" title="interface in ru.nsu.izmailova.pizzeria
 <h4>DeliveryGuy</h4>
 <pre>public&nbsp;DeliveryGuy&#8203;(<a href="DataQueue.html" title="class in ru.nsu.izmailova.pizzeria">DataQueue</a>&nbsp;deliveryQueue,
                    int&nbsp;trunkSize)</pre>
-<div class="block">Takes as many pizzas from storage, as his trunk could afford</div>
+<div class="block">Takes as many pizzas from storage, as his trunk could afford.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>deliveryQueue</code> - - queue of cooked pizzas</dd>
@@ -281,7 +283,7 @@ implements <a href="Consumer.html" title="interface in ru.nsu.izmailova.pizzeria
 <li class="blockList">
 <h4>run</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;run()</pre>
-<div class="block">Starts consuming orders from the storage</div>
+<div class="block">Starts consuming orders from the storage.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="Consumer.html#run()">run</a></code>&nbsp;in interface&nbsp;<code><a href="Consumer.html" title="interface in ru.nsu.izmailova.pizzeria">Consumer</a></code></dd>
@@ -297,7 +299,7 @@ implements <a href="Consumer.html" title="interface in ru.nsu.izmailova.pizzeria
 <li class="blockList">
 <h4>consumer</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;consumer()</pre>
-<div class="block">The consuming process itself</div>
+<div class="block">Delivery person takes pizzas from the queue and delivers them.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="Consumer.html#consumer()">consumer</a></code>&nbsp;in interface&nbsp;<code><a href="Consumer.html" title="interface in ru.nsu.izmailova.pizzeria">Consumer</a></code></dd>
@@ -325,7 +327,7 @@ implements <a href="Consumer.html" title="interface in ru.nsu.izmailova.pizzeria
 <li class="blockList">
 <h4>stopConsume</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;stopConsume()</pre>
-<div class="block">Stops delivering the pizzas</div>
+<div class="block">Stops delivering the pizzas.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="Consumer.html#stopConsume()">stopConsume</a></code>&nbsp;in interface&nbsp;<code><a href="Consumer.html" title="interface in ru.nsu.izmailova.pizzeria">Consumer</a></code></dd>
@@ -339,7 +341,8 @@ implements <a href="Consumer.html" title="interface in ru.nsu.izmailova.pizzeria
 <li class="blockList">
 <h4>changeProcessingTime</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;changeProcessingTime&#8203;(int&nbsp;time)</pre>
-<div class="block">This method can be used to change the maximum amount of time, that deliverer can spend on pizza delivery</div>
+<div class="block">This method can be used to change the maximum amount of time,
+ that deliverer can spend on pizza delivery.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>time</code> - - how long it takes to deliver the pizza</dd>
@@ -354,7 +357,7 @@ implements <a href="Consumer.html" title="interface in ru.nsu.izmailova.pizzeria
 <h4>changeOrderStatus</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;changeOrderStatus&#8203;(<a href="Order.html" title="class in ru.nsu.izmailova.pizzeria">Order</a>&nbsp;order,
                               java.lang.String&nbsp;status)</pre>
-<div class="block">This method can be used to change the status of an order</div>
+<div class="block">This method can be used to change the status of an order.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>order</code> - - the order you want to change</dd>
