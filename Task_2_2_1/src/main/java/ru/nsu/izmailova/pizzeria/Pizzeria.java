@@ -22,8 +22,8 @@ public class Pizzeria {
      * @param trunkSizes             the sizes of the trunks of deliverer's cars
      * @param ordersDelay            the maximum delay between two orders
      */
-    public Pizzeria(int bakersAmount, int[] bakersProductivity, int deliverersAmount, int[] deliverersProductivity,
-                    int storageSize, int[] trunkSizes, int ordersDelay) {
+    public Pizzeria(int bakersAmount, int[] bakersProductivity, int deliverersAmount,
+                    int[] deliverersProductivity, int storageSize, int[] trunkSizes, int ordersDelay) {
         DataQueue deliveryQueue = new DataQueue(storageSize);
         deliverers = new ArrayList<>();
         for (int i = 0; i < deliverersAmount; i++) {

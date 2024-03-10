@@ -52,7 +52,8 @@ public class DeliveryGuy implements Consumer {
                 }
                 try {
                     deliveryQueue.waitOnEmpty();
-                } catch (InterruptedException ignored) {
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
                 }
             }
             if (!runFlag) {
@@ -67,7 +68,8 @@ public class DeliveryGuy implements Consumer {
         while (!trunk.isEmpty()) {
             try {
                 Thread.sleep(random.nextInt(processingTime));
-            } catch (InterruptedException ignored) {
+            } catch (InterruptedException e) {
+                e.printStackTrace();
             }
             changeOrderStatus(trunk.remove(), orderConsumeStatus);
         }

@@ -118,7 +118,8 @@ public class Baker implements Consumer, Producer {
         Order delivery = generateDelivery();
         try {
             Thread.sleep(random.nextInt(processingTime));
-        } catch (InterruptedException ignored) {
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         }
         changeOrderStatus(delivery, orderProduceStatus);
         deliveryQueue.add(delivery);
