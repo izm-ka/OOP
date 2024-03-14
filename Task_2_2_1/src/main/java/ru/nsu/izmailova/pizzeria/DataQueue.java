@@ -64,7 +64,7 @@ public class DataQueue {
      */
     public void notifyAllForEmpty() {
         synchronized (EMPTY_QUEUE) {
-            EMPTY_QUEUE.notifyAll();
+            EMPTY_QUEUE.notify();
         }
     }
 

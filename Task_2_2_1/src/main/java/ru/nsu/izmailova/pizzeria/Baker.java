@@ -45,6 +45,10 @@ public class Baker implements Consumer, Producer {
 
     /**
      * Consumes orders from the order queue.
+     *
+     * orderQueue - очередь заказов клиентов
+     * runFlag - булевый флаг для управления процессами потребления и производства.
+     *
      */
     @Override
     public void consumer() {
@@ -63,7 +67,7 @@ public class Baker implements Consumer, Producer {
         }
         Order order = orderQueue.remove();
         deliveryCounter = order.getOrderNumber();
-        orderQueue.notifyAllForFull();
+        orderQueue.notifyAllForFull(); // пекарь уведомляет другие потоки, ожидающие освобождения места в очереди
     }
 
     /**
