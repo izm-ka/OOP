@@ -23,7 +23,8 @@ public class Pizzeria {
      * @param ordersDelay            the maximum delay between two orders
      */
     public Pizzeria(int bakersAmount, int[] bakersProductivity, int deliverersAmount,
-                    int[] deliverersProductivity, int storageSize, int[] trunkSizes, int ordersDelay) {
+                    int[] deliverersProductivity, int storageSize, int[] trunkSizes,
+                    int ordersDelay) {
         DataQueue deliveryQueue = new DataQueue(storageSize);
         deliverers = new ArrayList<>();
         for (int i = 0; i < deliverersAmount; i++) {

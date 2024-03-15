@@ -1,9 +1,12 @@
 package ru.nsu.izmailova.pizzeria;
 
-import org.junit.jupiter.api.Test;
-
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import org.junit.jupiter.api.Test;
+
+/**
+ * Test for DeliveryGuy class.
+ */
 public class DeliveryTest {
     @Test
     void deliveryGuyTest() throws InterruptedException {
