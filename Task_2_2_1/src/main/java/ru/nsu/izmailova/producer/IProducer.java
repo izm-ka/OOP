@@ -1,9 +1,9 @@
-package ru.nsu.izmailova.pizzeria;
+package ru.nsu.izmailova.producer;
 
 /**
  * Interface for making subjects that will produce something.
  */
-public interface Producer extends Runnable {
+public interface IProducer extends Runnable {
     void run();
 
     void producer();

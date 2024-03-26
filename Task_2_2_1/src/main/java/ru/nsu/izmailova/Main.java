@@ -1,6 +1,9 @@
-package ru.nsu.izmailova.pizzeria;
+package ru.nsu.izmailova;
 
 import java.io.IOException;
+import ru.nsu.izmailova.json.JsonHandler;
+import ru.nsu.izmailova.json.JsonPizzeria;
+import ru.nsu.izmailova.pizzeria.Pizzeria;
 
 /**
  * The main class to start the pizzeria simulation.
@@ -17,9 +20,9 @@ public class Main {
         JsonHandler handler = new JsonHandler();
         JsonPizzeria jp = handler.jsonHandle();
         Pizzeria pizzeria = new Pizzeria(jp.getBakersAmount(), jp.getBakersSpeed(), jp.getDeliverersAmount(),
-                jp.getDeliverersSpeed(), jp.getStorageSize(), jp.getTrunkSize(), jp.getOrdersDelay());
+                jp.getDeliverersSpeed(), jp.getStorageSize(), jp.getTrunkSize(), jp.getOrdersDelay(), "orders.json");
         pizzeria.pizzeriaStart();
-        Thread.sleep(1000 * 60);
+        Thread.sleep(10 * 20);
         pizzeria.pizzeriaStop();
     }
 }

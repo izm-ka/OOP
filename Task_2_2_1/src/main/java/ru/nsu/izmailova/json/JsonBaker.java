@@ -1,10 +1,10 @@
-package ru.nsu.izmailova.pizzeria;
+package ru.nsu.izmailova.json;
 
 /**
  * Structure for taking baker's data from json.
  */
 public class JsonBaker {
-    private int cookingTime;
+    private final int cookingTime;
 
     /**
      * Constructor of the JsonBaker class.

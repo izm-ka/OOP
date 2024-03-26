@@ -1,4 +1,4 @@
-package ru.nsu.izmailova.pizzeria;
+package ru.nsu.izmailova.json;
 
 /**
  * Represents a JSON structure for storing data about a pizzeria.
@@ -6,7 +6,7 @@ package ru.nsu.izmailova.pizzeria;
 public class JsonPizzeria {
     private final int bakersAmount;
     private final int deliverersAmount;
-    private final int storageSize;
+    private final int storageSize; //доделать склад
     private final int ordersDelay;
     private final JsonBaker[] bakers;
     private final JsonDeliverer[] deliverers;

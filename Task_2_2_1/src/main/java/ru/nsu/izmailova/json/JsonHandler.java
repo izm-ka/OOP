@@ -1,4 +1,4 @@
-package ru.nsu.izmailova.pizzeria;
+package ru.nsu.izmailova.json;
 
 import com.google.gson.Gson;
 import java.io.IOException;

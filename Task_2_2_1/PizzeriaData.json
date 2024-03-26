@@ -2,36 +2,36 @@
   "bakersAmount": 5,
   "deliverersAmount": 3,
   "storageSize": 20,
-  "ordersDelay": 5000,
+  "ordersDelay": 100,
 
   "bakers": [
     {
-      "cookingTime": 1000
+      "cookingTime": 30
     },
     {
-      "cookingTime": 2000
+      "cookingTime": 30
     },
     {
-      "cookingTime": 3000
+      "cookingTime": 30
     },
     {
-      "cookingTime": 2500
+      "cookingTime": 35
     },
     {
-      "cookingTime": 1500
+      "cookingTime": 35
     }
   ],
   "deliverers": [
     {
-      "deliveryTime": 20000,
+      "deliveryTime": 50,
       "trunkSize": 2
     },
     {
-      "deliveryTime": 10000,
+      "deliveryTime": 45,
       "trunkSize": 3
     },
     {
-      "deliveryTime": 15000,
+      "deliveryTime": 55,
       "trunkSize": 4
     }
   ]

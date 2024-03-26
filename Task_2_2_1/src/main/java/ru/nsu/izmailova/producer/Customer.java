@@ -1,27 +1,37 @@
-package ru.nsu.izmailova.pizzeria;
+package ru.nsu.izmailova.producer;
 
+import ru.nsu.izmailova.order.Order;
+import ru.nsu.izmailova.queue.DataQueue;
+
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 /**
  * Represents a customer who produces orders for the pizzeria.
  */
-public class Customer implements Producer {
+public class Customer implements IProducer {
     public final DataQueue orderQueue;
     private int orderCounter;
     private final String orderProduceStatus;
 
     private volatile boolean runFlag;
     private final Random random = new Random();
-    private int processingTime = 0;
+    private final int processingTime;
+    private List<Order> unprocessedOrders;
 
+    public List<Order> getUnprocessedOrders() {
+        return unprocessedOrders;
+    }
     /**
      * Constructs a Customer with the specified order queue.
      *
      * @param orderQueue the queue where the customer places orders
      */
-    public Customer(DataQueue orderQueue) {
+    public Customer(DataQueue orderQueue, int processingTime) {
         orderProduceStatus = "Processing";
         this.orderQueue = orderQueue;
+        this.processingTime = processingTime;
         runFlag = true;
     }
 
@@ -49,6 +59,8 @@ public class Customer implements Producer {
      */
     @Override
     public void producer() {
+        //проверяем если очередь заполнена, то произ-ль ожидает
+        //пока в очереди не освободится место для новых заказов
         while (orderQueue.isFull()) {
             try {
                 orderQueue.waitOnFull();
@@ -56,14 +68,15 @@ public class Customer implements Producer {
                 break;
             }
         }
-        if (!getFlag()) {
+        if (!getFlag()) { //проверяем не должен ли произ-ль прекратить работу
             return;
         }
+        //если очередь не полна то создаем заказ и добавляем его в очередь
         Order order = generateOrder();
         orderQueue.add(order);
-        orderQueue.notifyAllForEmpty();
+        orderQueue.notifyAllForEmpty(); //уведомляем потребителя что заказ добавлен в очередь
         try {
-            Thread.sleep(random.nextInt(processingTime));
+            Thread.sleep(random.nextInt(processingTime)); //типа производим заказ
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -77,19 +90,10 @@ public class Customer implements Producer {
     public Order generateOrder() {
         Order order = new Order();
         orderCounter++;
-        order.setOrderStatus(orderProduceStatus);
+        order.setOrderStatus("Unprocessed");
         order.setOrderNumber(orderCounter);
-        System.out.println("Order[" + orderCounter + "] is " + orderProduceStatus);
+        System.out.println("Order[" + orderCounter + "] is " + order.getOrderStatus());
         return order;
-    }
-
-    /**
-     * Changes the maximum amount of time that the customer can spend on producing an order.
-     *
-     * @param time the new processing time for producing an order
-     */
-    public void changeProcessingTime(int time) {
-        processingTime = time;
     }
 
     /**
@@ -98,9 +102,17 @@ public class Customer implements Producer {
      * @param order  the order whose status is to be changed
      * @param status the new status of the order
      */
-    public void changeOrderStatus(Order order, String status) {
-        order.setOrderStatus(status);
-        System.out.println("Order[" + order.getOrderNumber() + "] is " + status);
+    public void addUnprocessedOrders(List<Order> orders) {
+        if (unprocessedOrders == null) {
+            unprocessedOrders = new ArrayList<>();
+        }
+        for (Order order : orders) {
+            if ((order.getOrderStatus().equals("Unprocessed") )||
+                    (order.getOrderStatus().equals("On the way"))){
+                unprocessedOrders.add(order);
+                System.out.println("UOrder[" + order.getOrderNumber() + "] is " + order.getOrderStatus());
+            }
+        }
     }
 
     /**

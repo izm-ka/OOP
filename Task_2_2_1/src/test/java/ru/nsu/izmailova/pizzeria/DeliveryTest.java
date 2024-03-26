@@ -3,6 +3,8 @@ package ru.nsu.izmailova.pizzeria;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.Test;
+import ru.nsu.izmailova.order.Order;
+import ru.nsu.izmailova.queue.DataQueue;
 
 /**
  * Test for DeliveryGuy class.

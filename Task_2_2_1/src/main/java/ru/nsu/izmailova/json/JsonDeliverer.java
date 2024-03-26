@@ -1,4 +1,4 @@
-package ru.nsu.izmailova.pizzeria;
+package ru.nsu.izmailova.json;
 
 /**
  * Represents a JSON structure for storing data about a deliverer.

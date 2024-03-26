@@ -1,17 +1,21 @@
 package ru.nsu.izmailova.pizzeria;
 
+import ru.nsu.izmailova.consumer.IConsumer;
+import ru.nsu.izmailova.order.Order;
+import ru.nsu.izmailova.queue.DataQueue;
+
 import java.util.ArrayDeque;
 import java.util.Random;
 
 /**
  * Represents a delivery person who delivers pizzas.
  */
-public class DeliveryGuy implements Consumer {
+public class DeliveryGuy implements IConsumer, Runnable {
+    private Thread deliveryThread;
     private final DataQueue deliveryQueue;
     private final String orderConsumeStatus;
     private final ArrayDeque<Order> trunk = new ArrayDeque<>();
     private final int trunkSize;
-
     private volatile boolean runFlag;
     private final Random random = new Random();
     private int processingTime = 0;
@@ -26,6 +30,7 @@ public class DeliveryGuy implements Consumer {
         orderConsumeStatus = "Delivered";
         this.deliveryQueue = deliveryQueue;
         this.trunkSize = trunkSize;
+        deliveryThread = new Thread(this);
         runFlag = true;
     }
 
@@ -38,6 +43,19 @@ public class DeliveryGuy implements Consumer {
             consumer();
         }
     }
+
+    public void start() {
+        deliveryThread = new Thread(this);
+        deliveryThread.start();
+    }
+
+    public void join() throws InterruptedException {
+        if (deliveryThread != null) {
+            deliveryThread.join();
+        }
+    }
+
+    //все джсоны в один пакет и интерфейсы и мэйн
 
     /**
      * Delivery person takes pizzas from the queue and delivers them.
@@ -67,7 +85,7 @@ public class DeliveryGuy implements Consumer {
         }
         while (!trunk.isEmpty()) {
             try {
-                Thread.sleep(random.nextInt(processingTime));
+                Thread.sleep(processingTime);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }

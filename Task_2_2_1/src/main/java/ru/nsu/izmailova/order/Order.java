@@ -1,4 +1,4 @@
-package ru.nsu.izmailova.pizzeria;
+package ru.nsu.izmailova.order;
 
 /**
  * Represents an order in the pizzeria.

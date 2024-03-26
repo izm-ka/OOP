@@ -1,4 +1,6 @@
-package ru.nsu.izmailova.pizzeria;
+package ru.nsu.izmailova.queue;
+
+import ru.nsu.izmailova.order.Order;
 
 import java.util.LinkedList;
 import java.util.Queue;
@@ -11,11 +13,12 @@ public class DataQueue {
     private final int maxSize;
     private final Object FULL_QUEUE = new Object();
     private final Object EMPTY_QUEUE = new Object();
+    //захватывает мониторы объекта
 
     /**
      * DataQueue without an upper limit on its size.
      */
-    DataQueue() {
+    public DataQueue() {
         this.maxSize = Integer.MAX_VALUE;
     }
 
@@ -24,7 +27,7 @@ public class DataQueue {
      *
      * @param maxSize the maximum allowed number of elements in the queue
      */
-    DataQueue(int maxSize) {
+    public DataQueue(int maxSize) {
         this.maxSize = maxSize;
     }
 

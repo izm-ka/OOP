@@ -1,9 +1,9 @@
-package ru.nsu.izmailova.pizzeria;
+package ru.nsu.izmailova.consumer;
 
 /**
  * Interface for making subjects that will consume elements.
  */
-public interface Consumer extends Runnable {
+public interface IConsumer extends Runnable {
     void run();
 
     void consumer();

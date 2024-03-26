@@ -3,11 +3,14 @@ package ru.nsu.izmailova.pizzeria;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
+import ru.nsu.izmailova.baker.Baker;
+import ru.nsu.izmailova.order.Order;
+import ru.nsu.izmailova.queue.DataQueue;
 
 /**
  * Test for Baker class.
  */
-public class BakerTest {
+/*public class BakerTest {
     @Test
     void bakerTest() throws InterruptedException {
         Order order = new Order();

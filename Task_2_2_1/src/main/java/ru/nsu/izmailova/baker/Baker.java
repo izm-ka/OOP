@@ -1,12 +1,15 @@
-package ru.nsu.izmailova.pizzeria;
+package ru.nsu.izmailova.baker;
 
 import java.util.Random;
+import ru.nsu.izmailova.json.JsonBaker;
+import ru.nsu.izmailova.queue.DataQueue;
+import ru.nsu.izmailova.order.Order;
 
 /**
  * Represents a baker in the pizzeria who acts as a consumer of user's
  * orders and as a producer of pizzas.
  */
-public class Baker implements Consumer, Producer {
+public class Baker extends Employee {
     private final DataQueue orderQueue;
     private final String orderProduceStatus;
 
@@ -14,9 +17,8 @@ public class Baker implements Consumer, Producer {
     private final String orderConsumeStatus;
     private int deliveryCounter;
 
-    private volatile boolean runFlag;
     private final Random random = new Random();
-    private int processingTime = 0;
+    private final int cookingTime;
 
     /**
      * Baker acts as consumer of user's orders and as producer of pizzas.
@@ -24,11 +26,12 @@ public class Baker implements Consumer, Producer {
      * @param orderQueue    queue where baker receives order
      * @param deliveryQueue queue
      */
-    public Baker(DataQueue orderQueue, DataQueue deliveryQueue) {
+    public Baker(DataQueue orderQueue, DataQueue deliveryQueue, int cookingTime) {
         orderConsumeStatus = "Cooking";
         orderProduceStatus = "On the way";
         this.orderQueue = orderQueue;
         this.deliveryQueue = deliveryQueue;
+        this.cookingTime = cookingTime;
         runFlag = true;
     }
 
@@ -67,7 +70,7 @@ public class Baker implements Consumer, Producer {
         }
         Order order = orderQueue.remove();
         deliveryCounter = order.getOrderNumber();
-        orderQueue.notifyAllForFull();
+        orderQueue.notifyAllForFull();// пекарь уведомляет другие потоки, ожидающие освобождения места в очереди
     }
 
     /**
@@ -121,7 +124,7 @@ public class Baker implements Consumer, Producer {
         }
         Order delivery = generateDelivery();
         try {
-            Thread.sleep(random.nextInt(processingTime));
+            Thread.sleep(cookingTime);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -139,15 +142,6 @@ public class Baker implements Consumer, Producer {
     public void changeOrderStatus(Order order, String status) {
         order.setOrderStatus(status);
         System.out.println("Order[" + order.getOrderNumber() + "] is " + status);
-    }
-
-    /**
-     * Change the maximum amount of time that baker can spend on making pizza.
-     *
-     * @param time how long making pizza takes
-     */
-    public void changeProcessingTime(int time) {
-        processingTime = time;
     }
 
     /**
