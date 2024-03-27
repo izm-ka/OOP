@@ -6,19 +6,21 @@ import ru.nsu.izmailova.queue.DataQueue;
 
 import java.util.ArrayDeque;
 import java.util.Random;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 /**
  * Represents a delivery person who delivers pizzas.
  */
-public class DeliveryGuy implements IConsumer, Runnable {
-    private Thread deliveryThread;
+public class DeliveryGuy implements IConsumer {
+    private final Thread deliveryThread;
     private final DataQueue deliveryQueue;
     private final String orderConsumeStatus;
     private final ArrayDeque<Order> trunk = new ArrayDeque<>();
     private final int trunkSize;
     private volatile boolean runFlag;
-    private final Random random = new Random();
-    private int processingTime = 0;
+    private final int processingTime;
+    private static final Logger logger = LogManager.getLogger();
 
     /**
      * Takes as many pizzas from storage, as his trunk could afford.
@@ -26,9 +28,10 @@ public class DeliveryGuy implements IConsumer, Runnable {
      * @param deliveryQueue - queue of cooked pizzas
      * @param trunkSize     - amount of pizzas that deliverer can take once
      */
-    public DeliveryGuy(DataQueue deliveryQueue, int trunkSize) {
+    public DeliveryGuy(DataQueue deliveryQueue, int trunkSize, int processingTime) {
         orderConsumeStatus = "Delivered";
         this.deliveryQueue = deliveryQueue;
+        this.processingTime = processingTime;
         this.trunkSize = trunkSize;
         deliveryThread = new Thread(this);
         runFlag = true;
@@ -45,14 +48,11 @@ public class DeliveryGuy implements IConsumer, Runnable {
     }
 
     public void start() {
-        deliveryThread = new Thread(this);
         deliveryThread.start();
     }
 
-    public void join() throws InterruptedException {
-        if (deliveryThread != null) {
-            deliveryThread.join();
-        }
+    public void interrupt() {
+        deliveryThread.interrupt();
     }
 
     //все джсоны в один пакет и интерфейсы и мэйн
@@ -112,16 +112,6 @@ public class DeliveryGuy implements IConsumer, Runnable {
     }
 
     /**
-     * This method can be used to change the maximum amount of time,
-     * that deliverer can spend on pizza delivery.
-     *
-     * @param time - how long it takes to deliver the pizza
-     */
-    public void changeProcessingTime(int time) {
-        processingTime = time;
-    }
-
-    /**
      * This method can be used to change the status of an order.
      *
      * @param order  - the order you want to change
@@ -129,7 +119,7 @@ public class DeliveryGuy implements IConsumer, Runnable {
      */
     public void changeOrderStatus(Order order, String status) {
         order.setOrderStatus(status);
-        System.out.println("Order[" + order.getOrderNumber() + "] is " + status);
+        logger.info("Order[{}] is {}", order.getOrderNumber(), status);
     }
 
 }

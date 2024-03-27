@@ -20,7 +20,7 @@ public class Main {
         JsonHandler handler = new JsonHandler();
         JsonPizzeria jp = handler.jsonHandle();
         Pizzeria pizzeria = new Pizzeria(jp.getBakersAmount(), jp.getBakersSpeed(), jp.getDeliverersAmount(),
-                jp.getDeliverersSpeed(), jp.getStorageSize(), jp.getTrunkSize(), jp.getOrdersDelay(), "orders.json");
+                jp.getDeliverersSpeed(), jp.getStorageSize(), jp.getTrunkSize(), jp.getOrdersDelay(), "src/main/resources/orders.json");
         pizzeria.pizzeriaStart();
         Thread.sleep(10 * 20);
         pizzeria.pizzeriaStop();

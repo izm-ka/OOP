@@ -31,12 +31,11 @@ public class Pizzeria {
      */
     public Pizzeria(int bakersAmount, int[] bakersProductivity, int deliverersAmount,
                     int[] deliverersProductivity, int storageSize, int[] trunkSizes,
-                    int ordersDelay, String ordersFileName) {
+                    int ordersDelay, String ordersPath) {
         DataQueue deliveryQueue = new DataQueue(storageSize);
         deliverers = new ArrayList<>();
         for (int i = 0; i < deliverersAmount; i++) {
-            DeliveryGuy deliverer = new DeliveryGuy(deliveryQueue, trunkSizes[i]);
-            deliverer.changeProcessingTime(deliverersProductivity[i]);
+            DeliveryGuy deliverer = new DeliveryGuy(deliveryQueue, trunkSizes[i],deliverersProductivity[i]);
             deliverers.add(deliverer);
         }
 
@@ -49,7 +48,7 @@ public class Pizzeria {
             bakers.add(baker);
         }
         customers = new Customer(ordersQueue, ordersDelay);
-        orderSerializer = new OrderSerializer(ordersFileName);
+        orderSerializer = new OrderSerializer(ordersPath);
         //loadUnprocessedOrders();
     }
 
@@ -59,16 +58,10 @@ public class Pizzeria {
     public void pizzeriaStart() {
         loadUnprocessedOrders();
         Thread customersThread = new Thread(customers);
-        customers.addUnprocessedOrders(unprocessedOrders);
         customersThread.start();
         System.out.println("Pizzeria is opened");
         bakers.stream().map(Thread::new).forEach(Thread::start);
-        List<Thread> deliveryThreads = new ArrayList<>();
-        deliverers.forEach(deliverer -> {
-            Thread thread = new Thread(deliverer);
-            deliveryThreads.add(thread);
-            thread.start();
-        });
+        deliverers.stream().map(Thread::new).forEach(Thread::start);
     }
 
     /**
@@ -78,12 +71,18 @@ public class Pizzeria {
      */
     public void pizzeriaStop() throws InterruptedException {
         customers.stopProduce();
-        bakers.forEach(Baker::stopConsume);
-        bakers.forEach(Baker::stopProduce);
-        deliverers.forEach(DeliveryGuy::stopConsume);
-        for (DeliveryGuy deliverer : deliverers) {
-            deliverer.join();
+        for (Baker baker : bakers) {
+            baker.stopConsume();
+            baker.stopProduce();
+            baker.interrupt();
         }
+        //bakers.forEach(Baker::stopConsume);
+        //bakers.forEach(Baker::stopProduce);
+        for (DeliveryGuy deliveryGuy : deliverers) {
+            deliveryGuy.stopConsume();
+            deliveryGuy.interrupt();
+        }
+        customers.addUnprocessedOrders(unprocessedOrders);
         saveUnprocessedOrders();
         System.out.println("Pizzeria is closed");
     }

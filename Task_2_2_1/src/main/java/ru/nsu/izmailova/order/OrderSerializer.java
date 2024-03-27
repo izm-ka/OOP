@@ -10,14 +10,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class OrderSerializer {
-    private final String fileName;
+    private final String filePath;
 
-    public OrderSerializer(String fileName) {
-        this.fileName = fileName;
+    public OrderSerializer(String filePath) {
+        this.filePath = filePath;
     }
 
     public void saveOrders(List<Order> orders) {
-        try (Writer writer = new FileWriter(fileName)) {
+        try (Writer writer = new FileWriter(filePath)) {
             Gson gson = new Gson();
             gson.toJson(orders, writer);
         } catch (IOException e) {
@@ -27,7 +27,7 @@ public class OrderSerializer {
 
     public List<Order> loadOrders() {
         List<Order> orders = null;
-        try (Reader reader = new FileReader(fileName)) {
+        try (Reader reader = new FileReader(filePath)) {
             Gson gson = new Gson();
             Type type = new TypeToken<List<Order>>() {}.getType();
             orders = gson.fromJson(reader, type);

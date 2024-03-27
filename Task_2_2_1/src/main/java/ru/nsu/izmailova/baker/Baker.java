@@ -1,9 +1,10 @@
 package ru.nsu.izmailova.baker;
 
 import java.util.Random;
-import ru.nsu.izmailova.json.JsonBaker;
 import ru.nsu.izmailova.queue.DataQueue;
 import ru.nsu.izmailova.order.Order;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 /**
  * Represents a baker in the pizzeria who acts as a consumer of user's
@@ -12,12 +13,11 @@ import ru.nsu.izmailova.order.Order;
 public class Baker extends Employee {
     private final DataQueue orderQueue;
     private final String orderProduceStatus;
-
+    private static final Logger logger = LogManager.getLogger();
     private final DataQueue deliveryQueue;
     private final String orderConsumeStatus;
     private int deliveryCounter;
-
-    private final Random random = new Random();
+    private final Thread cookingThread;
     private final int cookingTime;
 
     /**
@@ -32,6 +32,7 @@ public class Baker extends Employee {
         this.orderQueue = orderQueue;
         this.deliveryQueue = deliveryQueue;
         this.cookingTime = cookingTime;
+        cookingThread = new Thread(this);
         runFlag = true;
     }
 
@@ -44,6 +45,14 @@ public class Baker extends Employee {
             consumer();
             producer();
         }
+    }
+
+    public void start() {
+        cookingThread.start();
+    }
+
+    public void interrupt() {
+        cookingThread.interrupt();
     }
 
     /**
@@ -82,7 +91,7 @@ public class Baker extends Employee {
         Order order = new Order();
         order.setOrderStatus(orderConsumeStatus);
         order.setOrderNumber(deliveryCounter);
-        System.out.println("Order[" + deliveryCounter + "] is " + orderConsumeStatus);
+        logger.info("Order[{}] is {}",deliveryCounter,orderConsumeStatus);
         return order;
     }
 
@@ -141,7 +150,7 @@ public class Baker extends Employee {
      */
     public void changeOrderStatus(Order order, String status) {
         order.setOrderStatus(status);
-        System.out.println("Order[" + order.getOrderNumber() + "] is " + status);
+        logger.info("Order[{}] is {}",order.getOrderNumber(),status);
     }
 
     /**

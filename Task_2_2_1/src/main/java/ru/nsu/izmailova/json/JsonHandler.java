@@ -18,7 +18,7 @@ public class JsonHandler {
      */
     public JsonPizzeria jsonHandle() throws IOException {
         Gson gson = new Gson();
-        Reader reader = Files.newBufferedReader(Paths.get("PizzeriaData.json"));
+        Reader reader = Files.newBufferedReader(Paths.get("src/main/resources/PizzeriaData.json"));
         JsonPizzeria pizzeria = gson.fromJson(reader, JsonPizzeria.class);
         reader.close();
         return pizzeria;
