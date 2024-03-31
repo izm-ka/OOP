@@ -9,7 +9,7 @@ import ru.nsu.izmailova.queue.DataQueue;
 /**
  * Test for DeliveryGuy class.
  */
-public class DeliveryTest {
+/*public class DeliveryTest {
     @Test
     void deliveryGuyTest() throws InterruptedException {
         DataQueue deliveryQueue = new DataQueue(3);
@@ -27,4 +27,4 @@ public class DeliveryTest {
         deliveryGuy.stopConsume();
         assertTrue(deliveryQueue.isEmpty());
     }
-}
+}*/

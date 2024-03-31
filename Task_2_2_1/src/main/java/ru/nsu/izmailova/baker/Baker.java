@@ -47,12 +47,9 @@ public class Baker extends Employee {
         }
     }
 
-    public void start() {
-        cookingThread.start();
-    }
-
     public void interrupt() {
         cookingThread.interrupt();
+        logger.info("thread is interrupred" + cookingThread.getName());
     }
 
     /**
@@ -136,6 +133,7 @@ public class Baker extends Employee {
             Thread.sleep(cookingTime);
         } catch (InterruptedException e) {
             e.printStackTrace();
+            return;
         }
         changeOrderStatus(delivery, orderProduceStatus);
         deliveryQueue.add(delivery);

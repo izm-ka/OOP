@@ -22,7 +22,7 @@ public class Main {
         Pizzeria pizzeria = new Pizzeria(jp.getBakersAmount(), jp.getBakersSpeed(), jp.getDeliverersAmount(),
                 jp.getDeliverersSpeed(), jp.getStorageSize(), jp.getTrunkSize(), jp.getOrdersDelay(), "src/main/resources/orders.json");
         pizzeria.pizzeriaStart();
-        Thread.sleep(10 * 20);
+        Thread.sleep(15); //config
         pizzeria.pizzeriaStop();
     }
 }

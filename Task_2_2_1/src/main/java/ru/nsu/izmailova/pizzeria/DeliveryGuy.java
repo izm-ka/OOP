@@ -42,20 +42,15 @@ public class DeliveryGuy implements IConsumer {
      */
     @Override
     public void run() {
-        while (getFlag()) {
+        while (getFlag() && !Thread.currentThread().isInterrupted()) {
             consumer();
         }
-    }
-
-    public void start() {
-        deliveryThread.start();
     }
 
     public void interrupt() {
         deliveryThread.interrupt();
     }
 
-    //все джсоны в один пакет и интерфейсы и мэйн
 
     /**
      * Delivery person takes pizzas from the queue and delivers them.
@@ -63,7 +58,7 @@ public class DeliveryGuy implements IConsumer {
     @SuppressWarnings("BusyWait")
     @Override
     public void consumer() {
-        for (int i = 0; i < trunkSize; i++) {
+        for (int i = 0; i < trunkSize && !Thread.currentThread().isInterrupted(); i++) {
             while (deliveryQueue.isEmpty()) {
                 if (!runFlag) {
                     return;
@@ -88,6 +83,7 @@ public class DeliveryGuy implements IConsumer {
                 Thread.sleep(processingTime);
             } catch (InterruptedException e) {
                 e.printStackTrace();
+                return;
             }
             changeOrderStatus(trunk.remove(), orderConsumeStatus);
         }

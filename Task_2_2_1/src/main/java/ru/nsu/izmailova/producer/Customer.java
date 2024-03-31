@@ -104,13 +104,13 @@ public class Customer implements IProducer {
      * @param order  the order whose status is to be changed
      * @param status the new status of the order
      */
-    public void addUnprocessedOrders(List<Order> orders) {
+    public void addUnprocessedOrders(DataQueue orderQueue) {
         if (unprocessedOrders == null) {
             unprocessedOrders = new ArrayList<>();
         }
-        for (Order order : orders) {
-            if ((order.getOrderStatus().equals("Unprocessed") )||
-                    (order.getOrderStatus().equals("On the way"))){
+        while (!orderQueue.isEmpty()) {
+            Order order = orderQueue.remove();
+            if ((order.getOrderStatus().equals("Unprocessed"))) {
                 unprocessedOrders.add(order);
                 System.out.println("UOrder[" + order.getOrderNumber() + "] is " + order.getOrderStatus());
             }

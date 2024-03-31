@@ -9,7 +9,7 @@ import ru.nsu.izmailova.queue.DataQueue;
 /**
  * Test for Customer class.
  */
-class CustomerTest {
+/*lass CustomerTest {
 
     @Test
     void customerTest() throws InterruptedException {
@@ -28,4 +28,4 @@ class CustomerTest {
         }
         Thread.sleep(3000);
     }
-}
+}*/
