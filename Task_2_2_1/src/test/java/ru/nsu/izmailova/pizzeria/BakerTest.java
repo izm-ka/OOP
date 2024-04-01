@@ -1,39 +1,59 @@
 package ru.nsu.izmailova.pizzeria;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
 import org.junit.jupiter.api.Test;
 import ru.nsu.izmailova.baker.Baker;
 import ru.nsu.izmailova.order.Order;
 import ru.nsu.izmailova.queue.DataQueue;
 
+import static org.junit.jupiter.api.Assertions.*;
+
 /**
  * Test for Baker class.
  */
-/*public class BakerTest {
+public class BakerTest {
     @Test
-    void bakerTest() throws InterruptedException {
+    void testConsumer(){
         Order order = new Order();
-        DataQueue ordersQueue = new DataQueue(3);
-        order.setOrderStatus("in process");
-        order.setOrderNumber(15);
-        while (!ordersQueue.isFull()) {
-            ordersQueue.add(order);
-        }
-        DataQueue deliveryQueue = new DataQueue(3);
-        Baker baker = new Baker(ordersQueue, deliveryQueue);
-        baker.changeProcessingTime(1000);
-        Thread bakerThread = new Thread(baker);
-        bakerThread.start();
-        while (!deliveryQueue.isFull()) {
-        }
-        Thread.sleep(3000);
-        baker.stopConsume();
-        baker.stopProduce();
-        while (!deliveryQueue.isEmpty()) {
-            order = deliveryQueue.remove();
-            assertEquals("On the way", order.getOrderStatus());
-            assertEquals(15, order.getOrderNumber());
-        }
+        DataQueue ordersQueue = new DataQueue();
+        order.setOrderNumber(1);
+        ordersQueue.add(order);
+
+        DataQueue deliveryQueue = new DataQueue();
+        Baker baker = new Baker(ordersQueue, deliveryQueue, 1000);
+
+       baker.consumer();
+       assertTrue(ordersQueue.isEmpty());
+       assertEquals(1, baker.deliveryCounter);
     }
-}*/
+
+    @Test
+    void testProducer() {
+        DataQueue ordersQueue = new DataQueue();
+        Order expOrder = new Order();
+        expOrder.setOrderNumber(1);
+        expOrder.setOrderStatus("On the way");
+        ordersQueue.add(expOrder);
+
+        DataQueue deliveryQueue = new DataQueue();
+        Baker baker = new Baker(ordersQueue, deliveryQueue, 100);
+        baker.deliveryCounter = 1;
+
+        baker.producer();
+        Order actOrder = deliveryQueue.remove();
+
+        assertEquals(expOrder.getOrderNumber(), actOrder.getOrderNumber());
+        assertEquals(expOrder.getOrderStatus(), actOrder.getOrderStatus());
+    }
+
+    @Test
+    void testStopConsume() {
+        DataQueue ordersQueue = new DataQueue();
+        Order order = new Order();
+        order.setOrderNumber(1);
+        ordersQueue.add(order);
+        DataQueue deliveryQueue = new DataQueue();
+        Baker baker = new Baker(ordersQueue, deliveryQueue, 100);
+        baker.stopConsume();
+        assertFalse(baker.getFlag());
+    }
+}

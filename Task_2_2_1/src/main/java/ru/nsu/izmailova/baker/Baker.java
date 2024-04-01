@@ -16,7 +16,7 @@ public class Baker extends Employee {
     private static final Logger logger = LogManager.getLogger();
     private final DataQueue deliveryQueue;
     private final String orderConsumeStatus;
-    private int deliveryCounter;
+    public int deliveryCounter;
     private final Thread cookingThread;
     private final int cookingTime;
 
