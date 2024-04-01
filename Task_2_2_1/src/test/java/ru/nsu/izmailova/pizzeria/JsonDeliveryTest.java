@@ -5,6 +5,9 @@ import ru.nsu.izmailova.json.JsonDeliverer;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+/**
+ * Test for JsonDelivery class.
+ */
 public class JsonDeliveryTest {
     @Test
     void testGetSpeed() {

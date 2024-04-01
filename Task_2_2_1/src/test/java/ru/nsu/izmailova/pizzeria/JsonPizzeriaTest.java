@@ -8,6 +8,9 @@ import ru.nsu.izmailova.json.JsonBaker;
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+/**
+ * Test for JsonPizzeria class.
+ */
 public class JsonPizzeriaTest {
 
     int bakersAmount = 3;

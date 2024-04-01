@@ -5,6 +5,9 @@ import ru.nsu.izmailova.json.JsonBaker;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+/**
+ * Test for JsonBaker class.
+ */
 public class JsonBakerTest {
     @Test
     void testGetCookingTime() {

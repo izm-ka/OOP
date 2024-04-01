@@ -8,6 +8,9 @@ import java.io.IOException;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+/**
+ * Test for JsonHandler class.
+ */
 public class JsonHandlerTest {
     @Test
     public void testJsonHandler() throws IOException {
