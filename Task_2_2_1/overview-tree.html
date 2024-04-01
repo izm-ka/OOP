@@ -45,6 +45,7 @@ loadScripts(document, 'script');</script>
 <!--   -->
 </a>
 <ul class="navList" title="Navigation">
+<li><a href="index.html">Overview</a></li>
 <li>Package</li>
 <li>Class</li>
 <li class="navBarCell1Rev">Tree</li>
@@ -95,7 +96,14 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <h1 class="title">Hierarchy For All Packages</h1>
 <span class="packageHierarchyLabel">Package Hierarchies:</span>
 <ul class="horizontal">
-<li><a href="ru/nsu/izmailova/pizzeria/package-tree.html">ru.nsu.izmailova.pizzeria</a></li>
+<li><a href="ru/nsu/izmailova/package-tree.html">ru.nsu.izmailova</a>, </li>
+<li><a href="ru/nsu/izmailova/baker/package-tree.html">ru.nsu.izmailova.baker</a>, </li>
+<li><a href="ru/nsu/izmailova/consumer/package-tree.html">ru.nsu.izmailova.consumer</a>, </li>
+<li><a href="ru/nsu/izmailova/json/package-tree.html">ru.nsu.izmailova.json</a>, </li>
+<li><a href="ru/nsu/izmailova/order/package-tree.html">ru.nsu.izmailova.order</a>, </li>
+<li><a href="ru/nsu/izmailova/pizzeria/package-tree.html">ru.nsu.izmailova.pizzeria</a>, </li>
+<li><a href="ru/nsu/izmailova/producer/package-tree.html">ru.nsu.izmailova.producer</a>, </li>
+<li><a href="ru/nsu/izmailova/queue/package-tree.html">ru.nsu.izmailova.queue</a></li>
 </ul>
 </div>
 <div class="contentContainer">
@@ -104,16 +112,21 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <ul>
 <li class="circle">java.lang.Object
 <ul>
-<li class="circle">ru.nsu.izmailova.pizzeria.<a href="ru/nsu/izmailova/pizzeria/Baker.html" title="class in ru.nsu.izmailova.pizzeria"><span class="typeNameLink">Baker</span></a> (implements ru.nsu.izmailova.pizzeria.<a href="ru/nsu/izmailova/pizzeria/Consumer.html" title="interface in ru.nsu.izmailova.pizzeria">Consumer</a>, ru.nsu.izmailova.pizzeria.<a href="ru/nsu/izmailova/pizzeria/Producer.html" title="interface in ru.nsu.izmailova.pizzeria">Producer</a>)</li>
-<li class="circle">ru.nsu.izmailova.pizzeria.<a href="ru/nsu/izmailova/pizzeria/Customer.html" title="class in ru.nsu.izmailova.pizzeria"><span class="typeNameLink">Customer</span></a> (implements ru.nsu.izmailova.pizzeria.<a href="ru/nsu/izmailova/pizzeria/Producer.html" title="interface in ru.nsu.izmailova.pizzeria">Producer</a>)</li>
-<li class="circle">ru.nsu.izmailova.pizzeria.<a href="ru/nsu/izmailova/pizzeria/DataQueue.html" title="class in ru.nsu.izmailova.pizzeria"><span class="typeNameLink">DataQueue</span></a></li>
-<li class="circle">ru.nsu.izmailova.pizzeria.<a href="ru/nsu/izmailova/pizzeria/DeliveryGuy.html" title="class in ru.nsu.izmailova.pizzeria"><span class="typeNameLink">DeliveryGuy</span></a> (implements ru.nsu.izmailova.pizzeria.<a href="ru/nsu/izmailova/pizzeria/Consumer.html" title="interface in ru.nsu.izmailova.pizzeria">Consumer</a>)</li>
-<li class="circle">ru.nsu.izmailova.pizzeria.<a href="ru/nsu/izmailova/pizzeria/JsonBaker.html" title="class in ru.nsu.izmailova.pizzeria"><span class="typeNameLink">JsonBaker</span></a></li>
-<li class="circle">ru.nsu.izmailova.pizzeria.<a href="ru/nsu/izmailova/pizzeria/JsonDeliverer.html" title="class in ru.nsu.izmailova.pizzeria"><span class="typeNameLink">JsonDeliverer</span></a></li>
-<li class="circle">ru.nsu.izmailova.pizzeria.<a href="ru/nsu/izmailova/pizzeria/JsonHandler.html" title="class in ru.nsu.izmailova.pizzeria"><span class="typeNameLink">JsonHandler</span></a></li>
-<li class="circle">ru.nsu.izmailova.pizzeria.<a href="ru/nsu/izmailova/pizzeria/JsonPizzeria.html" title="class in ru.nsu.izmailova.pizzeria"><span class="typeNameLink">JsonPizzeria</span></a></li>
-<li class="circle">ru.nsu.izmailova.pizzeria.<a href="ru/nsu/izmailova/pizzeria/Main.html" title="class in ru.nsu.izmailova.pizzeria"><span class="typeNameLink">Main</span></a></li>
-<li class="circle">ru.nsu.izmailova.pizzeria.<a href="ru/nsu/izmailova/pizzeria/Order.html" title="class in ru.nsu.izmailova.pizzeria"><span class="typeNameLink">Order</span></a></li>
+<li class="circle">ru.nsu.izmailova.producer.<a href="ru/nsu/izmailova/producer/Customer.html" title="class in ru.nsu.izmailova.producer"><span class="typeNameLink">Customer</span></a> (implements ru.nsu.izmailova.producer.<a href="ru/nsu/izmailova/producer/IProducer.html" title="interface in ru.nsu.izmailova.producer">IProducer</a>)</li>
+<li class="circle">ru.nsu.izmailova.queue.<a href="ru/nsu/izmailova/queue/DataQueue.html" title="class in ru.nsu.izmailova.queue"><span class="typeNameLink">DataQueue</span></a></li>
+<li class="circle">ru.nsu.izmailova.pizzeria.<a href="ru/nsu/izmailova/pizzeria/DeliveryGuy.html" title="class in ru.nsu.izmailova.pizzeria"><span class="typeNameLink">DeliveryGuy</span></a> (implements ru.nsu.izmailova.consumer.<a href="ru/nsu/izmailova/consumer/IConsumer.html" title="interface in ru.nsu.izmailova.consumer">IConsumer</a>)</li>
+<li class="circle">ru.nsu.izmailova.baker.<a href="ru/nsu/izmailova/baker/Employee.html" title="class in ru.nsu.izmailova.baker"><span class="typeNameLink">Employee</span></a> (implements ru.nsu.izmailova.consumer.<a href="ru/nsu/izmailova/consumer/IConsumer.html" title="interface in ru.nsu.izmailova.consumer">IConsumer</a>, ru.nsu.izmailova.producer.<a href="ru/nsu/izmailova/producer/IProducer.html" title="interface in ru.nsu.izmailova.producer">IProducer</a>)
+<ul>
+<li class="circle">ru.nsu.izmailova.baker.<a href="ru/nsu/izmailova/baker/Baker.html" title="class in ru.nsu.izmailova.baker"><span class="typeNameLink">Baker</span></a></li>
+</ul>
+</li>
+<li class="circle">ru.nsu.izmailova.json.<a href="ru/nsu/izmailova/json/JsonBaker.html" title="class in ru.nsu.izmailova.json"><span class="typeNameLink">JsonBaker</span></a></li>
+<li class="circle">ru.nsu.izmailova.json.<a href="ru/nsu/izmailova/json/JsonDeliverer.html" title="class in ru.nsu.izmailova.json"><span class="typeNameLink">JsonDeliverer</span></a></li>
+<li class="circle">ru.nsu.izmailova.json.<a href="ru/nsu/izmailova/json/JsonHandler.html" title="class in ru.nsu.izmailova.json"><span class="typeNameLink">JsonHandler</span></a></li>
+<li class="circle">ru.nsu.izmailova.json.<a href="ru/nsu/izmailova/json/JsonPizzeria.html" title="class in ru.nsu.izmailova.json"><span class="typeNameLink">JsonPizzeria</span></a></li>
+<li class="circle">ru.nsu.izmailova.<a href="ru/nsu/izmailova/Main.html" title="class in ru.nsu.izmailova"><span class="typeNameLink">Main</span></a></li>
+<li class="circle">ru.nsu.izmailova.order.<a href="ru/nsu/izmailova/order/Order.html" title="class in ru.nsu.izmailova.order"><span class="typeNameLink">Order</span></a></li>
+<li class="circle">ru.nsu.izmailova.order.<a href="ru/nsu/izmailova/order/OrderSerializer.html" title="class in ru.nsu.izmailova.order"><span class="typeNameLink">OrderSerializer</span></a></li>
 <li class="circle">ru.nsu.izmailova.pizzeria.<a href="ru/nsu/izmailova/pizzeria/Pizzeria.html" title="class in ru.nsu.izmailova.pizzeria"><span class="typeNameLink">Pizzeria</span></a></li>
 </ul>
 </li>
@@ -124,8 +137,8 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <ul>
 <li class="circle">java.lang.Runnable
 <ul>
-<li class="circle">ru.nsu.izmailova.pizzeria.<a href="ru/nsu/izmailova/pizzeria/Consumer.html" title="interface in ru.nsu.izmailova.pizzeria"><span class="typeNameLink">Consumer</span></a></li>
-<li class="circle">ru.nsu.izmailova.pizzeria.<a href="ru/nsu/izmailova/pizzeria/Producer.html" title="interface in ru.nsu.izmailova.pizzeria"><span class="typeNameLink">Producer</span></a></li>
+<li class="circle">ru.nsu.izmailova.consumer.<a href="ru/nsu/izmailova/consumer/IConsumer.html" title="interface in ru.nsu.izmailova.consumer"><span class="typeNameLink">IConsumer</span></a></li>
+<li class="circle">ru.nsu.izmailova.producer.<a href="ru/nsu/izmailova/producer/IProducer.html" title="interface in ru.nsu.izmailova.producer"><span class="typeNameLink">IProducer</span></a></li>
 </ul>
 </li>
 </ul>
@@ -143,6 +156,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <!--   -->
 </a>
 <ul class="navList" title="Navigation">
+<li><a href="index.html">Overview</a></li>
 <li>Package</li>
 <li>Class</li>
 <li class="navBarCell1Rev">Tree</li>

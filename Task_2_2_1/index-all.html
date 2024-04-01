@@ -45,7 +45,8 @@ loadScripts(document, 'script');</script>
 <!--   -->
 </a>
 <ul class="navList" title="Navigation">
-<li><a href="ru/nsu/izmailova/pizzeria/package-summary.html">Package</a></li>
+<li><a href="index.html">Overview</a></li>
+<li>Package</li>
 <li>Class</li>
 <li><a href="overview-tree.html">Tree</a></li>
 <li><a href="deprecated-list.html">Deprecated</a></li>
@@ -91,14 +92,18 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </nav>
 </header>
 <main role="main">
-<div class="contentContainer"><a href="#I:A">A</a>&nbsp;<a href="#I:B">B</a>&nbsp;<a href="#I:C">C</a>&nbsp;<a href="#I:D">D</a>&nbsp;<a href="#I:G">G</a>&nbsp;<a href="#I:I">I</a>&nbsp;<a href="#I:J">J</a>&nbsp;<a href="#I:M">M</a>&nbsp;<a href="#I:N">N</a>&nbsp;<a href="#I:O">O</a>&nbsp;<a href="#I:P">P</a>&nbsp;<a href="#I:R">R</a>&nbsp;<a href="#I:S">S</a>&nbsp;<a href="#I:W">W</a>&nbsp;<br><a href="allclasses-index.html">All&nbsp;Classes</a>&nbsp;<a href="allpackages-index.html">All&nbsp;Packages</a><a id="I:A">
+<div class="contentContainer"><a href="#I:A">A</a>&nbsp;<a href="#I:B">B</a>&nbsp;<a href="#I:C">C</a>&nbsp;<a href="#I:D">D</a>&nbsp;<a href="#I:E">E</a>&nbsp;<a href="#I:G">G</a>&nbsp;<a href="#I:I">I</a>&nbsp;<a href="#I:J">J</a>&nbsp;<a href="#I:L">L</a>&nbsp;<a href="#I:M">M</a>&nbsp;<a href="#I:N">N</a>&nbsp;<a href="#I:O">O</a>&nbsp;<a href="#I:P">P</a>&nbsp;<a href="#I:R">R</a>&nbsp;<a href="#I:S">S</a>&nbsp;<a href="#I:W">W</a>&nbsp;<br><a href="allclasses-index.html">All&nbsp;Classes</a>&nbsp;<a href="allpackages-index.html">All&nbsp;Packages</a><a id="I:A">
 <!--   -->
 </a>
 <h2 class="title">A</h2>
 <dl>
-<dt><span class="memberNameLink"><a href="ru/nsu/izmailova/pizzeria/DataQueue.html#add(ru.nsu.izmailova.pizzeria.Order)">add(Order)</a></span> - Method in class ru.nsu.izmailova.pizzeria.<a href="ru/nsu/izmailova/pizzeria/DataQueue.html" title="class in ru.nsu.izmailova.pizzeria">DataQueue</a></dt>
+<dt><span class="memberNameLink"><a href="ru/nsu/izmailova/queue/DataQueue.html#add(ru.nsu.izmailova.order.Order)">add(Order)</a></span> - Method in class ru.nsu.izmailova.queue.<a href="ru/nsu/izmailova/queue/DataQueue.html" title="class in ru.nsu.izmailova.queue">DataQueue</a></dt>
 <dd>
 <div class="block">Add new order to the queue.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="ru/nsu/izmailova/producer/Customer.html#addUnprocessedOrders(ru.nsu.izmailova.queue.DataQueue)">addUnprocessedOrders(DataQueue)</a></span> - Method in class ru.nsu.izmailova.producer.<a href="ru/nsu/izmailova/producer/Customer.html" title="class in ru.nsu.izmailova.producer">Customer</a></dt>
+<dd>
+<div class="block">Changes the status of an order.</div>
 </dd>
 </dl>
 <a id="I:B">
@@ -106,12 +111,12 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </a>
 <h2 class="title">B</h2>
 <dl>
-<dt><a href="ru/nsu/izmailova/pizzeria/Baker.html" title="class in ru.nsu.izmailova.pizzeria"><span class="typeNameLink">Baker</span></a> - Class in <a href="ru/nsu/izmailova/pizzeria/package-summary.html">ru.nsu.izmailova.pizzeria</a></dt>
+<dt><a href="ru/nsu/izmailova/baker/Baker.html" title="class in ru.nsu.izmailova.baker"><span class="typeNameLink">Baker</span></a> - Class in <a href="ru/nsu/izmailova/baker/package-summary.html">ru.nsu.izmailova.baker</a></dt>
 <dd>
 <div class="block">Represents a baker in the pizzeria who acts as a consumer of user's
  orders and as a producer of pizzas.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="ru/nsu/izmailova/pizzeria/Baker.html#%3Cinit%3E(ru.nsu.izmailova.pizzeria.DataQueue,ru.nsu.izmailova.pizzeria.DataQueue)">Baker(DataQueue, DataQueue)</a></span> - Constructor for class ru.nsu.izmailova.pizzeria.<a href="ru/nsu/izmailova/pizzeria/Baker.html" title="class in ru.nsu.izmailova.pizzeria">Baker</a></dt>
+<dt><span class="memberNameLink"><a href="ru/nsu/izmailova/baker/Baker.html#%3Cinit%3E(ru.nsu.izmailova.queue.DataQueue,ru.nsu.izmailova.queue.DataQueue,int)">Baker(DataQueue, DataQueue, int)</a></span> - Constructor for class ru.nsu.izmailova.baker.<a href="ru/nsu/izmailova/baker/Baker.html" title="class in ru.nsu.izmailova.baker">Baker</a></dt>
 <dd>
 <div class="block">Baker acts as consumer of user's orders and as producer of pizzas.</div>
 </dd>
@@ -121,50 +126,29 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </a>
 <h2 class="title">C</h2>
 <dl>
-<dt><span class="memberNameLink"><a href="ru/nsu/izmailova/pizzeria/Baker.html#changeOrderStatus(ru.nsu.izmailova.pizzeria.Order,java.lang.String)">changeOrderStatus(Order, String)</a></span> - Method in class ru.nsu.izmailova.pizzeria.<a href="ru/nsu/izmailova/pizzeria/Baker.html" title="class in ru.nsu.izmailova.pizzeria">Baker</a></dt>
+<dt><span class="memberNameLink"><a href="ru/nsu/izmailova/baker/Baker.html#changeOrderStatus(ru.nsu.izmailova.order.Order,java.lang.String)">changeOrderStatus(Order, String)</a></span> - Method in class ru.nsu.izmailova.baker.<a href="ru/nsu/izmailova/baker/Baker.html" title="class in ru.nsu.izmailova.baker">Baker</a></dt>
 <dd>
 <div class="block">Changes the status of an order.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="ru/nsu/izmailova/pizzeria/Customer.html#changeOrderStatus(ru.nsu.izmailova.pizzeria.Order,java.lang.String)">changeOrderStatus(Order, String)</a></span> - Method in class ru.nsu.izmailova.pizzeria.<a href="ru/nsu/izmailova/pizzeria/Customer.html" title="class in ru.nsu.izmailova.pizzeria">Customer</a></dt>
-<dd>
-<div class="block">Changes the status of an order.</div>
-</dd>
-<dt><span class="memberNameLink"><a href="ru/nsu/izmailova/pizzeria/DeliveryGuy.html#changeOrderStatus(ru.nsu.izmailova.pizzeria.Order,java.lang.String)">changeOrderStatus(Order, String)</a></span> - Method in class ru.nsu.izmailova.pizzeria.<a href="ru/nsu/izmailova/pizzeria/DeliveryGuy.html" title="class in ru.nsu.izmailova.pizzeria">DeliveryGuy</a></dt>
+<dt><span class="memberNameLink"><a href="ru/nsu/izmailova/pizzeria/DeliveryGuy.html#changeOrderStatus(ru.nsu.izmailova.order.Order,java.lang.String)">changeOrderStatus(Order, String)</a></span> - Method in class ru.nsu.izmailova.pizzeria.<a href="ru/nsu/izmailova/pizzeria/DeliveryGuy.html" title="class in ru.nsu.izmailova.pizzeria">DeliveryGuy</a></dt>
 <dd>
 <div class="block">This method can be used to change the status of an order.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="ru/nsu/izmailova/pizzeria/Baker.html#changeProcessingTime(int)">changeProcessingTime(int)</a></span> - Method in class ru.nsu.izmailova.pizzeria.<a href="ru/nsu/izmailova/pizzeria/Baker.html" title="class in ru.nsu.izmailova.pizzeria">Baker</a></dt>
-<dd>
-<div class="block">Change the maximum amount of time that baker can spend on making pizza.</div>
-</dd>
-<dt><span class="memberNameLink"><a href="ru/nsu/izmailova/pizzeria/Customer.html#changeProcessingTime(int)">changeProcessingTime(int)</a></span> - Method in class ru.nsu.izmailova.pizzeria.<a href="ru/nsu/izmailova/pizzeria/Customer.html" title="class in ru.nsu.izmailova.pizzeria">Customer</a></dt>
-<dd>
-<div class="block">Changes the maximum amount of time that the customer can spend on producing an order.</div>
-</dd>
-<dt><span class="memberNameLink"><a href="ru/nsu/izmailova/pizzeria/DeliveryGuy.html#changeProcessingTime(int)">changeProcessingTime(int)</a></span> - Method in class ru.nsu.izmailova.pizzeria.<a href="ru/nsu/izmailova/pizzeria/DeliveryGuy.html" title="class in ru.nsu.izmailova.pizzeria">DeliveryGuy</a></dt>
-<dd>
-<div class="block">This method can be used to change the maximum amount of time,
- that deliverer can spend on pizza delivery.</div>
-</dd>
-<dt><span class="memberNameLink"><a href="ru/nsu/izmailova/pizzeria/Baker.html#consumer()">consumer()</a></span> - Method in class ru.nsu.izmailova.pizzeria.<a href="ru/nsu/izmailova/pizzeria/Baker.html" title="class in ru.nsu.izmailova.pizzeria">Baker</a></dt>
+<dt><span class="memberNameLink"><a href="ru/nsu/izmailova/baker/Baker.html#consumer()">consumer()</a></span> - Method in class ru.nsu.izmailova.baker.<a href="ru/nsu/izmailova/baker/Baker.html" title="class in ru.nsu.izmailova.baker">Baker</a></dt>
 <dd>
 <div class="block">Consumes orders from the order queue.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="ru/nsu/izmailova/pizzeria/Consumer.html#consumer()">consumer()</a></span> - Method in interface ru.nsu.izmailova.pizzeria.<a href="ru/nsu/izmailova/pizzeria/Consumer.html" title="interface in ru.nsu.izmailova.pizzeria">Consumer</a></dt>
+<dt><span class="memberNameLink"><a href="ru/nsu/izmailova/consumer/IConsumer.html#consumer()">consumer()</a></span> - Method in interface ru.nsu.izmailova.consumer.<a href="ru/nsu/izmailova/consumer/IConsumer.html" title="interface in ru.nsu.izmailova.consumer">IConsumer</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="ru/nsu/izmailova/pizzeria/DeliveryGuy.html#consumer()">consumer()</a></span> - Method in class ru.nsu.izmailova.pizzeria.<a href="ru/nsu/izmailova/pizzeria/DeliveryGuy.html" title="class in ru.nsu.izmailova.pizzeria">DeliveryGuy</a></dt>
 <dd>
 <div class="block">Delivery person takes pizzas from the queue and delivers them.</div>
 </dd>
-<dt><a href="ru/nsu/izmailova/pizzeria/Consumer.html" title="interface in ru.nsu.izmailova.pizzeria"><span class="typeNameLink">Consumer</span></a> - Interface in <a href="ru/nsu/izmailova/pizzeria/package-summary.html">ru.nsu.izmailova.pizzeria</a></dt>
-<dd>
-<div class="block">Interface for making subjects that will consume elements.</div>
-</dd>
-<dt><a href="ru/nsu/izmailova/pizzeria/Customer.html" title="class in ru.nsu.izmailova.pizzeria"><span class="typeNameLink">Customer</span></a> - Class in <a href="ru/nsu/izmailova/pizzeria/package-summary.html">ru.nsu.izmailova.pizzeria</a></dt>
+<dt><a href="ru/nsu/izmailova/producer/Customer.html" title="class in ru.nsu.izmailova.producer"><span class="typeNameLink">Customer</span></a> - Class in <a href="ru/nsu/izmailova/producer/package-summary.html">ru.nsu.izmailova.producer</a></dt>
 <dd>
 <div class="block">Represents a customer who produces orders for the pizzeria.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="ru/nsu/izmailova/pizzeria/Customer.html#%3Cinit%3E(ru.nsu.izmailova.pizzeria.DataQueue)">Customer(DataQueue)</a></span> - Constructor for class ru.nsu.izmailova.pizzeria.<a href="ru/nsu/izmailova/pizzeria/Customer.html" title="class in ru.nsu.izmailova.pizzeria">Customer</a></dt>
+<dt><span class="memberNameLink"><a href="ru/nsu/izmailova/producer/Customer.html#%3Cinit%3E(ru.nsu.izmailova.queue.DataQueue,int)">Customer(DataQueue, int)</a></span> - Constructor for class ru.nsu.izmailova.producer.<a href="ru/nsu/izmailova/producer/Customer.html" title="class in ru.nsu.izmailova.producer">Customer</a></dt>
 <dd>
 <div class="block">Constructs a Customer with the specified order queue.</div>
 </dd>
@@ -174,57 +158,71 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </a>
 <h2 class="title">D</h2>
 <dl>
-<dt><a href="ru/nsu/izmailova/pizzeria/DataQueue.html" title="class in ru.nsu.izmailova.pizzeria"><span class="typeNameLink">DataQueue</span></a> - Class in <a href="ru/nsu/izmailova/pizzeria/package-summary.html">ru.nsu.izmailova.pizzeria</a></dt>
+<dt><a href="ru/nsu/izmailova/queue/DataQueue.html" title="class in ru.nsu.izmailova.queue"><span class="typeNameLink">DataQueue</span></a> - Class in <a href="ru/nsu/izmailova/queue/package-summary.html">ru.nsu.izmailova.queue</a></dt>
 <dd>
 <div class="block">Queue that allow to transfer pizza position from the beginning to the end.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="ru/nsu/izmailova/queue/DataQueue.html#%3Cinit%3E()">DataQueue()</a></span> - Constructor for class ru.nsu.izmailova.queue.<a href="ru/nsu/izmailova/queue/DataQueue.html" title="class in ru.nsu.izmailova.queue">DataQueue</a></dt>
+<dd>
+<div class="block">DataQueue without an upper limit on its size.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="ru/nsu/izmailova/queue/DataQueue.html#%3Cinit%3E(int)">DataQueue(int)</a></span> - Constructor for class ru.nsu.izmailova.queue.<a href="ru/nsu/izmailova/queue/DataQueue.html" title="class in ru.nsu.izmailova.queue">DataQueue</a></dt>
+<dd>
+<div class="block">DataQueue with the specified maximum size.</div>
 </dd>
 <dt><a href="ru/nsu/izmailova/pizzeria/DeliveryGuy.html" title="class in ru.nsu.izmailova.pizzeria"><span class="typeNameLink">DeliveryGuy</span></a> - Class in <a href="ru/nsu/izmailova/pizzeria/package-summary.html">ru.nsu.izmailova.pizzeria</a></dt>
 <dd>
 <div class="block">Represents a delivery person who delivers pizzas.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="ru/nsu/izmailova/pizzeria/DeliveryGuy.html#%3Cinit%3E(ru.nsu.izmailova.pizzeria.DataQueue,int)">DeliveryGuy(DataQueue, int)</a></span> - Constructor for class ru.nsu.izmailova.pizzeria.<a href="ru/nsu/izmailova/pizzeria/DeliveryGuy.html" title="class in ru.nsu.izmailova.pizzeria">DeliveryGuy</a></dt>
+<dt><span class="memberNameLink"><a href="ru/nsu/izmailova/pizzeria/DeliveryGuy.html#%3Cinit%3E(ru.nsu.izmailova.queue.DataQueue,int,int)">DeliveryGuy(DataQueue, int, int)</a></span> - Constructor for class ru.nsu.izmailova.pizzeria.<a href="ru/nsu/izmailova/pizzeria/DeliveryGuy.html" title="class in ru.nsu.izmailova.pizzeria">DeliveryGuy</a></dt>
 <dd>
 <div class="block">Takes as many pizzas from storage, as his trunk could afford.</div>
 </dd>
+</dl>
+<a id="I:E">
+<!--   -->
+</a>
+<h2 class="title">E</h2>
+<dl>
+<dt><a href="ru/nsu/izmailova/baker/Employee.html" title="class in ru.nsu.izmailova.baker"><span class="typeNameLink">Employee</span></a> - Class in <a href="ru/nsu/izmailova/baker/package-summary.html">ru.nsu.izmailova.baker</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="ru/nsu/izmailova/baker/Employee.html#%3Cinit%3E()">Employee()</a></span> - Constructor for class ru.nsu.izmailova.baker.<a href="ru/nsu/izmailova/baker/Employee.html" title="class in ru.nsu.izmailova.baker">Employee</a></dt>
+<dd>&nbsp;</dd>
 </dl>
 <a id="I:G">
 <!--   -->
 </a>
 <h2 class="title">G</h2>
 <dl>
-<dt><span class="memberNameLink"><a href="ru/nsu/izmailova/pizzeria/Baker.html#generateDelivery()">generateDelivery()</a></span> - Method in class ru.nsu.izmailova.pizzeria.<a href="ru/nsu/izmailova/pizzeria/Baker.html" title="class in ru.nsu.izmailova.pizzeria">Baker</a></dt>
+<dt><span class="memberNameLink"><a href="ru/nsu/izmailova/baker/Baker.html#generateDelivery()">generateDelivery()</a></span> - Method in class ru.nsu.izmailova.baker.<a href="ru/nsu/izmailova/baker/Baker.html" title="class in ru.nsu.izmailova.baker">Baker</a></dt>
 <dd>
 <div class="block">Generates a pizza delivery order.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="ru/nsu/izmailova/pizzeria/Customer.html#generateOrder()">generateOrder()</a></span> - Method in class ru.nsu.izmailova.pizzeria.<a href="ru/nsu/izmailova/pizzeria/Customer.html" title="class in ru.nsu.izmailova.pizzeria">Customer</a></dt>
+<dt><span class="memberNameLink"><a href="ru/nsu/izmailova/producer/Customer.html#generateOrder()">generateOrder()</a></span> - Method in class ru.nsu.izmailova.producer.<a href="ru/nsu/izmailova/producer/Customer.html" title="class in ru.nsu.izmailova.producer">Customer</a></dt>
 <dd>
 <div class="block">Generates an order.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="ru/nsu/izmailova/pizzeria/JsonPizzeria.html#getBakersAmount()">getBakersAmount()</a></span> - Method in class ru.nsu.izmailova.pizzeria.<a href="ru/nsu/izmailova/pizzeria/JsonPizzeria.html" title="class in ru.nsu.izmailova.pizzeria">JsonPizzeria</a></dt>
+<dt><span class="memberNameLink"><a href="ru/nsu/izmailova/json/JsonPizzeria.html#getBakersAmount()">getBakersAmount()</a></span> - Method in class ru.nsu.izmailova.json.<a href="ru/nsu/izmailova/json/JsonPizzeria.html" title="class in ru.nsu.izmailova.json">JsonPizzeria</a></dt>
 <dd>
 <div class="block">Gets the number of bakers in the pizzeria.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="ru/nsu/izmailova/pizzeria/JsonPizzeria.html#getBakersSpeed()">getBakersSpeed()</a></span> - Method in class ru.nsu.izmailova.pizzeria.<a href="ru/nsu/izmailova/pizzeria/JsonPizzeria.html" title="class in ru.nsu.izmailova.pizzeria">JsonPizzeria</a></dt>
+<dt><span class="memberNameLink"><a href="ru/nsu/izmailova/json/JsonPizzeria.html#getBakersSpeed()">getBakersSpeed()</a></span> - Method in class ru.nsu.izmailova.json.<a href="ru/nsu/izmailova/json/JsonPizzeria.html" title="class in ru.nsu.izmailova.json">JsonPizzeria</a></dt>
 <dd>
 <div class="block">Gets the array of cooking times for the bakers.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="ru/nsu/izmailova/pizzeria/JsonBaker.html#getCookingTime()">getCookingTime()</a></span> - Method in class ru.nsu.izmailova.pizzeria.<a href="ru/nsu/izmailova/pizzeria/JsonBaker.html" title="class in ru.nsu.izmailova.pizzeria">JsonBaker</a></dt>
+<dt><span class="memberNameLink"><a href="ru/nsu/izmailova/json/JsonBaker.html#getCookingTime()">getCookingTime()</a></span> - Method in class ru.nsu.izmailova.json.<a href="ru/nsu/izmailova/json/JsonBaker.html" title="class in ru.nsu.izmailova.json">JsonBaker</a></dt>
 <dd>
 <div class="block">Gets the cooking time.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="ru/nsu/izmailova/pizzeria/JsonPizzeria.html#getDeliverersAmount()">getDeliverersAmount()</a></span> - Method in class ru.nsu.izmailova.pizzeria.<a href="ru/nsu/izmailova/pizzeria/JsonPizzeria.html" title="class in ru.nsu.izmailova.pizzeria">JsonPizzeria</a></dt>
+<dt><span class="memberNameLink"><a href="ru/nsu/izmailova/json/JsonPizzeria.html#getDeliverersAmount()">getDeliverersAmount()</a></span> - Method in class ru.nsu.izmailova.json.<a href="ru/nsu/izmailova/json/JsonPizzeria.html" title="class in ru.nsu.izmailova.json">JsonPizzeria</a></dt>
 <dd>
 <div class="block">Gets the number of deliverers in the pizzeria.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="ru/nsu/izmailova/pizzeria/JsonPizzeria.html#getDeliverersSpeed()">getDeliverersSpeed()</a></span> - Method in class ru.nsu.izmailova.pizzeria.<a href="ru/nsu/izmailova/pizzeria/JsonPizzeria.html" title="class in ru.nsu.izmailova.pizzeria">JsonPizzeria</a></dt>
+<dt><span class="memberNameLink"><a href="ru/nsu/izmailova/json/JsonPizzeria.html#getDeliverersSpeed()">getDeliverersSpeed()</a></span> - Method in class ru.nsu.izmailova.json.<a href="ru/nsu/izmailova/json/JsonPizzeria.html" title="class in ru.nsu.izmailova.json">JsonPizzeria</a></dt>
 <dd>
 <div class="block">Gets the array of delivery speeds for the deliverers.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="ru/nsu/izmailova/pizzeria/Baker.html#getFlag()">getFlag()</a></span> - Method in class ru.nsu.izmailova.pizzeria.<a href="ru/nsu/izmailova/pizzeria/Baker.html" title="class in ru.nsu.izmailova.pizzeria">Baker</a></dt>
-<dd>
-<div class="block">Gets the value of the run flag.</div>
-</dd>
-<dt><span class="memberNameLink"><a href="ru/nsu/izmailova/pizzeria/Customer.html#getFlag()">getFlag()</a></span> - Method in class ru.nsu.izmailova.pizzeria.<a href="ru/nsu/izmailova/pizzeria/Customer.html" title="class in ru.nsu.izmailova.pizzeria">Customer</a></dt>
+<dt><span class="memberNameLink"><a href="ru/nsu/izmailova/baker/Baker.html#getFlag()">getFlag()</a></span> - Method in class ru.nsu.izmailova.baker.<a href="ru/nsu/izmailova/baker/Baker.html" title="class in ru.nsu.izmailova.baker">Baker</a></dt>
 <dd>
 <div class="block">Gets the value of the run flag.</div>
 </dd>
@@ -232,45 +230,63 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">This method allows getting flag indicating whether the program is running or not.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="ru/nsu/izmailova/pizzeria/Order.html#getOrderNumber()">getOrderNumber()</a></span> - Method in class ru.nsu.izmailova.pizzeria.<a href="ru/nsu/izmailova/pizzeria/Order.html" title="class in ru.nsu.izmailova.pizzeria">Order</a></dt>
+<dt><span class="memberNameLink"><a href="ru/nsu/izmailova/producer/Customer.html#getFlag()">getFlag()</a></span> - Method in class ru.nsu.izmailova.producer.<a href="ru/nsu/izmailova/producer/Customer.html" title="class in ru.nsu.izmailova.producer">Customer</a></dt>
+<dd>
+<div class="block">Gets the value of the run flag.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="ru/nsu/izmailova/order/Order.html#getOrderNumber()">getOrderNumber()</a></span> - Method in class ru.nsu.izmailova.order.<a href="ru/nsu/izmailova/order/Order.html" title="class in ru.nsu.izmailova.order">Order</a></dt>
 <dd>
 <div class="block">Returns order number.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="ru/nsu/izmailova/pizzeria/JsonPizzeria.html#getOrdersDelay()">getOrdersDelay()</a></span> - Method in class ru.nsu.izmailova.pizzeria.<a href="ru/nsu/izmailova/pizzeria/JsonPizzeria.html" title="class in ru.nsu.izmailova.pizzeria">JsonPizzeria</a></dt>
+<dt><span class="memberNameLink"><a href="ru/nsu/izmailova/json/JsonPizzeria.html#getOrdersDelay()">getOrdersDelay()</a></span> - Method in class ru.nsu.izmailova.json.<a href="ru/nsu/izmailova/json/JsonPizzeria.html" title="class in ru.nsu.izmailova.json">JsonPizzeria</a></dt>
 <dd>
 <div class="block">Gets the maximum delay between two orders.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="ru/nsu/izmailova/pizzeria/Order.html#getOrderStatus()">getOrderStatus()</a></span> - Method in class ru.nsu.izmailova.pizzeria.<a href="ru/nsu/izmailova/pizzeria/Order.html" title="class in ru.nsu.izmailova.pizzeria">Order</a></dt>
+<dt><span class="memberNameLink"><a href="ru/nsu/izmailova/order/Order.html#getOrderStatus()">getOrderStatus()</a></span> - Method in class ru.nsu.izmailova.order.<a href="ru/nsu/izmailova/order/Order.html" title="class in ru.nsu.izmailova.order">Order</a></dt>
 <dd>
 <div class="block">Returns order status.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="ru/nsu/izmailova/pizzeria/JsonDeliverer.html#getSpeed()">getSpeed()</a></span> - Method in class ru.nsu.izmailova.pizzeria.<a href="ru/nsu/izmailova/pizzeria/JsonDeliverer.html" title="class in ru.nsu.izmailova.pizzeria">JsonDeliverer</a></dt>
+<dt><span class="memberNameLink"><a href="ru/nsu/izmailova/json/JsonDeliverer.html#getSpeed()">getSpeed()</a></span> - Method in class ru.nsu.izmailova.json.<a href="ru/nsu/izmailova/json/JsonDeliverer.html" title="class in ru.nsu.izmailova.json">JsonDeliverer</a></dt>
 <dd>
 <div class="block">Gets delivery time.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="ru/nsu/izmailova/pizzeria/JsonPizzeria.html#getStorageSize()">getStorageSize()</a></span> - Method in class ru.nsu.izmailova.pizzeria.<a href="ru/nsu/izmailova/pizzeria/JsonPizzeria.html" title="class in ru.nsu.izmailova.pizzeria">JsonPizzeria</a></dt>
+<dt><span class="memberNameLink"><a href="ru/nsu/izmailova/json/JsonPizzeria.html#getStorageSize()">getStorageSize()</a></span> - Method in class ru.nsu.izmailova.json.<a href="ru/nsu/izmailova/json/JsonPizzeria.html" title="class in ru.nsu.izmailova.json">JsonPizzeria</a></dt>
 <dd>
 <div class="block">Gets the size of the storage from which deliverers take their orders.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="ru/nsu/izmailova/pizzeria/JsonDeliverer.html#getTrunkSize()">getTrunkSize()</a></span> - Method in class ru.nsu.izmailova.pizzeria.<a href="ru/nsu/izmailova/pizzeria/JsonDeliverer.html" title="class in ru.nsu.izmailova.pizzeria">JsonDeliverer</a></dt>
+<dt><span class="memberNameLink"><a href="ru/nsu/izmailova/json/JsonDeliverer.html#getTrunkSize()">getTrunkSize()</a></span> - Method in class ru.nsu.izmailova.json.<a href="ru/nsu/izmailova/json/JsonDeliverer.html" title="class in ru.nsu.izmailova.json">JsonDeliverer</a></dt>
 <dd>
 <div class="block">Gets trunk size.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="ru/nsu/izmailova/pizzeria/JsonPizzeria.html#getTrunkSize()">getTrunkSize()</a></span> - Method in class ru.nsu.izmailova.pizzeria.<a href="ru/nsu/izmailova/pizzeria/JsonPizzeria.html" title="class in ru.nsu.izmailova.pizzeria">JsonPizzeria</a></dt>
+<dt><span class="memberNameLink"><a href="ru/nsu/izmailova/json/JsonPizzeria.html#getTrunkSize()">getTrunkSize()</a></span> - Method in class ru.nsu.izmailova.json.<a href="ru/nsu/izmailova/json/JsonPizzeria.html" title="class in ru.nsu.izmailova.json">JsonPizzeria</a></dt>
 <dd>
 <div class="block">Gets the array of trunk sizes for the deliverers.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="ru/nsu/izmailova/producer/Customer.html#getUnprocessedOrders()">getUnprocessedOrders()</a></span> - Method in class ru.nsu.izmailova.producer.<a href="ru/nsu/izmailova/producer/Customer.html" title="class in ru.nsu.izmailova.producer">Customer</a></dt>
+<dd>&nbsp;</dd>
 </dl>
 <a id="I:I">
 <!--   -->
 </a>
 <h2 class="title">I</h2>
 <dl>
-<dt><span class="memberNameLink"><a href="ru/nsu/izmailova/pizzeria/DataQueue.html#isEmpty()">isEmpty()</a></span> - Method in class ru.nsu.izmailova.pizzeria.<a href="ru/nsu/izmailova/pizzeria/DataQueue.html" title="class in ru.nsu.izmailova.pizzeria">DataQueue</a></dt>
+<dt><a href="ru/nsu/izmailova/consumer/IConsumer.html" title="interface in ru.nsu.izmailova.consumer"><span class="typeNameLink">IConsumer</span></a> - Interface in <a href="ru/nsu/izmailova/consumer/package-summary.html">ru.nsu.izmailova.consumer</a></dt>
+<dd>
+<div class="block">Interface for making subjects that will consume elements.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="ru/nsu/izmailova/baker/Baker.html#interrupt()">interrupt()</a></span> - Method in class ru.nsu.izmailova.baker.<a href="ru/nsu/izmailova/baker/Baker.html" title="class in ru.nsu.izmailova.baker">Baker</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="ru/nsu/izmailova/pizzeria/DeliveryGuy.html#interrupt()">interrupt()</a></span> - Method in class ru.nsu.izmailova.pizzeria.<a href="ru/nsu/izmailova/pizzeria/DeliveryGuy.html" title="class in ru.nsu.izmailova.pizzeria">DeliveryGuy</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="ru/nsu/izmailova/producer/IProducer.html" title="interface in ru.nsu.izmailova.producer"><span class="typeNameLink">IProducer</span></a> - Interface in <a href="ru/nsu/izmailova/producer/package-summary.html">ru.nsu.izmailova.producer</a></dt>
+<dd>
+<div class="block">Interface for making subjects that will produce something.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="ru/nsu/izmailova/queue/DataQueue.html#isEmpty()">isEmpty()</a></span> - Method in class ru.nsu.izmailova.queue.<a href="ru/nsu/izmailova/queue/DataQueue.html" title="class in ru.nsu.izmailova.queue">DataQueue</a></dt>
 <dd>
 <div class="block">Checking whether the queue is empty.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="ru/nsu/izmailova/pizzeria/DataQueue.html#isFull()">isFull()</a></span> - Method in class ru.nsu.izmailova.pizzeria.<a href="ru/nsu/izmailova/pizzeria/DataQueue.html" title="class in ru.nsu.izmailova.pizzeria">DataQueue</a></dt>
+<dt><span class="memberNameLink"><a href="ru/nsu/izmailova/queue/DataQueue.html#isFull()">isFull()</a></span> - Method in class ru.nsu.izmailova.queue.<a href="ru/nsu/izmailova/queue/DataQueue.html" title="class in ru.nsu.izmailova.queue">DataQueue</a></dt>
 <dd>
 <div class="block">Checking whether the queue is full.</div>
 </dd>
@@ -280,55 +296,65 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </a>
 <h2 class="title">J</h2>
 <dl>
-<dt><a href="ru/nsu/izmailova/pizzeria/JsonBaker.html" title="class in ru.nsu.izmailova.pizzeria"><span class="typeNameLink">JsonBaker</span></a> - Class in <a href="ru/nsu/izmailova/pizzeria/package-summary.html">ru.nsu.izmailova.pizzeria</a></dt>
+<dt><a href="ru/nsu/izmailova/json/JsonBaker.html" title="class in ru.nsu.izmailova.json"><span class="typeNameLink">JsonBaker</span></a> - Class in <a href="ru/nsu/izmailova/json/package-summary.html">ru.nsu.izmailova.json</a></dt>
 <dd>
 <div class="block">Structure for taking baker's data from json.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="ru/nsu/izmailova/pizzeria/JsonBaker.html#%3Cinit%3E(int)">JsonBaker(int)</a></span> - Constructor for class ru.nsu.izmailova.pizzeria.<a href="ru/nsu/izmailova/pizzeria/JsonBaker.html" title="class in ru.nsu.izmailova.pizzeria">JsonBaker</a></dt>
+<dt><span class="memberNameLink"><a href="ru/nsu/izmailova/json/JsonBaker.html#%3Cinit%3E(int)">JsonBaker(int)</a></span> - Constructor for class ru.nsu.izmailova.json.<a href="ru/nsu/izmailova/json/JsonBaker.html" title="class in ru.nsu.izmailova.json">JsonBaker</a></dt>
 <dd>
 <div class="block">Constructor of the JsonBaker class.</div>
 </dd>
-<dt><a href="ru/nsu/izmailova/pizzeria/JsonDeliverer.html" title="class in ru.nsu.izmailova.pizzeria"><span class="typeNameLink">JsonDeliverer</span></a> - Class in <a href="ru/nsu/izmailova/pizzeria/package-summary.html">ru.nsu.izmailova.pizzeria</a></dt>
+<dt><a href="ru/nsu/izmailova/json/JsonDeliverer.html" title="class in ru.nsu.izmailova.json"><span class="typeNameLink">JsonDeliverer</span></a> - Class in <a href="ru/nsu/izmailova/json/package-summary.html">ru.nsu.izmailova.json</a></dt>
 <dd>
 <div class="block">Represents a JSON structure for storing data about a deliverer.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="ru/nsu/izmailova/pizzeria/JsonDeliverer.html#%3Cinit%3E(int,int)">JsonDeliverer(int, int)</a></span> - Constructor for class ru.nsu.izmailova.pizzeria.<a href="ru/nsu/izmailova/pizzeria/JsonDeliverer.html" title="class in ru.nsu.izmailova.pizzeria">JsonDeliverer</a></dt>
+<dt><span class="memberNameLink"><a href="ru/nsu/izmailova/json/JsonDeliverer.html#%3Cinit%3E(int,int)">JsonDeliverer(int, int)</a></span> - Constructor for class ru.nsu.izmailova.json.<a href="ru/nsu/izmailova/json/JsonDeliverer.html" title="class in ru.nsu.izmailova.json">JsonDeliverer</a></dt>
 <dd>
 <div class="block">Constructs a deliverer with the specified delivery time and trunk size.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="ru/nsu/izmailova/pizzeria/JsonHandler.html#jsonHandle()">jsonHandle()</a></span> - Method in class ru.nsu.izmailova.pizzeria.<a href="ru/nsu/izmailova/pizzeria/JsonHandler.html" title="class in ru.nsu.izmailova.pizzeria">JsonHandler</a></dt>
+<dt><span class="memberNameLink"><a href="ru/nsu/izmailova/json/JsonHandler.html#jsonHandle()">jsonHandle()</a></span> - Method in class ru.nsu.izmailova.json.<a href="ru/nsu/izmailova/json/JsonHandler.html" title="class in ru.nsu.izmailova.json">JsonHandler</a></dt>
 <dd>
 <div class="block">Find "PizzeriaDara.json" file and takes data from it.</div>
 </dd>
-<dt><a href="ru/nsu/izmailova/pizzeria/JsonHandler.html" title="class in ru.nsu.izmailova.pizzeria"><span class="typeNameLink">JsonHandler</span></a> - Class in <a href="ru/nsu/izmailova/pizzeria/package-summary.html">ru.nsu.izmailova.pizzeria</a></dt>
+<dt><a href="ru/nsu/izmailova/json/JsonHandler.html" title="class in ru.nsu.izmailova.json"><span class="typeNameLink">JsonHandler</span></a> - Class in <a href="ru/nsu/izmailova/json/package-summary.html">ru.nsu.izmailova.json</a></dt>
 <dd>
 <div class="block">Class for working with json.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="ru/nsu/izmailova/pizzeria/JsonHandler.html#%3Cinit%3E()">JsonHandler()</a></span> - Constructor for class ru.nsu.izmailova.pizzeria.<a href="ru/nsu/izmailova/pizzeria/JsonHandler.html" title="class in ru.nsu.izmailova.pizzeria">JsonHandler</a></dt>
+<dt><span class="memberNameLink"><a href="ru/nsu/izmailova/json/JsonHandler.html#%3Cinit%3E()">JsonHandler()</a></span> - Constructor for class ru.nsu.izmailova.json.<a href="ru/nsu/izmailova/json/JsonHandler.html" title="class in ru.nsu.izmailova.json">JsonHandler</a></dt>
 <dd>&nbsp;</dd>
-<dt><a href="ru/nsu/izmailova/pizzeria/JsonPizzeria.html" title="class in ru.nsu.izmailova.pizzeria"><span class="typeNameLink">JsonPizzeria</span></a> - Class in <a href="ru/nsu/izmailova/pizzeria/package-summary.html">ru.nsu.izmailova.pizzeria</a></dt>
+<dt><a href="ru/nsu/izmailova/json/JsonPizzeria.html" title="class in ru.nsu.izmailova.json"><span class="typeNameLink">JsonPizzeria</span></a> - Class in <a href="ru/nsu/izmailova/json/package-summary.html">ru.nsu.izmailova.json</a></dt>
 <dd>
 <div class="block">Represents a JSON structure for storing data about a pizzeria.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="ru/nsu/izmailova/pizzeria/JsonPizzeria.html#%3Cinit%3E(int,int,int,int,ru.nsu.izmailova.pizzeria.JsonBaker%5B%5D,ru.nsu.izmailova.pizzeria.JsonDeliverer%5B%5D)">JsonPizzeria(int, int, int, int, JsonBaker[], JsonDeliverer[])</a></span> - Constructor for class ru.nsu.izmailova.pizzeria.<a href="ru/nsu/izmailova/pizzeria/JsonPizzeria.html" title="class in ru.nsu.izmailova.pizzeria">JsonPizzeria</a></dt>
+<dt><span class="memberNameLink"><a href="ru/nsu/izmailova/json/JsonPizzeria.html#%3Cinit%3E(int,int,int,int,ru.nsu.izmailova.json.JsonBaker%5B%5D,ru.nsu.izmailova.json.JsonDeliverer%5B%5D)">JsonPizzeria(int, int, int, int, JsonBaker[], JsonDeliverer[])</a></span> - Constructor for class ru.nsu.izmailova.json.<a href="ru/nsu/izmailova/json/JsonPizzeria.html" title="class in ru.nsu.izmailova.json">JsonPizzeria</a></dt>
 <dd>
 <div class="block">Constructs a JsonPizzeria with the specified parameters.</div>
 </dd>
+</dl>
+<a id="I:L">
+<!--   -->
+</a>
+<h2 class="title">L</h2>
+<dl>
+<dt><span class="memberNameLink"><a href="ru/nsu/izmailova/order/OrderSerializer.html#loadOrders()">loadOrders()</a></span> - Method in class ru.nsu.izmailova.order.<a href="ru/nsu/izmailova/order/OrderSerializer.html" title="class in ru.nsu.izmailova.order">OrderSerializer</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="ru/nsu/izmailova/pizzeria/Pizzeria.html#loadUnprocessedOrders()">loadUnprocessedOrders()</a></span> - Method in class ru.nsu.izmailova.pizzeria.<a href="ru/nsu/izmailova/pizzeria/Pizzeria.html" title="class in ru.nsu.izmailova.pizzeria">Pizzeria</a></dt>
+<dd>&nbsp;</dd>
 </dl>
 <a id="I:M">
 <!--   -->
 </a>
 <h2 class="title">M</h2>
 <dl>
-<dt><span class="memberNameLink"><a href="ru/nsu/izmailova/pizzeria/Main.html#main(java.lang.String%5B%5D)">main(String[])</a></span> - Static method in class ru.nsu.izmailova.pizzeria.<a href="ru/nsu/izmailova/pizzeria/Main.html" title="class in ru.nsu.izmailova.pizzeria">Main</a></dt>
+<dt><span class="memberNameLink"><a href="ru/nsu/izmailova/Main.html#main(java.lang.String%5B%5D)">main(String[])</a></span> - Static method in class ru.nsu.izmailova.<a href="ru/nsu/izmailova/Main.html" title="class in ru.nsu.izmailova">Main</a></dt>
 <dd>
 <div class="block">The main method to start the pizzeria simulation.</div>
 </dd>
-<dt><a href="ru/nsu/izmailova/pizzeria/Main.html" title="class in ru.nsu.izmailova.pizzeria"><span class="typeNameLink">Main</span></a> - Class in <a href="ru/nsu/izmailova/pizzeria/package-summary.html">ru.nsu.izmailova.pizzeria</a></dt>
+<dt><a href="ru/nsu/izmailova/Main.html" title="class in ru.nsu.izmailova"><span class="typeNameLink">Main</span></a> - Class in <a href="ru/nsu/izmailova/package-summary.html">ru.nsu.izmailova</a></dt>
 <dd>
 <div class="block">The main class to start the pizzeria simulation.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="ru/nsu/izmailova/pizzeria/Main.html#%3Cinit%3E()">Main()</a></span> - Constructor for class ru.nsu.izmailova.pizzeria.<a href="ru/nsu/izmailova/pizzeria/Main.html" title="class in ru.nsu.izmailova.pizzeria">Main</a></dt>
+<dt><span class="memberNameLink"><a href="ru/nsu/izmailova/Main.html#%3Cinit%3E()">Main()</a></span> - Constructor for class ru.nsu.izmailova.<a href="ru/nsu/izmailova/Main.html" title="class in ru.nsu.izmailova">Main</a></dt>
 <dd>&nbsp;</dd>
 </dl>
 <a id="I:N">
@@ -336,11 +362,11 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </a>
 <h2 class="title">N</h2>
 <dl>
-<dt><span class="memberNameLink"><a href="ru/nsu/izmailova/pizzeria/DataQueue.html#notifyAllForEmpty()">notifyAllForEmpty()</a></span> - Method in class ru.nsu.izmailova.pizzeria.<a href="ru/nsu/izmailova/pizzeria/DataQueue.html" title="class in ru.nsu.izmailova.pizzeria">DataQueue</a></dt>
+<dt><span class="memberNameLink"><a href="ru/nsu/izmailova/queue/DataQueue.html#notifyAllForEmpty()">notifyAllForEmpty()</a></span> - Method in class ru.nsu.izmailova.queue.<a href="ru/nsu/izmailova/queue/DataQueue.html" title="class in ru.nsu.izmailova.queue">DataQueue</a></dt>
 <dd>
 <div class="block">Notifies all the thread that queue is empty.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="ru/nsu/izmailova/pizzeria/DataQueue.html#notifyAllForFull()">notifyAllForFull()</a></span> - Method in class ru.nsu.izmailova.pizzeria.<a href="ru/nsu/izmailova/pizzeria/DataQueue.html" title="class in ru.nsu.izmailova.pizzeria">DataQueue</a></dt>
+<dt><span class="memberNameLink"><a href="ru/nsu/izmailova/queue/DataQueue.html#notifyAllForFull()">notifyAllForFull()</a></span> - Method in class ru.nsu.izmailova.queue.<a href="ru/nsu/izmailova/queue/DataQueue.html" title="class in ru.nsu.izmailova.queue">DataQueue</a></dt>
 <dd>
 <div class="block">Notifies all the threads that queue is full.</div>
 </dd>
@@ -350,13 +376,17 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </a>
 <h2 class="title">O</h2>
 <dl>
-<dt><a href="ru/nsu/izmailova/pizzeria/Order.html" title="class in ru.nsu.izmailova.pizzeria"><span class="typeNameLink">Order</span></a> - Class in <a href="ru/nsu/izmailova/pizzeria/package-summary.html">ru.nsu.izmailova.pizzeria</a></dt>
+<dt><a href="ru/nsu/izmailova/order/Order.html" title="class in ru.nsu.izmailova.order"><span class="typeNameLink">Order</span></a> - Class in <a href="ru/nsu/izmailova/order/package-summary.html">ru.nsu.izmailova.order</a></dt>
 <dd>
 <div class="block">Represents an order in the pizzeria.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="ru/nsu/izmailova/pizzeria/Order.html#%3Cinit%3E()">Order()</a></span> - Constructor for class ru.nsu.izmailova.pizzeria.<a href="ru/nsu/izmailova/pizzeria/Order.html" title="class in ru.nsu.izmailova.pizzeria">Order</a></dt>
+<dt><span class="memberNameLink"><a href="ru/nsu/izmailova/order/Order.html#%3Cinit%3E()">Order()</a></span> - Constructor for class ru.nsu.izmailova.order.<a href="ru/nsu/izmailova/order/Order.html" title="class in ru.nsu.izmailova.order">Order</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="ru/nsu/izmailova/pizzeria/Customer.html#orderQueue">orderQueue</a></span> - Variable in class ru.nsu.izmailova.pizzeria.<a href="ru/nsu/izmailova/pizzeria/Customer.html" title="class in ru.nsu.izmailova.pizzeria">Customer</a></dt>
+<dt><span class="memberNameLink"><a href="ru/nsu/izmailova/producer/Customer.html#orderQueue">orderQueue</a></span> - Variable in class ru.nsu.izmailova.producer.<a href="ru/nsu/izmailova/producer/Customer.html" title="class in ru.nsu.izmailova.producer">Customer</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="ru/nsu/izmailova/order/OrderSerializer.html" title="class in ru.nsu.izmailova.order"><span class="typeNameLink">OrderSerializer</span></a> - Class in <a href="ru/nsu/izmailova/order/package-summary.html">ru.nsu.izmailova.order</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="ru/nsu/izmailova/order/OrderSerializer.html#%3Cinit%3E(java.lang.String)">OrderSerializer(String)</a></span> - Constructor for class ru.nsu.izmailova.order.<a href="ru/nsu/izmailova/order/OrderSerializer.html" title="class in ru.nsu.izmailova.order">OrderSerializer</a></dt>
 <dd>&nbsp;</dd>
 </dl>
 <a id="I:P">
@@ -368,7 +398,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Represents a pizzeria that produces pizzas.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="ru/nsu/izmailova/pizzeria/Pizzeria.html#%3Cinit%3E(int,int%5B%5D,int,int%5B%5D,int,int%5B%5D,int)">Pizzeria(int, int[], int, int[], int, int[], int)</a></span> - Constructor for class ru.nsu.izmailova.pizzeria.<a href="ru/nsu/izmailova/pizzeria/Pizzeria.html" title="class in ru.nsu.izmailova.pizzeria">Pizzeria</a></dt>
+<dt><span class="memberNameLink"><a href="ru/nsu/izmailova/pizzeria/Pizzeria.html#%3Cinit%3E(int,int%5B%5D,int,int%5B%5D,int,int%5B%5D,int,java.lang.String)">Pizzeria(int, int[], int, int[], int, int[], int, String)</a></span> - Constructor for class ru.nsu.izmailova.pizzeria.<a href="ru/nsu/izmailova/pizzeria/Pizzeria.html" title="class in ru.nsu.izmailova.pizzeria">Pizzeria</a></dt>
 <dd>
 <div class="block">Constructs a new pizzeria with the specified parameters.</div>
 </dd>
@@ -380,47 +410,61 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Stops the pizzeria.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="ru/nsu/izmailova/pizzeria/Baker.html#producer()">producer()</a></span> - Method in class ru.nsu.izmailova.pizzeria.<a href="ru/nsu/izmailova/pizzeria/Baker.html" title="class in ru.nsu.izmailova.pizzeria">Baker</a></dt>
+<dt><span class="memberNameLink"><a href="ru/nsu/izmailova/baker/Baker.html#producer()">producer()</a></span> - Method in class ru.nsu.izmailova.baker.<a href="ru/nsu/izmailova/baker/Baker.html" title="class in ru.nsu.izmailova.baker">Baker</a></dt>
 <dd>
 <div class="block">Produces pizzas and put them in the delivery queue.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="ru/nsu/izmailova/pizzeria/Customer.html#producer()">producer()</a></span> - Method in class ru.nsu.izmailova.pizzeria.<a href="ru/nsu/izmailova/pizzeria/Customer.html" title="class in ru.nsu.izmailova.pizzeria">Customer</a></dt>
+<dt><span class="memberNameLink"><a href="ru/nsu/izmailova/producer/Customer.html#producer()">producer()</a></span> - Method in class ru.nsu.izmailova.producer.<a href="ru/nsu/izmailova/producer/Customer.html" title="class in ru.nsu.izmailova.producer">Customer</a></dt>
 <dd>
 <div class="block">Produces orders and places them in the order queue.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="ru/nsu/izmailova/pizzeria/Producer.html#producer()">producer()</a></span> - Method in interface ru.nsu.izmailova.pizzeria.<a href="ru/nsu/izmailova/pizzeria/Producer.html" title="interface in ru.nsu.izmailova.pizzeria">Producer</a></dt>
+<dt><span class="memberNameLink"><a href="ru/nsu/izmailova/producer/IProducer.html#producer()">producer()</a></span> - Method in interface ru.nsu.izmailova.producer.<a href="ru/nsu/izmailova/producer/IProducer.html" title="interface in ru.nsu.izmailova.producer">IProducer</a></dt>
 <dd>&nbsp;</dd>
-<dt><a href="ru/nsu/izmailova/pizzeria/Producer.html" title="interface in ru.nsu.izmailova.pizzeria"><span class="typeNameLink">Producer</span></a> - Interface in <a href="ru/nsu/izmailova/pizzeria/package-summary.html">ru.nsu.izmailova.pizzeria</a></dt>
-<dd>
-<div class="block">Interface for making subjects that will produce something.</div>
-</dd>
 </dl>
 <a id="I:R">
 <!--   -->
 </a>
 <h2 class="title">R</h2>
 <dl>
-<dt><span class="memberNameLink"><a href="ru/nsu/izmailova/pizzeria/DataQueue.html#remove()">remove()</a></span> - Method in class ru.nsu.izmailova.pizzeria.<a href="ru/nsu/izmailova/pizzeria/DataQueue.html" title="class in ru.nsu.izmailova.pizzeria">DataQueue</a></dt>
+<dt><span class="memberNameLink"><a href="ru/nsu/izmailova/queue/DataQueue.html#remove()">remove()</a></span> - Method in class ru.nsu.izmailova.queue.<a href="ru/nsu/izmailova/queue/DataQueue.html" title="class in ru.nsu.izmailova.queue">DataQueue</a></dt>
 <dd>
 <div class="block">Remove order from the queue.</div>
 </dd>
+<dt><a href="ru/nsu/izmailova/package-summary.html">ru.nsu.izmailova</a> - package ru.nsu.izmailova</dt>
+<dd>&nbsp;</dd>
+<dt><a href="ru/nsu/izmailova/baker/package-summary.html">ru.nsu.izmailova.baker</a> - package ru.nsu.izmailova.baker</dt>
+<dd>&nbsp;</dd>
+<dt><a href="ru/nsu/izmailova/consumer/package-summary.html">ru.nsu.izmailova.consumer</a> - package ru.nsu.izmailova.consumer</dt>
+<dd>&nbsp;</dd>
+<dt><a href="ru/nsu/izmailova/json/package-summary.html">ru.nsu.izmailova.json</a> - package ru.nsu.izmailova.json</dt>
+<dd>&nbsp;</dd>
+<dt><a href="ru/nsu/izmailova/order/package-summary.html">ru.nsu.izmailova.order</a> - package ru.nsu.izmailova.order</dt>
+<dd>&nbsp;</dd>
 <dt><a href="ru/nsu/izmailova/pizzeria/package-summary.html">ru.nsu.izmailova.pizzeria</a> - package ru.nsu.izmailova.pizzeria</dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="ru/nsu/izmailova/pizzeria/Baker.html#run()">run()</a></span> - Method in class ru.nsu.izmailova.pizzeria.<a href="ru/nsu/izmailova/pizzeria/Baker.html" title="class in ru.nsu.izmailova.pizzeria">Baker</a></dt>
+<dt><a href="ru/nsu/izmailova/producer/package-summary.html">ru.nsu.izmailova.producer</a> - package ru.nsu.izmailova.producer</dt>
+<dd>&nbsp;</dd>
+<dt><a href="ru/nsu/izmailova/queue/package-summary.html">ru.nsu.izmailova.queue</a> - package ru.nsu.izmailova.queue</dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="ru/nsu/izmailova/baker/Baker.html#run()">run()</a></span> - Method in class ru.nsu.izmailova.baker.<a href="ru/nsu/izmailova/baker/Baker.html" title="class in ru.nsu.izmailova.baker">Baker</a></dt>
 <dd>
 <div class="block">Starts the consuming and the producing processes.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="ru/nsu/izmailova/pizzeria/Consumer.html#run()">run()</a></span> - Method in interface ru.nsu.izmailova.pizzeria.<a href="ru/nsu/izmailova/pizzeria/Consumer.html" title="interface in ru.nsu.izmailova.pizzeria">Consumer</a></dt>
+<dt><span class="memberNameLink"><a href="ru/nsu/izmailova/baker/Employee.html#run()">run()</a></span> - Method in class ru.nsu.izmailova.baker.<a href="ru/nsu/izmailova/baker/Employee.html" title="class in ru.nsu.izmailova.baker">Employee</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="ru/nsu/izmailova/pizzeria/Customer.html#run()">run()</a></span> - Method in class ru.nsu.izmailova.pizzeria.<a href="ru/nsu/izmailova/pizzeria/Customer.html" title="class in ru.nsu.izmailova.pizzeria">Customer</a></dt>
-<dd>
-<div class="block">Starts the producing process.</div>
-</dd>
+<dt><span class="memberNameLink"><a href="ru/nsu/izmailova/consumer/IConsumer.html#run()">run()</a></span> - Method in interface ru.nsu.izmailova.consumer.<a href="ru/nsu/izmailova/consumer/IConsumer.html" title="interface in ru.nsu.izmailova.consumer">IConsumer</a></dt>
+<dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="ru/nsu/izmailova/pizzeria/DeliveryGuy.html#run()">run()</a></span> - Method in class ru.nsu.izmailova.pizzeria.<a href="ru/nsu/izmailova/pizzeria/DeliveryGuy.html" title="class in ru.nsu.izmailova.pizzeria">DeliveryGuy</a></dt>
 <dd>
 <div class="block">Starts consuming orders from the storage.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="ru/nsu/izmailova/pizzeria/Producer.html#run()">run()</a></span> - Method in interface ru.nsu.izmailova.pizzeria.<a href="ru/nsu/izmailova/pizzeria/Producer.html" title="interface in ru.nsu.izmailova.pizzeria">Producer</a></dt>
+<dt><span class="memberNameLink"><a href="ru/nsu/izmailova/producer/Customer.html#run()">run()</a></span> - Method in class ru.nsu.izmailova.producer.<a href="ru/nsu/izmailova/producer/Customer.html" title="class in ru.nsu.izmailova.producer">Customer</a></dt>
+<dd>
+<div class="block">Starts the producing process.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="ru/nsu/izmailova/producer/IProducer.html#run()">run()</a></span> - Method in interface ru.nsu.izmailova.producer.<a href="ru/nsu/izmailova/producer/IProducer.html" title="interface in ru.nsu.izmailova.producer">IProducer</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="ru/nsu/izmailova/baker/Employee.html#runFlag">runFlag</a></span> - Variable in class ru.nsu.izmailova.baker.<a href="ru/nsu/izmailova/baker/Employee.html" title="class in ru.nsu.izmailova.baker">Employee</a></dt>
 <dd>&nbsp;</dd>
 </dl>
 <a id="I:S">
@@ -428,33 +472,39 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </a>
 <h2 class="title">S</h2>
 <dl>
-<dt><span class="memberNameLink"><a href="ru/nsu/izmailova/pizzeria/Order.html#setOrderNumber(int)">setOrderNumber(int)</a></span> - Method in class ru.nsu.izmailova.pizzeria.<a href="ru/nsu/izmailova/pizzeria/Order.html" title="class in ru.nsu.izmailova.pizzeria">Order</a></dt>
+<dt><span class="memberNameLink"><a href="ru/nsu/izmailova/order/OrderSerializer.html#saveOrders(java.util.List)">saveOrders(List&lt;Order&gt;)</a></span> - Method in class ru.nsu.izmailova.order.<a href="ru/nsu/izmailova/order/OrderSerializer.html" title="class in ru.nsu.izmailova.order">OrderSerializer</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="ru/nsu/izmailova/order/Order.html#setOrderNumber(int)">setOrderNumber(int)</a></span> - Method in class ru.nsu.izmailova.order.<a href="ru/nsu/izmailova/order/Order.html" title="class in ru.nsu.izmailova.order">Order</a></dt>
 <dd>
 <div class="block">Sets order number.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="ru/nsu/izmailova/pizzeria/Order.html#setOrderStatus(java.lang.String)">setOrderStatus(String)</a></span> - Method in class ru.nsu.izmailova.pizzeria.<a href="ru/nsu/izmailova/pizzeria/Order.html" title="class in ru.nsu.izmailova.pizzeria">Order</a></dt>
+<dt><span class="memberNameLink"><a href="ru/nsu/izmailova/order/Order.html#setOrderStatus(java.lang.String)">setOrderStatus(String)</a></span> - Method in class ru.nsu.izmailova.order.<a href="ru/nsu/izmailova/order/Order.html" title="class in ru.nsu.izmailova.order">Order</a></dt>
 <dd>
 <div class="block">Sets order status.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="ru/nsu/izmailova/pizzeria/Baker.html#stopConsume()">stopConsume()</a></span> - Method in class ru.nsu.izmailova.pizzeria.<a href="ru/nsu/izmailova/pizzeria/Baker.html" title="class in ru.nsu.izmailova.pizzeria">Baker</a></dt>
+<dt><span class="memberNameLink"><a href="ru/nsu/izmailova/baker/Baker.html#stopConsume()">stopConsume()</a></span> - Method in class ru.nsu.izmailova.baker.<a href="ru/nsu/izmailova/baker/Baker.html" title="class in ru.nsu.izmailova.baker">Baker</a></dt>
 <dd>
 <div class="block">Stops consuming orders from the queue.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="ru/nsu/izmailova/pizzeria/Consumer.html#stopConsume()">stopConsume()</a></span> - Method in interface ru.nsu.izmailova.pizzeria.<a href="ru/nsu/izmailova/pizzeria/Consumer.html" title="interface in ru.nsu.izmailova.pizzeria">Consumer</a></dt>
+<dt><span class="memberNameLink"><a href="ru/nsu/izmailova/baker/Employee.html#stopConsume()">stopConsume()</a></span> - Method in class ru.nsu.izmailova.baker.<a href="ru/nsu/izmailova/baker/Employee.html" title="class in ru.nsu.izmailova.baker">Employee</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="ru/nsu/izmailova/consumer/IConsumer.html#stopConsume()">stopConsume()</a></span> - Method in interface ru.nsu.izmailova.consumer.<a href="ru/nsu/izmailova/consumer/IConsumer.html" title="interface in ru.nsu.izmailova.consumer">IConsumer</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="ru/nsu/izmailova/pizzeria/DeliveryGuy.html#stopConsume()">stopConsume()</a></span> - Method in class ru.nsu.izmailova.pizzeria.<a href="ru/nsu/izmailova/pizzeria/DeliveryGuy.html" title="class in ru.nsu.izmailova.pizzeria">DeliveryGuy</a></dt>
 <dd>
 <div class="block">Stops delivering the pizzas.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="ru/nsu/izmailova/pizzeria/Baker.html#stopProduce()">stopProduce()</a></span> - Method in class ru.nsu.izmailova.pizzeria.<a href="ru/nsu/izmailova/pizzeria/Baker.html" title="class in ru.nsu.izmailova.pizzeria">Baker</a></dt>
+<dt><span class="memberNameLink"><a href="ru/nsu/izmailova/baker/Baker.html#stopProduce()">stopProduce()</a></span> - Method in class ru.nsu.izmailova.baker.<a href="ru/nsu/izmailova/baker/Baker.html" title="class in ru.nsu.izmailova.baker">Baker</a></dt>
 <dd>
 <div class="block">Stops producing new pizzas.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="ru/nsu/izmailova/pizzeria/Customer.html#stopProduce()">stopProduce()</a></span> - Method in class ru.nsu.izmailova.pizzeria.<a href="ru/nsu/izmailova/pizzeria/Customer.html" title="class in ru.nsu.izmailova.pizzeria">Customer</a></dt>
+<dt><span class="memberNameLink"><a href="ru/nsu/izmailova/baker/Employee.html#stopProduce()">stopProduce()</a></span> - Method in class ru.nsu.izmailova.baker.<a href="ru/nsu/izmailova/baker/Employee.html" title="class in ru.nsu.izmailova.baker">Employee</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="ru/nsu/izmailova/producer/Customer.html#stopProduce()">stopProduce()</a></span> - Method in class ru.nsu.izmailova.producer.<a href="ru/nsu/izmailova/producer/Customer.html" title="class in ru.nsu.izmailova.producer">Customer</a></dt>
 <dd>
 <div class="block">Stops producing new orders.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="ru/nsu/izmailova/pizzeria/Producer.html#stopProduce()">stopProduce()</a></span> - Method in interface ru.nsu.izmailova.pizzeria.<a href="ru/nsu/izmailova/pizzeria/Producer.html" title="interface in ru.nsu.izmailova.pizzeria">Producer</a></dt>
+<dt><span class="memberNameLink"><a href="ru/nsu/izmailova/producer/IProducer.html#stopProduce()">stopProduce()</a></span> - Method in interface ru.nsu.izmailova.producer.<a href="ru/nsu/izmailova/producer/IProducer.html" title="interface in ru.nsu.izmailova.producer">IProducer</a></dt>
 <dd>&nbsp;</dd>
 </dl>
 <a id="I:W">
@@ -462,16 +512,16 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </a>
 <h2 class="title">W</h2>
 <dl>
-<dt><span class="memberNameLink"><a href="ru/nsu/izmailova/pizzeria/DataQueue.html#waitOnEmpty()">waitOnEmpty()</a></span> - Method in class ru.nsu.izmailova.pizzeria.<a href="ru/nsu/izmailova/pizzeria/DataQueue.html" title="class in ru.nsu.izmailova.pizzeria">DataQueue</a></dt>
+<dt><span class="memberNameLink"><a href="ru/nsu/izmailova/queue/DataQueue.html#waitOnEmpty()">waitOnEmpty()</a></span> - Method in class ru.nsu.izmailova.queue.<a href="ru/nsu/izmailova/queue/DataQueue.html" title="class in ru.nsu.izmailova.queue">DataQueue</a></dt>
 <dd>
 <div class="block">Waits until queue will be available to interact.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="ru/nsu/izmailova/pizzeria/DataQueue.html#waitOnFull()">waitOnFull()</a></span> - Method in class ru.nsu.izmailova.pizzeria.<a href="ru/nsu/izmailova/pizzeria/DataQueue.html" title="class in ru.nsu.izmailova.pizzeria">DataQueue</a></dt>
+<dt><span class="memberNameLink"><a href="ru/nsu/izmailova/queue/DataQueue.html#waitOnFull()">waitOnFull()</a></span> - Method in class ru.nsu.izmailova.queue.<a href="ru/nsu/izmailova/queue/DataQueue.html" title="class in ru.nsu.izmailova.queue">DataQueue</a></dt>
 <dd>
 <div class="block">Waits until queue will be available to interact.</div>
 </dd>
 </dl>
-<a href="#I:A">A</a>&nbsp;<a href="#I:B">B</a>&nbsp;<a href="#I:C">C</a>&nbsp;<a href="#I:D">D</a>&nbsp;<a href="#I:G">G</a>&nbsp;<a href="#I:I">I</a>&nbsp;<a href="#I:J">J</a>&nbsp;<a href="#I:M">M</a>&nbsp;<a href="#I:N">N</a>&nbsp;<a href="#I:O">O</a>&nbsp;<a href="#I:P">P</a>&nbsp;<a href="#I:R">R</a>&nbsp;<a href="#I:S">S</a>&nbsp;<a href="#I:W">W</a>&nbsp;<br><a href="allclasses-index.html">All&nbsp;Classes</a>&nbsp;<a href="allpackages-index.html">All&nbsp;Packages</a></div>
+<a href="#I:A">A</a>&nbsp;<a href="#I:B">B</a>&nbsp;<a href="#I:C">C</a>&nbsp;<a href="#I:D">D</a>&nbsp;<a href="#I:E">E</a>&nbsp;<a href="#I:G">G</a>&nbsp;<a href="#I:I">I</a>&nbsp;<a href="#I:J">J</a>&nbsp;<a href="#I:L">L</a>&nbsp;<a href="#I:M">M</a>&nbsp;<a href="#I:N">N</a>&nbsp;<a href="#I:O">O</a>&nbsp;<a href="#I:P">P</a>&nbsp;<a href="#I:R">R</a>&nbsp;<a href="#I:S">S</a>&nbsp;<a href="#I:W">W</a>&nbsp;<br><a href="allclasses-index.html">All&nbsp;Classes</a>&nbsp;<a href="allpackages-index.html">All&nbsp;Packages</a></div>
 </main>
 <footer role="contentinfo">
 <nav role="navigation">
@@ -484,7 +534,8 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <!--   -->
 </a>
 <ul class="navList" title="Navigation">
-<li><a href="ru/nsu/izmailova/pizzeria/package-summary.html">Package</a></li>
+<li><a href="index.html">Overview</a></li>
+<li>Package</li>
 <li>Class</li>
 <li><a href="overview-tree.html">Tree</a></li>
 <li><a href="deprecated-list.html">Deprecated</a></li>

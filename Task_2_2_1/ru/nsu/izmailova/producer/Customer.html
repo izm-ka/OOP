@@ -51,6 +51,7 @@ loadScripts(document, 'script');</script>
 <!--   -->
 </a>
 <ul class="navList" title="Navigation">
+<li><a href="../../../../index.html">Overview</a></li>
 <li><a href="package-summary.html">Package</a></li>
 <li class="navBarCell1Rev">Class</li>
 <li><a href="package-tree.html">Tree</a></li>
@@ -114,7 +115,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <!-- ======== START OF CLASS DATA ======== -->
 <main role="main">
 <div class="header">
-<div class="subTitle"><span class="packageLabelInType">Package</span>&nbsp;<a href="package-summary.html">ru.nsu.izmailova.pizzeria</a></div>
+<div class="subTitle"><span class="packageLabelInType">Package</span>&nbsp;<a href="package-summary.html">ru.nsu.izmailova.producer</a></div>
 <h2 title="Class Customer" class="title">Class Customer</h2>
 </div>
 <div class="contentContainer">
@@ -122,7 +123,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <li>java.lang.Object</li>
 <li>
 <ul class="inheritance">
-<li>ru.nsu.izmailova.pizzeria.Customer</li>
+<li>ru.nsu.izmailova.producer.Customer</li>
 </ul>
 </li>
 </ul>
@@ -131,12 +132,12 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <li class="blockList">
 <dl>
 <dt>All Implemented Interfaces:</dt>
-<dd><code>java.lang.Runnable</code>, <code><a href="Producer.html" title="interface in ru.nsu.izmailova.pizzeria">Producer</a></code></dd>
+<dd><code>java.lang.Runnable</code>, <code><a href="IProducer.html" title="interface in ru.nsu.izmailova.producer">IProducer</a></code></dd>
 </dl>
 <hr>
 <pre>public class <span class="typeNameLabel">Customer</span>
 extends java.lang.Object
-implements <a href="Producer.html" title="interface in ru.nsu.izmailova.pizzeria">Producer</a></pre>
+implements <a href="IProducer.html" title="interface in ru.nsu.izmailova.producer">IProducer</a></pre>
 <div class="block">Represents a customer who produces orders for the pizzeria.</div>
 </li>
 </ul>
@@ -159,7 +160,7 @@ implements <a href="Producer.html" title="interface in ru.nsu.izmailova.pizzeria
 <th class="colLast" scope="col">Description</th>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code><a href="DataQueue.html" title="class in ru.nsu.izmailova.pizzeria">DataQueue</a></code></td>
+<td class="colFirst"><code><a href="../queue/DataQueue.html" title="class in ru.nsu.izmailova.queue">DataQueue</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#orderQueue">orderQueue</a></span></code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
@@ -181,7 +182,8 @@ implements <a href="Producer.html" title="interface in ru.nsu.izmailova.pizzeria
 <th class="colLast" scope="col">Description</th>
 </tr>
 <tr class="altColor">
-<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(ru.nsu.izmailova.pizzeria.DataQueue)">Customer</a></span>&#8203;(<a href="DataQueue.html" title="class in ru.nsu.izmailova.pizzeria">DataQueue</a>&nbsp;orderQueue)</code></th>
+<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(ru.nsu.izmailova.queue.DataQueue,int)">Customer</a></span>&#8203;(<a href="../queue/DataQueue.html" title="class in ru.nsu.izmailova.queue">DataQueue</a>&nbsp;orderQueue,
+        int&nbsp;processingTime)</code></th>
 <td class="colLast">
 <div class="block">Constructs a Customer with the specified order queue.</div>
 </td>
@@ -206,32 +208,29 @@ implements <a href="Producer.html" title="interface in ru.nsu.izmailova.pizzeria
 </tr>
 <tr id="i0" class="altColor">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#changeOrderStatus(ru.nsu.izmailova.pizzeria.Order,java.lang.String)">changeOrderStatus</a></span>&#8203;(<a href="Order.html" title="class in ru.nsu.izmailova.pizzeria">Order</a>&nbsp;order,
-                 java.lang.String&nbsp;status)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#addUnprocessedOrders(ru.nsu.izmailova.queue.DataQueue)">addUnprocessedOrders</a></span>&#8203;(<a href="../queue/DataQueue.html" title="class in ru.nsu.izmailova.queue">DataQueue</a>&nbsp;orderQueue)</code></th>
 <td class="colLast">
 <div class="block">Changes the status of an order.</div>
 </td>
 </tr>
 <tr id="i1" class="rowColor">
-<td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#changeProcessingTime(int)">changeProcessingTime</a></span>&#8203;(int&nbsp;time)</code></th>
-<td class="colLast">
-<div class="block">Changes the maximum amount of time that the customer can spend on producing an order.</div>
-</td>
-</tr>
-<tr id="i2" class="altColor">
-<td class="colFirst"><code><a href="Order.html" title="class in ru.nsu.izmailova.pizzeria">Order</a></code></td>
+<td class="colFirst"><code><a href="../order/Order.html" title="class in ru.nsu.izmailova.order">Order</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#generateOrder()">generateOrder</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Generates an order.</div>
 </td>
 </tr>
-<tr id="i3" class="rowColor">
+<tr id="i2" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getFlag()">getFlag</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Gets the value of the run flag.</div>
 </td>
+</tr>
+<tr id="i3" class="rowColor">
+<td class="colFirst"><code>java.util.List&lt;<a href="../order/Order.html" title="class in ru.nsu.izmailova.order">Order</a>&gt;</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getUnprocessedOrders()">getUnprocessedOrders</a></span>()</code></th>
+<td class="colLast">&nbsp;</td>
 </tr>
 <tr id="i4" class="altColor">
 <td class="colFirst"><code>void</code></td>
@@ -284,7 +283,7 @@ implements <a href="Producer.html" title="interface in ru.nsu.izmailova.pizzeria
 <ul class="blockListLast">
 <li class="blockList">
 <h4>orderQueue</h4>
-<pre>public final&nbsp;<a href="DataQueue.html" title="class in ru.nsu.izmailova.pizzeria">DataQueue</a> orderQueue</pre>
+<pre>public final&nbsp;<a href="../queue/DataQueue.html" title="class in ru.nsu.izmailova.queue">DataQueue</a> orderQueue</pre>
 </li>
 </ul>
 </li>
@@ -297,17 +296,19 @@ implements <a href="Producer.html" title="interface in ru.nsu.izmailova.pizzeria
 <!--   -->
 </a>
 <h3>Constructor Detail</h3>
-<a id="&lt;init&gt;(ru.nsu.izmailova.pizzeria.DataQueue)">
+<a id="&lt;init&gt;(ru.nsu.izmailova.queue.DataQueue,int)">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
 <h4>Customer</h4>
-<pre>public&nbsp;Customer&#8203;(<a href="DataQueue.html" title="class in ru.nsu.izmailova.pizzeria">DataQueue</a>&nbsp;orderQueue)</pre>
+<pre>public&nbsp;Customer&#8203;(<a href="../queue/DataQueue.html" title="class in ru.nsu.izmailova.queue">DataQueue</a>&nbsp;orderQueue,
+                int&nbsp;processingTime)</pre>
 <div class="block">Constructs a Customer with the specified order queue.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>orderQueue</code> - the queue where the customer places orders</dd>
+<dd><code>processingTime</code> - time the customer takes to process the order</dd>
 </dl>
 </li>
 </ul>
@@ -321,6 +322,15 @@ implements <a href="Producer.html" title="interface in ru.nsu.izmailova.pizzeria
 <!--   -->
 </a>
 <h3>Method Detail</h3>
+<a id="getUnprocessedOrders()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getUnprocessedOrders</h4>
+<pre class="methodSignature">public&nbsp;java.util.List&lt;<a href="../order/Order.html" title="class in ru.nsu.izmailova.order">Order</a>&gt;&nbsp;getUnprocessedOrders()</pre>
+</li>
+</ul>
 <a id="run()">
 <!--   -->
 </a>
@@ -331,7 +341,7 @@ implements <a href="Producer.html" title="interface in ru.nsu.izmailova.pizzeria
 <div class="block">Starts the producing process.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="Producer.html#run()">run</a></code>&nbsp;in interface&nbsp;<code><a href="Producer.html" title="interface in ru.nsu.izmailova.pizzeria">Producer</a></code></dd>
+<dd><code><a href="IProducer.html#run()">run</a></code>&nbsp;in interface&nbsp;<code><a href="IProducer.html" title="interface in ru.nsu.izmailova.producer">IProducer</a></code></dd>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code>run</code>&nbsp;in interface&nbsp;<code>java.lang.Runnable</code></dd>
 </dl>
@@ -361,7 +371,7 @@ implements <a href="Producer.html" title="interface in ru.nsu.izmailova.pizzeria
 <div class="block">Produces orders and places them in the order queue.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="Producer.html#producer()">producer</a></code>&nbsp;in interface&nbsp;<code><a href="Producer.html" title="interface in ru.nsu.izmailova.pizzeria">Producer</a></code></dd>
+<dd><code><a href="IProducer.html#producer()">producer</a></code>&nbsp;in interface&nbsp;<code><a href="IProducer.html" title="interface in ru.nsu.izmailova.producer">IProducer</a></code></dd>
 </dl>
 </li>
 </ul>
@@ -371,7 +381,7 @@ implements <a href="Producer.html" title="interface in ru.nsu.izmailova.pizzeria
 <ul class="blockList">
 <li class="blockList">
 <h4>generateOrder</h4>
-<pre class="methodSignature">public&nbsp;<a href="Order.html" title="class in ru.nsu.izmailova.pizzeria">Order</a>&nbsp;generateOrder()</pre>
+<pre class="methodSignature">public&nbsp;<a href="../order/Order.html" title="class in ru.nsu.izmailova.order">Order</a>&nbsp;generateOrder()</pre>
 <div class="block">Generates an order.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -379,33 +389,17 @@ implements <a href="Producer.html" title="interface in ru.nsu.izmailova.pizzeria
 </dl>
 </li>
 </ul>
-<a id="changeProcessingTime(int)">
+<a id="addUnprocessedOrders(ru.nsu.izmailova.queue.DataQueue)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>changeProcessingTime</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;changeProcessingTime&#8203;(int&nbsp;time)</pre>
-<div class="block">Changes the maximum amount of time that the customer can spend on producing an order.</div>
-<dl>
-<dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>time</code> - the new processing time for producing an order</dd>
-</dl>
-</li>
-</ul>
-<a id="changeOrderStatus(ru.nsu.izmailova.pizzeria.Order,java.lang.String)">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>changeOrderStatus</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;changeOrderStatus&#8203;(<a href="Order.html" title="class in ru.nsu.izmailova.pizzeria">Order</a>&nbsp;order,
-                              java.lang.String&nbsp;status)</pre>
+<h4>addUnprocessedOrders</h4>
+<pre class="methodSignature">public&nbsp;void&nbsp;addUnprocessedOrders&#8203;(<a href="../queue/DataQueue.html" title="class in ru.nsu.izmailova.queue">DataQueue</a>&nbsp;orderQueue)</pre>
 <div class="block">Changes the status of an order.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>order</code> - the order whose status is to be changed</dd>
-<dd><code>status</code> - the new status of the order</dd>
+<dd><code>orderQueue</code> - queue with unprocessed orders</dd>
 </dl>
 </li>
 </ul>
@@ -419,7 +413,7 @@ implements <a href="Producer.html" title="interface in ru.nsu.izmailova.pizzeria
 <div class="block">Stops producing new orders.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="Producer.html#stopProduce()">stopProduce</a></code>&nbsp;in interface&nbsp;<code><a href="Producer.html" title="interface in ru.nsu.izmailova.pizzeria">Producer</a></code></dd>
+<dd><code><a href="IProducer.html#stopProduce()">stopProduce</a></code>&nbsp;in interface&nbsp;<code><a href="IProducer.html" title="interface in ru.nsu.izmailova.producer">IProducer</a></code></dd>
 </dl>
 </li>
 </ul>
@@ -443,6 +437,7 @@ implements <a href="Producer.html" title="interface in ru.nsu.izmailova.pizzeria
 <!--   -->
 </a>
 <ul class="navList" title="Navigation">
+<li><a href="../../../../index.html">Overview</a></li>
 <li><a href="package-summary.html">Package</a></li>
 <li class="navBarCell1Rev">Class</li>
 <li><a href="package-tree.html">Tree</a></li>

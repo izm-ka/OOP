@@ -27,7 +27,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":10,"i1":10};
+var data = {"i0":10,"i1":10,"i2":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -51,6 +51,7 @@ loadScripts(document, 'script');</script>
 <!--   -->
 </a>
 <ul class="navList" title="Navigation">
+<li><a href="../../../../index.html">Overview</a></li>
 <li><a href="package-summary.html">Package</a></li>
 <li class="navBarCell1Rev">Class</li>
 <li><a href="package-tree.html">Tree</a></li>
@@ -153,13 +154,14 @@ extends java.lang.Object</pre>
 <th class="colLast" scope="col">Description</th>
 </tr>
 <tr class="altColor">
-<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(int,int%5B%5D,int,int%5B%5D,int,int%5B%5D,int)">Pizzeria</a></span>&#8203;(int&nbsp;bakersAmount,
+<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(int,int%5B%5D,int,int%5B%5D,int,int%5B%5D,int,java.lang.String)">Pizzeria</a></span>&#8203;(int&nbsp;bakersAmount,
         int[]&nbsp;bakersProductivity,
         int&nbsp;deliverersAmount,
         int[]&nbsp;deliverersProductivity,
         int&nbsp;storageSize,
         int[]&nbsp;trunkSizes,
-        int&nbsp;ordersDelay)</code></th>
+        int&nbsp;ordersDelay,
+        java.lang.String&nbsp;ordersPath)</code></th>
 <td class="colLast">
 <div class="block">Constructs a new pizzeria with the specified parameters.</div>
 </td>
@@ -184,12 +186,17 @@ extends java.lang.Object</pre>
 </tr>
 <tr id="i0" class="altColor">
 <td class="colFirst"><code>void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#loadUnprocessedOrders()">loadUnprocessedOrders</a></span>()</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr id="i1" class="rowColor">
+<td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#pizzeriaStart()">pizzeriaStart</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Starts the pizzeria.</div>
 </td>
 </tr>
-<tr id="i1" class="rowColor">
+<tr id="i2" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#pizzeriaStop()">pizzeriaStop</a></span>()</code></th>
 <td class="colLast">
@@ -220,7 +227,7 @@ extends java.lang.Object</pre>
 <!--   -->
 </a>
 <h3>Constructor Detail</h3>
-<a id="&lt;init&gt;(int,int[],int,int[],int,int[],int)">
+<a id="&lt;init&gt;(int,int[],int,int[],int,int[],int,java.lang.String)">
 <!--   -->
 </a>
 <ul class="blockListLast">
@@ -232,7 +239,8 @@ extends java.lang.Object</pre>
                 int[]&nbsp;deliverersProductivity,
                 int&nbsp;storageSize,
                 int[]&nbsp;trunkSizes,
-                int&nbsp;ordersDelay)</pre>
+                int&nbsp;ordersDelay,
+                java.lang.String&nbsp;ordersPath)</pre>
 <div class="block">Constructs a new pizzeria with the specified parameters.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -243,6 +251,7 @@ extends java.lang.Object</pre>
 <dd><code>storageSize</code> - the size of the storage from which deliverers take orders</dd>
 <dd><code>trunkSizes</code> - the sizes of the trunks of deliverer's cars</dd>
 <dd><code>ordersDelay</code> - the maximum delay between two orders</dd>
+<dd><code>ordersPath</code> - path to file with the unprocessed orders</dd>
 </dl>
 </li>
 </ul>
@@ -269,7 +278,7 @@ extends java.lang.Object</pre>
 <a id="pizzeriaStop()">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>pizzeriaStop</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;pizzeriaStop()
@@ -279,6 +288,15 @@ extends java.lang.Object</pre>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code>java.lang.InterruptedException</code> - if any thread is interrupted while sleeping</dd>
 </dl>
+</li>
+</ul>
+<a id="loadUnprocessedOrders()">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>loadUnprocessedOrders</h4>
+<pre class="methodSignature">public&nbsp;void&nbsp;loadUnprocessedOrders()</pre>
 </li>
 </ul>
 </li>
@@ -301,6 +319,7 @@ extends java.lang.Object</pre>
 <!--   -->
 </a>
 <ul class="navList" title="Navigation">
+<li><a href="../../../../index.html">Overview</a></li>
 <li><a href="package-summary.html">Package</a></li>
 <li class="navBarCell1Rev">Class</li>
 <li><a href="package-tree.html">Tree</a></li>

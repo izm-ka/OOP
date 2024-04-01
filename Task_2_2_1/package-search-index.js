@@ -1,1 +1,1 @@
-packageSearchIndex = [{"l":"All Packages","url":"allpackages-index.html"},{"l":"ru.nsu.izmailova.pizzeria"}]
+packageSearchIndex = [{"l":"All Packages","url":"allpackages-index.html"},{"l":"ru.nsu.izmailova"},{"l":"ru.nsu.izmailova.baker"},{"l":"ru.nsu.izmailova.consumer"},{"l":"ru.nsu.izmailova.json"},{"l":"ru.nsu.izmailova.order"},{"l":"ru.nsu.izmailova.pizzeria"},{"l":"ru.nsu.izmailova.producer"},{"l":"ru.nsu.izmailova.queue"}]

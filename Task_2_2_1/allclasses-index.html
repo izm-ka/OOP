@@ -27,7 +27,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":2,"i1":1,"i2":2,"i3":2,"i4":2,"i5":2,"i6":2,"i7":2,"i8":2,"i9":2,"i10":2,"i11":2,"i12":1};
+var data = {"i0":2,"i1":2,"i2":2,"i3":2,"i4":2,"i5":1,"i6":1,"i7":2,"i8":2,"i9":2,"i10":2,"i11":2,"i12":2,"i13":2,"i14":2};
 var tabs = {65535:["t0","All Classes"],1:["t1","Interface Summary"],2:["t2","Class Summary"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -51,7 +51,8 @@ loadScripts(document, 'script');</script>
 <!--   -->
 </a>
 <ul class="navList" title="Navigation">
-<li><a href="ru/nsu/izmailova/pizzeria/package-summary.html">Package</a></li>
+<li><a href="index.html">Overview</a></li>
+<li>Package</li>
 <li>Class</li>
 <li><a href="overview-tree.html">Tree</a></li>
 <li><a href="deprecated-list.html">Deprecated</a></li>
@@ -110,82 +111,90 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <th class="colLast" scope="col">Description</th>
 </tr>
 <tr id="i0" class="altColor">
-<td class="colFirst"><a href="ru/nsu/izmailova/pizzeria/Baker.html" title="class in ru.nsu.izmailova.pizzeria">Baker</a></td>
+<td class="colFirst"><a href="ru/nsu/izmailova/baker/Baker.html" title="class in ru.nsu.izmailova.baker">Baker</a></td>
 <th class="colLast" scope="row">
 <div class="block">Represents a baker in the pizzeria who acts as a consumer of user's
  orders and as a producer of pizzas.</div>
 </th>
 </tr>
 <tr id="i1" class="rowColor">
-<td class="colFirst"><a href="ru/nsu/izmailova/pizzeria/Consumer.html" title="interface in ru.nsu.izmailova.pizzeria">Consumer</a></td>
-<th class="colLast" scope="row">
-<div class="block">Interface for making subjects that will consume elements.</div>
-</th>
-</tr>
-<tr id="i2" class="altColor">
-<td class="colFirst"><a href="ru/nsu/izmailova/pizzeria/Customer.html" title="class in ru.nsu.izmailova.pizzeria">Customer</a></td>
+<td class="colFirst"><a href="ru/nsu/izmailova/producer/Customer.html" title="class in ru.nsu.izmailova.producer">Customer</a></td>
 <th class="colLast" scope="row">
 <div class="block">Represents a customer who produces orders for the pizzeria.</div>
 </th>
 </tr>
-<tr id="i3" class="rowColor">
-<td class="colFirst"><a href="ru/nsu/izmailova/pizzeria/DataQueue.html" title="class in ru.nsu.izmailova.pizzeria">DataQueue</a></td>
+<tr id="i2" class="altColor">
+<td class="colFirst"><a href="ru/nsu/izmailova/queue/DataQueue.html" title="class in ru.nsu.izmailova.queue">DataQueue</a></td>
 <th class="colLast" scope="row">
 <div class="block">Queue that allow to transfer pizza position from the beginning to the end.</div>
 </th>
 </tr>
-<tr id="i4" class="altColor">
+<tr id="i3" class="rowColor">
 <td class="colFirst"><a href="ru/nsu/izmailova/pizzeria/DeliveryGuy.html" title="class in ru.nsu.izmailova.pizzeria">DeliveryGuy</a></td>
 <th class="colLast" scope="row">
 <div class="block">Represents a delivery person who delivers pizzas.</div>
 </th>
 </tr>
+<tr id="i4" class="altColor">
+<td class="colFirst"><a href="ru/nsu/izmailova/baker/Employee.html" title="class in ru.nsu.izmailova.baker">Employee</a></td>
+<th class="colLast" scope="row">&nbsp;</th>
+</tr>
 <tr id="i5" class="rowColor">
-<td class="colFirst"><a href="ru/nsu/izmailova/pizzeria/JsonBaker.html" title="class in ru.nsu.izmailova.pizzeria">JsonBaker</a></td>
+<td class="colFirst"><a href="ru/nsu/izmailova/consumer/IConsumer.html" title="interface in ru.nsu.izmailova.consumer">IConsumer</a></td>
+<th class="colLast" scope="row">
+<div class="block">Interface for making subjects that will consume elements.</div>
+</th>
+</tr>
+<tr id="i6" class="altColor">
+<td class="colFirst"><a href="ru/nsu/izmailova/producer/IProducer.html" title="interface in ru.nsu.izmailova.producer">IProducer</a></td>
+<th class="colLast" scope="row">
+<div class="block">Interface for making subjects that will produce something.</div>
+</th>
+</tr>
+<tr id="i7" class="rowColor">
+<td class="colFirst"><a href="ru/nsu/izmailova/json/JsonBaker.html" title="class in ru.nsu.izmailova.json">JsonBaker</a></td>
 <th class="colLast" scope="row">
 <div class="block">Structure for taking baker's data from json.</div>
 </th>
 </tr>
-<tr id="i6" class="altColor">
-<td class="colFirst"><a href="ru/nsu/izmailova/pizzeria/JsonDeliverer.html" title="class in ru.nsu.izmailova.pizzeria">JsonDeliverer</a></td>
+<tr id="i8" class="altColor">
+<td class="colFirst"><a href="ru/nsu/izmailova/json/JsonDeliverer.html" title="class in ru.nsu.izmailova.json">JsonDeliverer</a></td>
 <th class="colLast" scope="row">
 <div class="block">Represents a JSON structure for storing data about a deliverer.</div>
 </th>
 </tr>
-<tr id="i7" class="rowColor">
-<td class="colFirst"><a href="ru/nsu/izmailova/pizzeria/JsonHandler.html" title="class in ru.nsu.izmailova.pizzeria">JsonHandler</a></td>
+<tr id="i9" class="rowColor">
+<td class="colFirst"><a href="ru/nsu/izmailova/json/JsonHandler.html" title="class in ru.nsu.izmailova.json">JsonHandler</a></td>
 <th class="colLast" scope="row">
 <div class="block">Class for working with json.</div>
 </th>
 </tr>
-<tr id="i8" class="altColor">
-<td class="colFirst"><a href="ru/nsu/izmailova/pizzeria/JsonPizzeria.html" title="class in ru.nsu.izmailova.pizzeria">JsonPizzeria</a></td>
+<tr id="i10" class="altColor">
+<td class="colFirst"><a href="ru/nsu/izmailova/json/JsonPizzeria.html" title="class in ru.nsu.izmailova.json">JsonPizzeria</a></td>
 <th class="colLast" scope="row">
 <div class="block">Represents a JSON structure for storing data about a pizzeria.</div>
 </th>
 </tr>
-<tr id="i9" class="rowColor">
-<td class="colFirst"><a href="ru/nsu/izmailova/pizzeria/Main.html" title="class in ru.nsu.izmailova.pizzeria">Main</a></td>
+<tr id="i11" class="rowColor">
+<td class="colFirst"><a href="ru/nsu/izmailova/Main.html" title="class in ru.nsu.izmailova">Main</a></td>
 <th class="colLast" scope="row">
 <div class="block">The main class to start the pizzeria simulation.</div>
 </th>
 </tr>
-<tr id="i10" class="altColor">
-<td class="colFirst"><a href="ru/nsu/izmailova/pizzeria/Order.html" title="class in ru.nsu.izmailova.pizzeria">Order</a></td>
+<tr id="i12" class="altColor">
+<td class="colFirst"><a href="ru/nsu/izmailova/order/Order.html" title="class in ru.nsu.izmailova.order">Order</a></td>
 <th class="colLast" scope="row">
 <div class="block">Represents an order in the pizzeria.</div>
 </th>
 </tr>
-<tr id="i11" class="rowColor">
+<tr id="i13" class="rowColor">
+<td class="colFirst"><a href="ru/nsu/izmailova/order/OrderSerializer.html" title="class in ru.nsu.izmailova.order">OrderSerializer</a></td>
+<th class="colLast" scope="row">&nbsp;</th>
+</tr>
+<tr id="i14" class="altColor">
 <td class="colFirst"><a href="ru/nsu/izmailova/pizzeria/Pizzeria.html" title="class in ru.nsu.izmailova.pizzeria">Pizzeria</a></td>
 <th class="colLast" scope="row">
 <div class="block">Represents a pizzeria that produces pizzas.</div>
-</th>
-</tr>
-<tr id="i12" class="altColor">
-<td class="colFirst"><a href="ru/nsu/izmailova/pizzeria/Producer.html" title="interface in ru.nsu.izmailova.pizzeria">Producer</a></td>
-<th class="colLast" scope="row">
-<div class="block">Interface for making subjects that will produce something.</div>
 </th>
 </tr>
 </table>
@@ -204,7 +213,8 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <!--   -->
 </a>
 <ul class="navList" title="Navigation">
-<li><a href="ru/nsu/izmailova/pizzeria/package-summary.html">Package</a></li>
+<li><a href="index.html">Overview</a></li>
+<li>Package</li>
 <li>Class</li>
 <li><a href="overview-tree.html">Tree</a></li>
 <li><a href="deprecated-list.html">Deprecated</a></li>
