@@ -1,10 +1,9 @@
 package ru.nsu.izmailova.baker;
 
-import java.util.Random;
-import ru.nsu.izmailova.queue.DataQueue;
-import ru.nsu.izmailova.order.Order;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import ru.nsu.izmailova.order.Order;
+import ru.nsu.izmailova.queue.DataQueue;
 
 /**
  * Represents a baker in the pizzeria who acts as a consumer of user's
@@ -48,11 +47,6 @@ public class Baker extends Employee {
         }
     }
 
-    public void interrupt() {
-        cookingThread.interrupt();
-        logger.info("thread is interrupred" + cookingThread.getName());
-    }
-
     /**
      * Consumes orders from the order queue.
      *
@@ -77,7 +71,7 @@ public class Baker extends Employee {
         }
         Order order = orderQueue.remove();
         deliveryCounter = order.getOrderNumber();
-        orderQueue.notifyAllForFull();// пекарь уведомляет другие потоки, ожидающие освобождения места в очереди
+        orderQueue.notifyAllForFull();
     }
 
     /**
@@ -89,7 +83,7 @@ public class Baker extends Employee {
         Order order = new Order();
         order.setOrderStatus(orderConsumeStatus);
         order.setOrderNumber(deliveryCounter);
-        logger.info("Order[{}] is {}",deliveryCounter,orderConsumeStatus);
+        logger.info("Order[{}] is {}", deliveryCounter, orderConsumeStatus);
         return order;
     }
 
@@ -149,7 +143,7 @@ public class Baker extends Employee {
      */
     public void changeOrderStatus(Order order, String status) {
         order.setOrderStatus(status);
-        logger.info("Order[{}] is {}",order.getOrderNumber(),status);
+        logger.info("Order[{}] is {}", order.getOrderNumber(), status);
     }
 
     /**

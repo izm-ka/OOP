@@ -1,9 +1,8 @@
 package ru.nsu.izmailova.queue;
 
-import ru.nsu.izmailova.order.Order;
-
 import java.util.LinkedList;
 import java.util.Queue;
+import ru.nsu.izmailova.order.Order;
 
 /**
  * Queue that allow to transfer pizza position from the beginning to the end.
