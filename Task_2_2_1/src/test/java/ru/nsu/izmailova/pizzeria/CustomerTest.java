@@ -1,31 +1,83 @@
 package ru.nsu.izmailova.pizzeria;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
 import org.junit.jupiter.api.Test;
 import ru.nsu.izmailova.producer.Customer;
 import ru.nsu.izmailova.queue.DataQueue;
+import ru.nsu.izmailova.order.Order;
+
+import javax.xml.crypto.Data;
+import java.util.ArrayList;
+import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * Test for Customer class.
  */
-/*lass CustomerTest {
+class CustomerTest {
 
     @Test
-    void customerTest() throws InterruptedException {
-        DataQueue ordersQueue = new DataQueue(5);
-        Customer customers = new Customer(ordersQueue);
-        customers.changeProcessingTime(1000);
+    void testGenerateOrder() {
+        DataQueue ordersQueue = new DataQueue();
+        Customer customer = new Customer(ordersQueue, 1000);
+        Order order = customer.generateOrder();
 
-        Thread customersThread = new Thread(customers);
-        customersThread.start();
-        while (!ordersQueue.isFull()) {
-        }
-        Thread.sleep(3000);
-        customers.stopProduce();
-        while (!ordersQueue.isEmpty()) {
-            assertEquals("Processing", ordersQueue.remove().getOrderStatus());
-        }
-        Thread.sleep(3000);
+        assertEquals("Unprocessed", order.getOrderStatus());
+        assertEquals(1, order.getOrderNumber());
     }
-}*/
+
+    @Test
+    void testAddUnprocessedOrders() {
+        DataQueue orderQueue = new DataQueue();
+        Customer customer = new Customer(orderQueue, 1000);
+
+        Order order1 = new Order();
+        order1.setOrderNumber(1);
+        order1.setOrderStatus("Unprocessed");
+        orderQueue.add(order1);
+
+        Order order2 = new Order();
+        order2.setOrderNumber(2);
+        order2.setOrderStatus("Processed");
+        orderQueue.add(order2);
+
+        List<Order> expOrders = new ArrayList<>();
+        expOrders.add(order1);
+
+        customer.addUnprocessedOrders(orderQueue);
+
+        assertEquals(expOrders, customer.getUnprocessedOrders());
+    }
+
+    @Test
+    void testStopProduce() {
+        DataQueue orderQueue = new DataQueue();
+        Customer customer = new Customer(orderQueue, 1000);
+
+        customer.stopProduce();
+        assertFalse(customer.getFlag());
+    }
+
+    @Test
+    void testProducer() {
+        DataQueue orderQueue = new DataQueue();
+        Customer customer = new Customer(orderQueue, 1000);
+
+        assertTrue(orderQueue.isEmpty());
+
+        Thread producerThread = new Thread(customer::producer);
+        producerThread.start();
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        assertTrue(!orderQueue.isEmpty());
+        customer.stopProduce();
+
+        Order order = orderQueue.remove();
+        assertEquals("Unprocessed", order.getOrderStatus());
+        assertEquals(1, order.getOrderNumber());
+    }
+}

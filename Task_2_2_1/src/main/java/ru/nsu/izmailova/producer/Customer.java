@@ -112,7 +112,6 @@ public class Customer implements IProducer {
             Order order = orderQueue.remove();
             if ((order.getOrderStatus().equals("Unprocessed"))) {
                 unprocessedOrders.add(order);
-                System.out.println("UOrder[" + order.getOrderNumber() + "] is " + order.getOrderStatus());
             }
         }
     }
