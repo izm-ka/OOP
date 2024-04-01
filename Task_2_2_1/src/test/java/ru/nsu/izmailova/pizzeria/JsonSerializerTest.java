@@ -20,7 +20,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class JsonSerializerTest {
     private static final String orderPath = "src/main/resources/orders.json";
-    Pizzeria pizzeria = new Pizzeria(2, new int[]{1000, 1000},1, new int[]{1}, 5, new int[]{5}, 100, orderPath);
+    Pizzeria pizzeria = new Pizzeria(2, new int[]{1000, 1000},1, new int[]{1}, 5, new int[]{5}, 100, orderPath, 100);
 
     @Test
     void testCustomerUnprocessedOrders() throws InterruptedException {

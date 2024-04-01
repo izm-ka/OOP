@@ -6,10 +6,11 @@ package ru.nsu.izmailova.json;
 public class JsonPizzeria {
     private final int bakersAmount;
     private final int deliverersAmount;
-    private final int storageSize; //доделать склад
+    private final int storageSize;
     private final int ordersDelay;
     private final JsonBaker[] bakers;
     private final JsonDeliverer[] deliverers;
+    private final int workingTime;
 
     /**
      * Constructs a JsonPizzeria with the specified parameters.
@@ -20,15 +21,26 @@ public class JsonPizzeria {
      * @param ordersDelay      the maximum delay between two orders
      * @param bakers           an array of JsonBaker objects representing bakers' data
      * @param deliverers       an array of JsonDeliverer objects representing deliverers' data
+     * @param workingTime      the time pizzeria works
      */
     public JsonPizzeria(int bakersAmount, int deliverersAmount, int storageSize, int ordersDelay,
-                        JsonBaker[] bakers, JsonDeliverer[] deliverers) {
+                        JsonBaker[] bakers, JsonDeliverer[] deliverers, int workingTime) {
         this.bakersAmount = bakersAmount;
         this.deliverersAmount = deliverersAmount;
         this.storageSize = storageSize;
         this.ordersDelay = ordersDelay;
         this.bakers = bakers;
         this.deliverers = deliverers;
+        this.workingTime = workingTime;
+    }
+
+    /**
+     * Gets the working time.
+     *
+     * @return working time
+     */
+    public int getWorkingTime() {
+        return workingTime;
     }
 
     /**

@@ -16,10 +16,11 @@ public class Pizzeria {
     private final List<DeliveryGuy> deliverers;
     final Customer customers;
     final OrderSerializer orderSerializer;
-    private final List<Order> unprocessedOrders;
+    //private final int workingTime;
     final DataQueue ordersQueue;
     private List<Thread> bakerThreads;
     private List<Thread> deliverersThreads;
+    private final int workingTime;
 
     /**
      * Constructs a new pizzeria with the specified parameters.
@@ -32,18 +33,17 @@ public class Pizzeria {
      * @param trunkSizes             the sizes of the trunks of deliverer's cars
      * @param ordersDelay            the maximum delay between two orders
      * @param ordersPath             path to file with the unprocessed orders
+     * @param workingTime            time that pizzeria works
      */
     public Pizzeria(int bakersAmount, int[] bakersProductivity, int deliverersAmount,
                     int[] deliverersProductivity, int storageSize, int[] trunkSizes,
-                    int ordersDelay, String ordersPath) {
+                    int ordersDelay, String ordersPath, int workingTime) {
         DataQueue deliveryQueue = new DataQueue(storageSize);
         deliverers = new ArrayList<>();
         for (int i = 0; i < deliverersAmount; i++) {
             DeliveryGuy deliverer = new DeliveryGuy(deliveryQueue, trunkSizes[i],deliverersProductivity[i]);
             deliverers.add(deliverer);
         }
-
-        unprocessedOrders = new ArrayList<>();
 
         ordersQueue = new DataQueue();
         bakers = new ArrayList<>();
@@ -53,7 +53,7 @@ public class Pizzeria {
         }
         customers = new Customer(ordersQueue, ordersDelay);
         orderSerializer = new OrderSerializer(ordersPath);
-        //loadUnprocessedOrders();
+        this.workingTime = workingTime;
     }
 
     /**
@@ -79,9 +79,13 @@ public class Pizzeria {
         for (Thread delivererThread : deliverersThreads) {
             delivererThread.start();
         }
+
         System.out.println("Pizzeria is opened");
-        //bakers.stream().map(Thread::new).forEach(Thread::start);
-        //deliverers.stream().map(Thread::new).forEach(Thread::start);
+
+    }
+
+    public void pizzeriaWorking() throws InterruptedException{
+        Thread.sleep(workingTime * 10);
     }
 
     /**

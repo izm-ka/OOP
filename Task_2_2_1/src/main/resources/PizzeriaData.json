@@ -3,6 +3,7 @@
   "deliverersAmount": 3,
   "storageSize": 20,
   "ordersDelay": 100,
+  "workingTime": 60,
 
   "bakers": [
     {
