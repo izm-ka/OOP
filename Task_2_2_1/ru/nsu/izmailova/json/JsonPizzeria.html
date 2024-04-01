@@ -27,7 +27,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10};
+var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -154,12 +154,13 @@ extends java.lang.Object</pre>
 <th class="colLast" scope="col">Description</th>
 </tr>
 <tr class="altColor">
-<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(int,int,int,int,ru.nsu.izmailova.json.JsonBaker%5B%5D,ru.nsu.izmailova.json.JsonDeliverer%5B%5D)">JsonPizzeria</a></span>&#8203;(int&nbsp;bakersAmount,
+<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(int,int,int,int,ru.nsu.izmailova.json.JsonBaker%5B%5D,ru.nsu.izmailova.json.JsonDeliverer%5B%5D,int)">JsonPizzeria</a></span>&#8203;(int&nbsp;bakersAmount,
             int&nbsp;deliverersAmount,
             int&nbsp;storageSize,
             int&nbsp;ordersDelay,
             <a href="JsonBaker.html" title="class in ru.nsu.izmailova.json">JsonBaker</a>[]&nbsp;bakers,
-            <a href="JsonDeliverer.html" title="class in ru.nsu.izmailova.json">JsonDeliverer</a>[]&nbsp;deliverers)</code></th>
+            <a href="JsonDeliverer.html" title="class in ru.nsu.izmailova.json">JsonDeliverer</a>[]&nbsp;deliverers,
+            int&nbsp;workingTime)</code></th>
 <td class="colLast">
 <div class="block">Constructs a JsonPizzeria with the specified parameters.</div>
 </td>
@@ -231,6 +232,13 @@ extends java.lang.Object</pre>
 <div class="block">Gets the array of trunk sizes for the deliverers.</div>
 </td>
 </tr>
+<tr id="i7" class="rowColor">
+<td class="colFirst"><code>int</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getWorkingTime()">getWorkingTime</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Gets the working time.</div>
+</td>
+</tr>
 </table>
 <ul class="blockList">
 <li class="blockList"><a id="methods.inherited.from.class.java.lang.Object">
@@ -255,7 +263,7 @@ extends java.lang.Object</pre>
 <!--   -->
 </a>
 <h3>Constructor Detail</h3>
-<a id="&lt;init&gt;(int,int,int,int,ru.nsu.izmailova.json.JsonBaker[],ru.nsu.izmailova.json.JsonDeliverer[])">
+<a id="&lt;init&gt;(int,int,int,int,ru.nsu.izmailova.json.JsonBaker[],ru.nsu.izmailova.json.JsonDeliverer[],int)">
 <!--   -->
 </a>
 <ul class="blockListLast">
@@ -266,7 +274,8 @@ extends java.lang.Object</pre>
                     int&nbsp;storageSize,
                     int&nbsp;ordersDelay,
                     <a href="JsonBaker.html" title="class in ru.nsu.izmailova.json">JsonBaker</a>[]&nbsp;bakers,
-                    <a href="JsonDeliverer.html" title="class in ru.nsu.izmailova.json">JsonDeliverer</a>[]&nbsp;deliverers)</pre>
+                    <a href="JsonDeliverer.html" title="class in ru.nsu.izmailova.json">JsonDeliverer</a>[]&nbsp;deliverers,
+                    int&nbsp;workingTime)</pre>
 <div class="block">Constructs a JsonPizzeria with the specified parameters.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -276,6 +285,7 @@ extends java.lang.Object</pre>
 <dd><code>ordersDelay</code> - the maximum delay between two orders</dd>
 <dd><code>bakers</code> - an array of JsonBaker objects representing bakers' data</dd>
 <dd><code>deliverers</code> - an array of JsonDeliverer objects representing deliverers' data</dd>
+<dd><code>workingTime</code> - the time pizzeria works</dd>
 </dl>
 </li>
 </ul>
@@ -289,6 +299,20 @@ extends java.lang.Object</pre>
 <!--   -->
 </a>
 <h3>Method Detail</h3>
+<a id="getWorkingTime()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getWorkingTime</h4>
+<pre class="methodSignature">public&nbsp;int&nbsp;getWorkingTime()</pre>
+<div class="block">Gets the working time.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>working time</dd>
+</dl>
+</li>
+</ul>
 <a id="getBakersSpeed()">
 <!--   -->
 </a>

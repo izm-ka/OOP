@@ -27,7 +27,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":10,"i1":10,"i2":10};
+var data = {"i0":10,"i1":10,"i2":10,"i3":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -154,14 +154,15 @@ extends java.lang.Object</pre>
 <th class="colLast" scope="col">Description</th>
 </tr>
 <tr class="altColor">
-<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(int,int%5B%5D,int,int%5B%5D,int,int%5B%5D,int,java.lang.String)">Pizzeria</a></span>&#8203;(int&nbsp;bakersAmount,
+<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(int,int%5B%5D,int,int%5B%5D,int,int%5B%5D,int,java.lang.String,int)">Pizzeria</a></span>&#8203;(int&nbsp;bakersAmount,
         int[]&nbsp;bakersProductivity,
         int&nbsp;deliverersAmount,
         int[]&nbsp;deliverersProductivity,
         int&nbsp;storageSize,
         int[]&nbsp;trunkSizes,
         int&nbsp;ordersDelay,
-        java.lang.String&nbsp;ordersPath)</code></th>
+        java.lang.String&nbsp;ordersPath,
+        int&nbsp;workingTime)</code></th>
 <td class="colLast">
 <div class="block">Constructs a new pizzeria with the specified parameters.</div>
 </td>
@@ -203,6 +204,11 @@ extends java.lang.Object</pre>
 <div class="block">Stops the pizzeria.</div>
 </td>
 </tr>
+<tr id="i3" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#pizzeriaWorking()">pizzeriaWorking</a></span>()</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
 </table>
 <ul class="blockList">
 <li class="blockList"><a id="methods.inherited.from.class.java.lang.Object">
@@ -227,7 +233,7 @@ extends java.lang.Object</pre>
 <!--   -->
 </a>
 <h3>Constructor Detail</h3>
-<a id="&lt;init&gt;(int,int[],int,int[],int,int[],int,java.lang.String)">
+<a id="&lt;init&gt;(int,int[],int,int[],int,int[],int,java.lang.String,int)">
 <!--   -->
 </a>
 <ul class="blockListLast">
@@ -240,7 +246,8 @@ extends java.lang.Object</pre>
                 int&nbsp;storageSize,
                 int[]&nbsp;trunkSizes,
                 int&nbsp;ordersDelay,
-                java.lang.String&nbsp;ordersPath)</pre>
+                java.lang.String&nbsp;ordersPath,
+                int&nbsp;workingTime)</pre>
 <div class="block">Constructs a new pizzeria with the specified parameters.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -252,6 +259,7 @@ extends java.lang.Object</pre>
 <dd><code>trunkSizes</code> - the sizes of the trunks of deliverer's cars</dd>
 <dd><code>ordersDelay</code> - the maximum delay between two orders</dd>
 <dd><code>ordersPath</code> - path to file with the unprocessed orders</dd>
+<dd><code>workingTime</code> - time that pizzeria works</dd>
 </dl>
 </li>
 </ul>
@@ -273,6 +281,20 @@ extends java.lang.Object</pre>
 <h4>pizzeriaStart</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;pizzeriaStart()</pre>
 <div class="block">Starts the pizzeria.</div>
+</li>
+</ul>
+<a id="pizzeriaWorking()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>pizzeriaWorking</h4>
+<pre class="methodSignature">public&nbsp;void&nbsp;pizzeriaWorking()
+                     throws java.lang.InterruptedException</pre>
+<dl>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code>java.lang.InterruptedException</code></dd>
+</dl>
 </li>
 </ul>
 <a id="pizzeriaStop()">
