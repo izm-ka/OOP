@@ -133,6 +133,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <hr>
 <pre>public class <span class="typeNameLabel">OrderSerializer</span>
 extends java.lang.Object</pre>
+<div class="block">Class for serializing and deserializing order data to and from JSON format.</div>
 </li>
 </ul>
 </div>
@@ -154,7 +155,9 @@ extends java.lang.Object</pre>
 </tr>
 <tr class="altColor">
 <th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(java.lang.String)">OrderSerializer</a></span>&#8203;(java.lang.String&nbsp;filePath)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Constructor of the OrderSerializer object with the file path.</div>
+</td>
 </tr>
 </table>
 </li>
@@ -177,12 +180,16 @@ extends java.lang.Object</pre>
 <tr id="i0" class="altColor">
 <td class="colFirst"><code>java.util.List&lt;<a href="Order.html" title="class in ru.nsu.izmailova.order">Order</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#loadOrders()">loadOrders</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Loads a list of orders from the JSON file.</div>
+</td>
 </tr>
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#saveOrders(java.util.List)">saveOrders</a></span>&#8203;(java.util.List&lt;<a href="Order.html" title="class in ru.nsu.izmailova.order">Order</a>&gt;&nbsp;orders)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Saves a list of orders to the JSON file.</div>
+</td>
 </tr>
 </table>
 <ul class="blockList">
@@ -215,6 +222,11 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>OrderSerializer</h4>
 <pre>public&nbsp;OrderSerializer&#8203;(java.lang.String&nbsp;filePath)</pre>
+<div class="block">Constructor of the OrderSerializer object with the file path.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>filePath</code> - path to the file where the order data will be saved/loaded</dd>
+</dl>
 </li>
 </ul>
 </li>
@@ -234,6 +246,11 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>saveOrders</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;saveOrders&#8203;(java.util.List&lt;<a href="Order.html" title="class in ru.nsu.izmailova.order">Order</a>&gt;&nbsp;orders)</pre>
+<div class="block">Saves a list of orders to the JSON file.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>orders</code> - the list of orders to be saved</dd>
+</dl>
 </li>
 </ul>
 <a id="loadOrders()">
@@ -243,6 +260,11 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>loadOrders</h4>
 <pre class="methodSignature">public&nbsp;java.util.List&lt;<a href="Order.html" title="class in ru.nsu.izmailova.order">Order</a>&gt;&nbsp;loadOrders()</pre>
+<div class="block">Loads a list of orders from the JSON file.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the list of orders loaded from the file</dd>
+</dl>
 </li>
 </ul>
 </li>
