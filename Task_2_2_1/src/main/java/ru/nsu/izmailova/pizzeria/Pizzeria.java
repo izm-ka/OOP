@@ -31,6 +31,7 @@ public class Pizzeria {
      * @param storageSize            the size of the storage from which deliverers take orders
      * @param trunkSizes             the sizes of the trunks of deliverer's cars
      * @param ordersDelay            the maximum delay between two orders
+     * @param ordersPath             path to file with the unprocessed orders
      */
     public Pizzeria(int bakersAmount, int[] bakersProductivity, int deliverersAmount,
                     int[] deliverersProductivity, int storageSize, int[] trunkSizes,

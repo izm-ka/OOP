@@ -29,6 +29,7 @@ public class Customer implements IProducer {
      * Constructs a Customer with the specified order queue.
      *
      * @param orderQueue the queue where the customer places orders
+     * @param processingTime time the customer takes to process the order
      */
     public Customer(DataQueue orderQueue, int processingTime) {
         orderProduceStatus = "Processing";
@@ -101,8 +102,7 @@ public class Customer implements IProducer {
     /**
      * Changes the status of an order.
      *
-     * @param order  the order whose status is to be changed
-     * @param status the new status of the order
+     * @param orderQueue  queue with unprocessed orders
      */
     public void addUnprocessedOrders(DataQueue orderQueue) {
         if (unprocessedOrders == null) {

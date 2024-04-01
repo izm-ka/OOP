@@ -9,9 +9,13 @@ import ru.nsu.izmailova.json.JsonHandler;
 import ru.nsu.izmailova.queue.DataQueue;
 import ru.nsu.izmailova.producer.Customer;
 
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.List;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class JsonSerializerTest {
@@ -19,7 +23,7 @@ public class JsonSerializerTest {
     Pizzeria pizzeria = new Pizzeria(2, new int[]{1000, 1000},1, new int[]{1}, 5, new int[]{5}, 100, orderPath);
 
     @Test
-    void testUnprocessedOrders() throws InterruptedException {
+    void testCustomerUnprocessedOrders() throws InterruptedException {
         Order testOrder = new Order();
         testOrder.setOrderNumber(1);
         testOrder.setOrderStatus("Unprocessed");
@@ -28,5 +32,24 @@ public class JsonSerializerTest {
         pizzeria.pizzeriaStop();
         List<Order> loadedOrders = pizzeria.customers.getUnprocessedOrders();
         assertTrue(loadedOrders.contains(testOrder));
+    }
+
+    @Test
+    void testJsonUnprocessedOrders() throws InterruptedException {
+        Order testOrder1 = new Order();
+        testOrder1.setOrderNumber(5);
+        testOrder1.setOrderStatus("Unprocessed");
+        pizzeria.ordersQueue.add(testOrder1);
+        pizzeria.pizzeriaStart();
+        pizzeria.pizzeriaStop();
+        File file = new File("src/main/resources/orders.json");
+        String actualJson = "";
+        try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
+            actualJson = reader.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        String expectedJson = "[{\"orderNumber\":5,\"orderStatus\":\"Unprocessed\"}]";
+        assertEquals(actualJson, expectedJson);
     }
 }

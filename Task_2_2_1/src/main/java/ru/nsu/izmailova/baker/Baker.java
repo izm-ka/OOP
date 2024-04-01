@@ -25,6 +25,7 @@ public class Baker extends Employee {
      *
      * @param orderQueue    queue where baker receives order
      * @param deliveryQueue queue
+     * @param cookingTime   time the baker takes to cook
      */
     public Baker(DataQueue orderQueue, DataQueue deliveryQueue, int cookingTime) {
         orderConsumeStatus = "Cooking";

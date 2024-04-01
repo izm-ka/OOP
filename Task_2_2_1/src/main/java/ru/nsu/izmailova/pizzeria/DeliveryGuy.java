@@ -25,8 +25,9 @@ public class DeliveryGuy implements IConsumer {
     /**
      * Takes as many pizzas from storage, as his trunk could afford.
      *
-     * @param deliveryQueue - queue of cooked pizzas
-     * @param trunkSize     - amount of pizzas that deliverer can take once
+     * @param deliveryQueue  queue of cooked pizzas
+     * @param trunkSize      amount of pizzas that deliverer can take once
+     * @param processingTime time the delivery guy takes to delivery
      */
     public DeliveryGuy(DataQueue deliveryQueue, int trunkSize, int processingTime) {
         orderConsumeStatus = "Delivered";
