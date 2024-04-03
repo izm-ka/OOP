@@ -10,6 +10,7 @@ import ru.nsu.izmailova.order.Order;
 public class DataQueue {
     private final Queue<Order> queue = new LinkedList<>();
     private final int maxSize;
+    //CHECKSTYLE:OFF: checkstyle:AbbreviationAsWordInName
     private final Object FULL_QUEUE = new Object();
     private final Object EMPTY_QUEUE = new Object();
     //захватывает мониторы объекта
@@ -69,6 +70,7 @@ public class DataQueue {
             EMPTY_QUEUE.notify();
         }
     }
+    //CHECKSTYLE:ON: checkstyle:AbbreviationAsWordInName
 
     /**
      * Add new order to the queue.
