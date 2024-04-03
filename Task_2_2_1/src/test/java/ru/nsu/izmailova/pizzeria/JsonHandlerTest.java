@@ -3,8 +3,9 @@ package ru.nsu.izmailova.pizzeria;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
 import ru.nsu.izmailova.json.JsonHandler;
-import ru.nsu.izmailova.json.JsonPizzeria;
 import java.io.IOException;
+import ru.nsu.izmailova.json.JsonPizzeria;
+
 /**
  * Test for JsonHandler class.
  */

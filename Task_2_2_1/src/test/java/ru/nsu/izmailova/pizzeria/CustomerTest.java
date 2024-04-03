@@ -1,13 +1,14 @@
 package ru.nsu.izmailova.pizzeria;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 import org.junit.jupiter.api.Test;
-import ru.nsu.izmailova.producer.Customer;
 import ru.nsu.izmailova.order.Order;
 import java.util.ArrayList;
 import java.util.List;
+import ru.nsu.izmailova.producer.Customer;
 import ru.nsu.izmailova.queue.DataQueue;
 
 /**

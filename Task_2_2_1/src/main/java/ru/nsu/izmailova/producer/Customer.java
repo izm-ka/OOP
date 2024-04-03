@@ -30,6 +30,7 @@ public class Customer implements IProducer {
      * @param orderQueue the queue where the customer places orders
      * @param processingTime time the customer takes to process the order
      */
+
     public Customer(DataQueue orderQueue, int processingTime) {
         orderProduceStatus = "Processing";
         this.orderQueue = orderQueue;

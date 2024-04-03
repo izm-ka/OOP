@@ -2,20 +2,20 @@ package ru.nsu.izmailova.pizzeria;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-import org.junit.jupiter.api.Test;
 import java.io.BufferedReader;
-import java.io.File;
 import java.io.FileReader;
-import java.io.IOException;
 import java.util.List;
+import java.io.File;
+import java.io.IOException;
 import ru.nsu.izmailova.order.Order;
+import org.junit.jupiter.api.Test;
 
 /**
  * Test for JsonSerializer class.
  */
 public class JsonSerializerTest {
     private static final String orderPath = "src/main/resources/orders.json";
-    Pizzeria pizzeria = new Pizzeria(2, new int[]{1000, 1000},1, new int[]{1}, 5,
+    Pizzeria pizzeria = new Pizzeria(2, new int[]{1000, 1000}, 1, new int[]{1}, 5,
             new int[]{5}, 100, orderPath, 100);
 
     @Test
