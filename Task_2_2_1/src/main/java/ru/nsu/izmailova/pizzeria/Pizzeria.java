@@ -3,10 +3,10 @@ package ru.nsu.izmailova.pizzeria;
 import java.util.ArrayList;
 import java.util.List;
 import ru.nsu.izmailova.baker.Baker;
+import ru.nsu.izmailova.order.Order;
+import ru.nsu.izmailova.order.OrderSerializer;
 import ru.nsu.izmailova.producer.Customer;
 import ru.nsu.izmailova.queue.DataQueue;
-import ru.nsu.izmailova.order.OrderSerializer;
-import ru.nsu.izmailova.order.Order;
 
 /**
  * Represents a pizzeria that produces pizzas.
@@ -41,7 +41,8 @@ public class Pizzeria {
         DataQueue deliveryQueue = new DataQueue(storageSize);
         deliverers = new ArrayList<>();
         for (int i = 0; i < deliverersAmount; i++) {
-            DeliveryGuy deliverer = new DeliveryGuy(deliveryQueue, trunkSizes[i],deliverersProductivity[i]);
+            DeliveryGuy deliverer = new DeliveryGuy(deliveryQueue, trunkSizes[i],
+                    deliverersProductivity[i]);
             deliverers.add(deliverer);
         }
 
@@ -84,16 +85,15 @@ public class Pizzeria {
 
     }
 
-    public void pizzeriaWorking() throws InterruptedException{
+    public void pizzeriaWorking() throws InterruptedException {
         Thread.sleep(workingTime * 10);
     }
 
     /**
      * Stops the pizzeria.
      *
-     * @throws InterruptedException if any thread is interrupted while sleeping
      */
-    public void pizzeriaStop() throws InterruptedException {
+    public void pizzeriaStop() {
         customers.stopProduce();
         customers.addUnprocessedOrders(ordersQueue);
         for (Baker baker : bakers) {
@@ -115,16 +115,21 @@ public class Pizzeria {
         System.out.println("Pizzeria is closed");
     }
 
+    /**
+     * Saves unprocessed orders.
+     */
     private void saveUnprocessedOrders() {
         List<Order> unprocessedOrders = customers.getUnprocessedOrders();
         orderSerializer.saveOrders(unprocessedOrders);
-        }
+    }
 
+    /**
+     * Loads unprocessed orders.
+     */
     public void loadUnprocessedOrders() {
         List<Order> unprocessedOrders = orderSerializer.loadOrders();
         if (unprocessedOrders != null) {
             customers.addUnprocessedOrders(ordersQueue);
         }
     }
-
 }

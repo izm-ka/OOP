@@ -1,15 +1,14 @@
 package ru.nsu.izmailova.pizzeria;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import org.junit.jupiter.api.Test;
 import ru.nsu.izmailova.producer.Customer;
-import ru.nsu.izmailova.queue.DataQueue;
 import ru.nsu.izmailova.order.Order;
-
-import javax.xml.crypto.Data;
 import java.util.ArrayList;
 import java.util.List;
-
-import static org.junit.jupiter.api.Assertions.*;
+import ru.nsu.izmailova.queue.DataQueue;
 
 /**
  * Test for Customer class.
@@ -29,7 +28,6 @@ class CustomerTest {
     @Test
     void testAddUnprocessedOrders() {
         DataQueue orderQueue = new DataQueue();
-        Customer customer = new Customer(orderQueue, 1000);
 
         Order order1 = new Order();
         order1.setOrderNumber(1);
@@ -44,6 +42,7 @@ class CustomerTest {
         List<Order> expOrders = new ArrayList<>();
         expOrders.add(order1);
 
+        Customer customer = new Customer(orderQueue, 1000);
         customer.addUnprocessedOrders(orderQueue);
 
         assertEquals(expOrders, customer.getUnprocessedOrders());

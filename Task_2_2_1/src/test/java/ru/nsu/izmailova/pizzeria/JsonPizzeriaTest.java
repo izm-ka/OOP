@@ -1,12 +1,11 @@
 package ru.nsu.izmailova.pizzeria;
 
-import org.junit.jupiter.api.Test;
-import ru.nsu.izmailova.json.JsonPizzeria;
-import ru.nsu.izmailova.json.JsonDeliverer;
-import ru.nsu.izmailova.json.JsonBaker;
-
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import org.junit.jupiter.api.Test;
+import ru.nsu.izmailova.json.JsonDeliverer;
+import ru.nsu.izmailova.json.JsonBaker;
+import ru.nsu.izmailova.json.JsonPizzeria;
 
 /**
  * Test for JsonPizzeria class.
@@ -19,18 +18,18 @@ public class JsonPizzeriaTest {
     int ordersDelay = 100;
     int workingTime = 100;
     JsonBaker[] bakers = new JsonBaker[] {
-            new JsonBaker(20),
-            new JsonBaker(20),
-            new JsonBaker(20)
+        new JsonBaker(20),
+        new JsonBaker(20),
+        new JsonBaker(20)
     };
     JsonDeliverer[] deliverers = new JsonDeliverer[] {
-            new JsonDeliverer(50, 2),
-            new JsonDeliverer(55, 2),
-            new JsonDeliverer(45, 1)
+        new JsonDeliverer(50, 2),
+        new JsonDeliverer(55, 2),
+        new JsonDeliverer(45, 1)
     };
 
-    JsonPizzeria pizzeria = new JsonPizzeria(bakersAmount, deliverersAmount, storageSize, ordersDelay,
-            bakers, deliverers, workingTime);
+    JsonPizzeria pizzeria = new JsonPizzeria(bakersAmount, deliverersAmount, storageSize,
+            ordersDelay, bakers, deliverers, workingTime);
 
     @Test
     public void testGetWorkingTime() {

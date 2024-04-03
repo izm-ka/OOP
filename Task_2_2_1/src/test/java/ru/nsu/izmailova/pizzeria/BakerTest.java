@@ -1,18 +1,19 @@
 package ru.nsu.izmailova.pizzeria;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import org.junit.jupiter.api.Test;
 import ru.nsu.izmailova.baker.Baker;
 import ru.nsu.izmailova.order.Order;
 import ru.nsu.izmailova.queue.DataQueue;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * Test for Baker class.
  */
 public class BakerTest {
     @Test
-    void testConsumer(){
+    void testConsumer() {
         Order order = new Order();
         DataQueue ordersQueue = new DataQueue();
         order.setOrderNumber(1);
@@ -21,9 +22,9 @@ public class BakerTest {
         DataQueue deliveryQueue = new DataQueue();
         Baker baker = new Baker(ordersQueue, deliveryQueue, 1000);
 
-       baker.consumer();
-       assertTrue(ordersQueue.isEmpty());
-       assertEquals(1, baker.deliveryCounter);
+        baker.consumer();
+        assertTrue(ordersQueue.isEmpty());
+        assertEquals(1, baker.deliveryCounter);
     }
 
     @Test

@@ -2,12 +2,10 @@ package ru.nsu.izmailova.pizzeria;
 
 import ru.nsu.izmailova.consumer.IConsumer;
 import ru.nsu.izmailova.order.Order;
-import ru.nsu.izmailova.queue.DataQueue;
-
 import java.util.ArrayDeque;
-import java.util.Random;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import ru.nsu.izmailova.queue.DataQueue;
 
 /**
  * Represents a delivery person who delivers pizzas.
