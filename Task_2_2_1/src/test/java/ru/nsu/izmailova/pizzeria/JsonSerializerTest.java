@@ -2,13 +2,14 @@ package ru.nsu.izmailova.pizzeria;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
-import java.util.List;
 import java.io.File;
 import java.io.IOException;
-import ru.nsu.izmailova.order.Order;
+import java.util.List;
 import org.junit.jupiter.api.Test;
+import ru.nsu.izmailova.order.Order;
 
 /**
  * Test for JsonSerializer class.
