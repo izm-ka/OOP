@@ -16,7 +16,8 @@ public class Engine {
     private final Timeline gameLoop;
 
     /**
-     * Constructor
+     * Constructor.
+     *
      * @param frameRate frame rate of the game (speed)
      * @param game instance
      */
@@ -57,7 +58,8 @@ public class Engine {
     }
 
     /**
-     * Creation of the game loop according to specified frame rate
+     * Creation of the game loop according to specified frame rate.
+     *
      * @return gameloop
      */
     private Timeline createLoop() {

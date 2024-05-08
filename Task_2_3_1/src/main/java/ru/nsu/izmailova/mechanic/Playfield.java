@@ -1,12 +1,14 @@
 package ru.nsu.izmailova.mechanic;
 
+import java.util.ArrayList;
 import ru.nsu.izmailova.mechanic.foodGeneration.FoodGenerator;
 import ru.nsu.izmailova.mechanic.foodGeneration.SnakeFoodGenerator;
 import ru.nsu.izmailova.mechanic.obstacleGeneration.ObstacleGenerator;
 import ru.nsu.izmailova.mechanic.obstacleGeneration.SnakeObstacleGenerator;
 
-import java.util.ArrayList;
-
+/**
+ * Playfield class.
+ */
 public class Playfield {
 
     public static final int SIZE = 20;
@@ -25,6 +27,7 @@ public class Playfield {
 
     /**
      * Constructor.
+     *
      * @param width playground width
      * @param height playground height
      * @param test true if test mode activated (0 food and 0 obstacles) - for testing

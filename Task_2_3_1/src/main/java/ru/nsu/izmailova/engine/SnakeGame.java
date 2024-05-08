@@ -15,6 +15,16 @@ public class SnakeGame extends Game {
     private boolean keyIsPressed;
     private final SnakeLobby snakeLobby;
 
+    /**
+     * Constructor for creating a new Snake game.
+     * This initializes all game components including the game field and the snake lobby,
+     * and sets up the painting handler for rendering the game elements on the canvas.
+     *
+     * @param width the width of the game field in pixels.
+     * @param height the height of the game field in pixels.
+     * @param gc the graphics context used for drawing game elements on the canvas.
+     * @param painter the painter responsible for rendering game elements on the canvas.
+     */
     public SnakeGame(double width, double height, GraphicsContext gc, Painter painter) {
         super(width, height, gc);
         this.playfield = new Playfield(width, height, false);
@@ -26,7 +36,7 @@ public class SnakeGame extends Game {
     }
 
     /**
-     * Extended from {@link Game}
+     * Extended from Game.
      */
     @Override
     public void update() {
@@ -35,7 +45,7 @@ public class SnakeGame extends Game {
     }
 
     /**
-     * Extended from {@link Game}
+     * Extended from Game.
      */
     @Override
     public void display() {
@@ -43,7 +53,8 @@ public class SnakeGame extends Game {
     }
 
     /**
-     * Get snakeLobby
+     * Get snakeLobby.
+     *
      * @return snakeLobby
      */
     public SnakeLobby getSnakeLobby() {
@@ -51,7 +62,7 @@ public class SnakeGame extends Game {
     }
 
     /**
-     * Extended from {@link Game}
+     * Extended from Game.
      */
     @Override
     public void reset() {
@@ -60,7 +71,8 @@ public class SnakeGame extends Game {
     }
 
     /**
-     * Get keyPress flag
+     * Get keyPress flag.
+     *
      * @return true - key was already pressed, otherwise - nope
      */
     public boolean isKeyPressed() {
@@ -68,7 +80,7 @@ public class SnakeGame extends Game {
     }
 
     /**
-     * Set keyPressed flag to true
+     * Set keyPressed flag to true.
      */
     public void setKeyPressed() {
         keyIsPressed = true;

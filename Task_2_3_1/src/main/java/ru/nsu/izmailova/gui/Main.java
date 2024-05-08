@@ -18,6 +18,7 @@ public final class Main extends Application {
     }
 
     @Override
+    //primaryStage - главное окно приложения
     public void start(final Stage primaryStage) throws Exception {
 
         FXMLLoader loader = new FXMLLoader(getClass().
