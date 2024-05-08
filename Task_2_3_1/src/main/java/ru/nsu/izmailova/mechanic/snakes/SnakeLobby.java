@@ -69,14 +69,10 @@ public class SnakeLobby {
     public void update() {
         Point point;
 
-        for (Snake s : snakes) {
+        for (Snake s: snakes) {
+
             if (snakes.indexOf(s) != 0) {
                 snakeAI.get(snakes.indexOf(s) - 1).update();
-            }
-
-            Snake playerSnake = getUserSnake();
-            if (s != playerSnake && playerSnake.getPoints().contains(s.getHead())) {
-                playerSnake.setSafe(false);
             }
 
             if (playfield.getObstacles().contains(s.getHead())) {
@@ -131,6 +127,7 @@ public class SnakeLobby {
                 s.extend();
             }
         }
+
 
         for (Snake s : snakes) {
             if (s.isSafe()) {
