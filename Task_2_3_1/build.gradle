@@ -18,8 +18,10 @@ ext {
     junitVersion = '5.9.2'
 }
 
-sourceCompatibility = '19'
-targetCompatibility = '19'
+java {
+    sourceCompatibility = JavaVersion.VERSION_19
+    targetCompatibility = JavaVersion.VERSION_19
+}
 
 /*tasks.withType(JavaCompile) {
     options.encoding = 'UTF-8'
