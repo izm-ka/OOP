@@ -1,10 +1,9 @@
 package ru.nsu.izmailova.mechanic.snakes;
 
-import ru.nsu.izmailova.mechanic.Playfield;
-import ru.nsu.izmailova.mechanic.Point;
-
 import java.util.ArrayList;
 import java.util.Random;
+import ru.nsu.izmailova.mechanic.Playfield;
+import ru.nsu.izmailova.mechanic.Point;
 
 /**
  * Class to perfom all snakes behavior.
@@ -69,7 +68,7 @@ public class SnakeLobby {
     public void update() {
         Point point;
 
-        for (Snake s: snakes) {
+        for (Snake s : snakes) {
 
             if (snakes.indexOf(s) != 0) {
                 snakeAI.get(snakes.indexOf(s) - 1).update();

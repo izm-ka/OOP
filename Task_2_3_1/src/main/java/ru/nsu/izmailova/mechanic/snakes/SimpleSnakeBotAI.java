@@ -1,9 +1,8 @@
 package ru.nsu.izmailova.mechanic.snakes;
 
+import java.util.Random;
 import ru.nsu.izmailova.mechanic.Playfield;
 import ru.nsu.izmailova.mechanic.Point;
-
-import java.util.Random;
 
 /**
  * Simple snake bot AI.
@@ -11,7 +10,7 @@ import java.util.Random;
  * If contains, changes rotation based on current one.
  * Also, change direction randomly every action = 10 frames.
  */
-public class SimpleSnakeBotAI extends SnakeBotAI{
+public class SimpleSnakeBotAI extends SnakeBotAI {
     private final Random random;
     private final int action = 10;
     private int curAction = action;
@@ -90,7 +89,8 @@ public class SimpleSnakeBotAI extends SnakeBotAI{
     }
 
     /**
-     * Check if point occupied by obstacles
+     * Check if point occupied by obstacles.
+     *
      * @param point point to check
      * @return true if occupied, otherwise - nope
      */

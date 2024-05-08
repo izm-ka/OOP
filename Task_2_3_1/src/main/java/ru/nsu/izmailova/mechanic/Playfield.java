@@ -59,6 +59,7 @@ public class Playfield {
 
     /**
      * Method to remove and add new food.
+     *
      * @param point food to remove
      */
     public void removeFood(final Point point) {
@@ -68,6 +69,7 @@ public class Playfield {
 
     /**
      * Get columns.
+     *
      * @return number of columns
      */
     public int getCols() {
@@ -76,6 +78,7 @@ public class Playfield {
 
     /**
      * Get rows.
+     *
      * @return number of rows
      */
     public int getRows() {
@@ -84,6 +87,7 @@ public class Playfield {
 
     /**
      * Get width of playground.
+     *
      * @return width
      */
     public double getWidth() {
@@ -92,6 +96,7 @@ public class Playfield {
 
     /**
      * Get height of playground.
+     *
      * @return height
      */
     public double getHeight() {
@@ -100,6 +105,7 @@ public class Playfield {
 
     /**
      * Get array with food.
+     *
      * @return array with food
      */
     public ArrayList<Point> getFood() {
@@ -108,6 +114,7 @@ public class Playfield {
 
     /**
      * Get array with obstacles.
+     *
      * @return array with obstacles
      */
     public ArrayList<Point> getObstacles() {

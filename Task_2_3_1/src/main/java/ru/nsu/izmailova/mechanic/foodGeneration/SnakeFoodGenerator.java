@@ -1,9 +1,8 @@
 package ru.nsu.izmailova.mechanic.foodGeneration;
 
-import ru.nsu.izmailova.mechanic.Point;
-
 import java.util.ArrayList;
 import java.util.Random;
+import ru.nsu.izmailova.mechanic.Point;
 
 /**
  * Simple food generator.
@@ -12,7 +11,8 @@ import java.util.Random;
  */
 public class SnakeFoodGenerator extends FoodGenerator {
 
-    public SnakeFoodGenerator(ArrayList<Point> pointsToAvoid, int maxFoodCnt, int width, int height) {
+    public SnakeFoodGenerator(ArrayList<Point> pointsToAvoid, int maxFoodCnt,
+                              int width, int height) {
         super(pointsToAvoid, maxFoodCnt, width, height);
     }
 

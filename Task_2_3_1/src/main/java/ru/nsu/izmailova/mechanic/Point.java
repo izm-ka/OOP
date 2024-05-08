@@ -1,5 +1,8 @@
 package ru.nsu.izmailova.mechanic;
 
+/**
+ * Point class.
+ */
 public final class Point {
     private static final int PRIME_NUM = 31;
     private int x;

@@ -28,20 +28,34 @@ public class Engine {
         gameLoop = createLoop();
     }
 
+    /**
+     * Handles a run cycle of the game.
+     *
+     * @param e the event that triggered this run cycle
+     */
     private void run(Event e) {
         game.update();
         game.display();
     }
 
+    /**
+     * Starts or restarts the game.
+     */
     public void start() {
         gameLoop.playFromStart();
         game.setPause(false);
     }
 
+    /**
+     * Stops the game.
+     */
     public void stop() {
         gameLoop.stop();
     }
 
+    /**
+     * Pauses the game.
+     */
     public void pause() {
         gameLoop.pause();
         game.setPause(true);
@@ -49,7 +63,7 @@ public class Engine {
     }
 
     /**
-     * Reset the game.
+     * Resets the game.
      */
     public void reset() {
         this.stop();
