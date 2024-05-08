@@ -7,6 +7,7 @@ import ru.nsu.izmailova.mechanic.Point;
  * Abstract class for custom food generation.
  */
 public abstract class FoodGenerator {
+    //CHECKSTYLE:OFF: checkstyle:ParameterNameCheck
     int maxFoodCnt;
     ArrayList<Point> pointsToAvoid;
     int width;

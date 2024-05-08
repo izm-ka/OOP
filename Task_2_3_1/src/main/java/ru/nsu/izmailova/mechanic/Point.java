@@ -4,6 +4,8 @@ package ru.nsu.izmailova.mechanic;
  * Point class.
  */
 public final class Point {
+    //CHECKSTYLE:OFF: checkstyle:MemberNameCheck
+    //CHECKSTYLE:OFF: checkstyle:ParameterNameCheck
     private static final int PRIME_NUM = 31;
     private int x;
     private int y;
@@ -52,5 +54,6 @@ public final class Point {
     public String toString() {
         return x + ", " + y;
     }
-
+    //CHECKSTYLE:ON: checkstyle:MemberNameCheck
+    //CHECKSTYLE:ON: checkstyle:ParameterNameCheck
 }

@@ -5,6 +5,7 @@ import java.util.Random;
 import ru.nsu.izmailova.mechanic.Playfield;
 import ru.nsu.izmailova.mechanic.Point;
 
+//CHECKSTYLE:OFF: checkstyle:AbbreviationAsWordInName
 /**
  * Class to perfom all snakes behavior.
  */
