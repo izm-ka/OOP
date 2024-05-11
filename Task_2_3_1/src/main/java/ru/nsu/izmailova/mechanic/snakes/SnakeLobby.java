@@ -15,7 +15,7 @@ public class SnakeLobby {
     private final int botCnt;
 
     private final ArrayList<Snake> snakes = new ArrayList<>();
-    private final ArrayList<SnakeBotAI> snakeAI = new ArrayList<>();
+    private final ArrayList<SnakeBotAi> snakeAI = new ArrayList<>();
 
     private final int modeAI;
 
@@ -46,7 +46,7 @@ public class SnakeLobby {
         if (modeAI == 1) {
             Snake s = new Snake(new Point(SPAWN_X, SPAWN_Y));
             snakes.add(s);
-            snakeAI.add(new ForwardSnakeBotAI(s, playfield));
+            snakeAI.add(new ForwardSnakeBotAi(s, playfield));
         } else {
             for (int i = 0; i < botCnt; i++) {
                 Snake s = new Snake(getRandomPoint());
@@ -57,7 +57,7 @@ public class SnakeLobby {
                 }
 
                 snakes.add(s);
-                snakeAI.add(new SimpleSnakeBotAI(s, playfield));
+                snakeAI.add(new SimpleSnakeBotAi(s, playfield));
             }
         }
     }
@@ -116,9 +116,9 @@ public class SnakeLobby {
 
                 snakes.set(index, snake);
                 if (modeAI == 0) {
-                    snakeAI.set(index - 1, new SimpleSnakeBotAI(snake, playfield));
+                    snakeAI.set(index - 1, new SimpleSnakeBotAi(snake, playfield));
                 } else {
-                    snakeAI.set(index - 1, new ForwardSnakeBotAI(snake, playfield));
+                    snakeAI.set(index - 1, new ForwardSnakeBotAi(snake, playfield));
                 }
             }
 

@@ -1,9 +1,8 @@
 package ru.nsu.izmailova.mechanic.obstacleGeneration;
 
-import ru.nsu.izmailova.mechanic.Point;
-
 import java.util.ArrayList;
 import java.util.Random;
+import ru.nsu.izmailova.mechanic.Point;
 
 /**
  * Simple obstacle generator.
@@ -64,7 +63,8 @@ public class SnakeObstacleGenerator extends ObstacleGenerator {
                     if (trs == ROT_SIDES) {
                         break;
                     }
-                } while (obstacles.contains(point) || ((point.getX() == width / 2) && point.getY() == height / 2));
+                } while (obstacles.contains(point) || ((point.getX() == width / 2)
+                        && point.getY() == height / 2));
                 if (j == 0) {
                     first = false;
                 }

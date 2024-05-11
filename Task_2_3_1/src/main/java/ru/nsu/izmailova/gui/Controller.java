@@ -7,11 +7,13 @@ import javafx.scene.control.Label;
 import javafx.scene.input.KeyEvent;
 import ru.nsu.izmailova.engine.Engine;
 import ru.nsu.izmailova.engine.SnakeGame;
-import ru.nsu.izmailova.mechanic.snakes.Snake;
-
 import java.net.URL;
 import java.util.ResourceBundle;
+import ru.nsu.izmailova.mechanic.snakes.Snake;
 
+/**
+ * Controller class.
+ */
 public class Controller implements Initializable {
     private static final int FPS = 10;
 
@@ -22,7 +24,13 @@ public class Controller implements Initializable {
     private SnakeGame loop;
     private Engine gameEngine;
 
-
+    /**
+     * Initializes the controller by setting up the game environment, configuring the canvas,
+     * and preparing the game engine.
+     *
+     * @param url The location used to resolve relative paths for the root object, or null if the location is not known.
+     * @param resourceBundle The resources used to localize the root object, or null if the root object was not localized.
+     */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         double width = upperCanvas.getWidth();
@@ -42,7 +50,8 @@ public class Controller implements Initializable {
     }
 
     /**
-     * Handler of the game, used to control the user snake
+     * Handler of the game, used to control the user snake.
+     *
      * @param e some key is pressed
      */
     private void handler(KeyEvent e) {

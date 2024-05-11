@@ -5,17 +5,18 @@ import ru.nsu.izmailova.mechanic.Playfield;
 /**
  * Abstract class for custom snake bots.
  */
-public abstract class SnakeBotAI {
+public abstract class SnakeBotAi {
 
     Snake snake;
     Playfield playfield;
 
     /**
      * Constructor.
+     *
      * @param snake to control
      * @param playfield to get info from
      */
-    public SnakeBotAI(Snake snake, Playfield playfield) {
+    public SnakeBotAi(Snake snake, Playfield playfield) {
         this.snake = snake;
         this.playfield = playfield;
     }

@@ -1,5 +1,6 @@
 package ru.nsu.izmailova.gui;
 
+import static ru.nsu.izmailova.mechanic.Playfield.SIZE;
 import javafx.application.Platform;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Label;
@@ -7,11 +8,8 @@ import javafx.scene.paint.Color;
 import ru.nsu.izmailova.mechanic.Playfield;
 import ru.nsu.izmailova.mechanic.Point;
 import ru.nsu.izmailova.mechanic.snakes.Snake;
-import ru.nsu.izmailova.mechanic.snakes.SnakeLobby;
-
 import java.util.ArrayList;
-
-import static ru.nsu.izmailova.mechanic.Playfield.SIZE;
+import ru.nsu.izmailova.mechanic.snakes.SnakeLobby;
 
 /**
  * Class for updating canvas graphics and info GUI.
@@ -37,8 +35,9 @@ public class Painter {
 
     /**
      * Constructor.
-     * @param score
-     * @param info
+     *
+     * @param score score
+     * @param info info
      * @param gc graphics canvas
      */
     public Painter(Label score, Label info, GraphicsContext gc) {
@@ -49,6 +48,7 @@ public class Painter {
 
     /**
      * Sets the playfield.
+     *
      * @param playfield to set
      */
     public void setPlayfield(Playfield playfield) {
@@ -57,6 +57,7 @@ public class Painter {
 
     /**
      * Set the snakeLobby.
+     *
      * @param snakeLobby to set
      */
     public void setSnakeLobby(SnakeLobby snakeLobby) {
@@ -65,6 +66,7 @@ public class Painter {
 
     /**
      * Main method of the class.
+     *
      * @param isPaused pause flag
      */
     public void paint(boolean isPaused) {
@@ -109,6 +111,7 @@ public class Painter {
 
     /**
      * GUI painter.
+     *
      * @param isPaused flag if game is paused
      */
     private void paintGUI(boolean isPaused) {
@@ -138,6 +141,7 @@ public class Painter {
 
     /**
      * Method for single point paint.
+     *
      * @param point to draw
      * @param oval flag if oval shape is required,
      *             otherwise - rectangle with smooth arcs

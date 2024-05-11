@@ -1,10 +1,12 @@
 package ru.nsu.izmailova.mechanic.snakes;
 
-import ru.nsu.izmailova.mechanic.Point;
-
 import java.util.ArrayList;
 import java.util.List;
+import ru.nsu.izmailova.mechanic.Point;
 
+/**
+ * Snake class.
+ */
 public class Snake {
     int length;
     private boolean safe;
@@ -15,6 +17,7 @@ public class Snake {
 
     /**
      * The constructor of the snake. It takes the initial point, for the head.
+     *
      * @param initialPoint - point to put the snake's head on.
      */
     public Snake(Point initialPoint) {
@@ -30,6 +33,7 @@ public class Snake {
     /**
      * This method is called after food has been consumed.
      * It increases the length of the snake by one.
+     *
      * @param point - point where the food was and the new location for the head.
      */
     public void growTo(Point point) {
@@ -40,6 +44,7 @@ public class Snake {
     /**
      * Called during every update.
      * It removes the oldest point and adds the given point.
+     *
      * @param point - point to add.
      */
     void shiftTo(Point point) {
@@ -50,6 +55,7 @@ public class Snake {
 
     /**
      * Checks for an intersection and marks the safe flag accordingly.
+     *
      * @param point - point to move.
      */
     private void checkAndAdd(Point point) {
@@ -63,6 +69,7 @@ public class Snake {
 
     /**
      * Get points occupied by the snake.
+     *
      * @return points occupied by the snake.
      */
     public List<Point> getPoints() {
@@ -85,6 +92,11 @@ public class Snake {
         return xVelocity == 0 & yVelocity == 0;
     }
 
+    /**
+     * Moves the entity to a new position if it is currently in motion.
+     *
+     * @param point The new position to move the entity to
+     */
     public void move(Point point) {
         if (!isStill()) {
             shiftTo(point);
@@ -101,7 +113,7 @@ public class Snake {
     }
 
     /**
-     * Set moving direction to up
+     * Set moving direction to up.
      */
     public void setUp() {
         if ((yVelocity == 1) && (length > 1)) {
@@ -112,7 +124,7 @@ public class Snake {
     }
 
     /**
-     * Set moving direction to down
+     * Set moving direction to down.
      */
     public void setDown() {
         if ((yVelocity == -1) && (length > 1)) {
@@ -123,7 +135,7 @@ public class Snake {
     }
 
     /**
-     * Set moving direction to left
+     * Set moving direction to left.
      */
     public void setLeft() {
         if ((xVelocity == 1) && (length > 1)) {
@@ -134,7 +146,7 @@ public class Snake {
     }
 
     /**
-     * Set moving direction to right
+     * Set moving direction to right.
      */
     public void setRight() {
         if ((xVelocity == -1) && (length > 1)) {
@@ -145,8 +157,9 @@ public class Snake {
     }
 
     /**
-     * Method to delete blocks from the snake
+     * Method to delete blocks from the snake.
      * (e.g. if snake is being eaten)
+     *
      * @param idx  index of the block to delete from (0 to idx)
      */
     public void deleteTail(int idx) {

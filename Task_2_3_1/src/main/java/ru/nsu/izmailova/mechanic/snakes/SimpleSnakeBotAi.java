@@ -10,7 +10,7 @@ import ru.nsu.izmailova.mechanic.Point;
  * If contains, changes rotation based on current one.
  * Also, change direction randomly every action = 10 frames.
  */
-public class SimpleSnakeBotAI extends SnakeBotAI {
+public class SimpleSnakeBotAi extends SnakeBotAi {
     private final Random random;
     private final int action = 10;
     private int curAction = action;
@@ -20,7 +20,7 @@ public class SimpleSnakeBotAI extends SnakeBotAI {
     private static final int RIGHT = 3;
     private static final int ROT_SIDES = 4;
 
-    public SimpleSnakeBotAI(Snake snake, Playfield playfield) {
+    public SimpleSnakeBotAi(Snake snake, Playfield playfield) {
         super(snake, playfield);
         random = new Random();
     }
