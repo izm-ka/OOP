@@ -1,11 +1,11 @@
 package ru.nsu.izmailova.gui;
 
 import static ru.nsu.izmailova.mechanic.Playfield.SIZE;
+import java.util.ArrayList;
 import javafx.application.Platform;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Label;
 import javafx.scene.paint.Color;
-import java.util.ArrayList;
 import ru.nsu.izmailova.mechanic.Playfield;
 import ru.nsu.izmailova.mechanic.Point;
 import ru.nsu.izmailova.mechanic.snakes.Snake;

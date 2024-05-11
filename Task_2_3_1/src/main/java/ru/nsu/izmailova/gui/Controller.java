@@ -1,12 +1,12 @@
 package ru.nsu.izmailova.gui;
 
+import java.net.URL;
+import java.util.ResourceBundle;
 import javafx.fxml.Initializable;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Label;
 import javafx.scene.input.KeyEvent;
-import java.net.URL;
-import java.util.ResourceBundle;
 import ru.nsu.izmailova.engine.Engine;
 import ru.nsu.izmailova.engine.SnakeGame;
 import ru.nsu.izmailova.mechanic.snakes.Snake;

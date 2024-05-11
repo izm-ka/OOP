@@ -28,7 +28,8 @@ public class SnakeFoodGenerator extends FoodGenerator {
         for (int i = 0; i < j; i++) {
             Point point = new Point(random.nextInt(width), random.nextInt(height));
 
-            while (pointsToAvoid.contains(point) || ((point.getX() == width / 2) && point.getY() == height / 2)) {
+            while (pointsToAvoid.contains(point) || ((point.getX() == width / 2)
+                    && point.getY() == height / 2)) {
                 point.setX(random.nextInt(width));
                 point.setY(random.nextInt(height));
             }
