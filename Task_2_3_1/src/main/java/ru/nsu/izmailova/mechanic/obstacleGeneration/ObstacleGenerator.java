@@ -7,7 +7,7 @@ import ru.nsu.izmailova.mechanic.Point;
  * Abstract class for custom obstacle generation.
  */
 public abstract class ObstacleGenerator {
-
+    //CHECKSTYLE:OFF: checkstyle:PackageNameCheck
     int maxWallLength;
     int maxWallCnt;
     int width;
@@ -36,4 +36,5 @@ public abstract class ObstacleGenerator {
      * @param obstacles array with obstacles
      */
     public abstract void generate(ArrayList<Point> obstacles);
+    //CHECKSTYLE:ON: checkstyle:PackageNameCheck
 }

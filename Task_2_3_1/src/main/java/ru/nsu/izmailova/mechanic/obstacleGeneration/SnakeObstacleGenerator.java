@@ -12,7 +12,7 @@ import ru.nsu.izmailova.mechanic.Point;
  * until maxWallCnt satisfied.
  */
 public class SnakeObstacleGenerator extends ObstacleGenerator {
-
+    //CHECKSTYLE:OFF: checkstyle:PackageNameCheck
     private static final int ROT_SIDES = 4;
     private static final int RIGHT = 0;
     private static final int LEFT = 1;
@@ -76,4 +76,5 @@ public class SnakeObstacleGenerator extends ObstacleGenerator {
             }
         }
     }
+    //CHECKSTYLE:ON: checkstyle:PackageNameCheck
 }

@@ -5,10 +5,10 @@ import javafx.application.Platform;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Label;
 import javafx.scene.paint.Color;
+import java.util.ArrayList;
 import ru.nsu.izmailova.mechanic.Playfield;
 import ru.nsu.izmailova.mechanic.Point;
 import ru.nsu.izmailova.mechanic.snakes.Snake;
-import java.util.ArrayList;
 import ru.nsu.izmailova.mechanic.snakes.SnakeLobby;
 
 /**

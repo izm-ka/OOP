@@ -5,10 +5,10 @@ import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Label;
 import javafx.scene.input.KeyEvent;
-import ru.nsu.izmailova.engine.Engine;
-import ru.nsu.izmailova.engine.SnakeGame;
 import java.net.URL;
 import java.util.ResourceBundle;
+import ru.nsu.izmailova.engine.Engine;
+import ru.nsu.izmailova.engine.SnakeGame;
 import ru.nsu.izmailova.mechanic.snakes.Snake;
 
 /**
@@ -28,8 +28,8 @@ public class Controller implements Initializable {
      * Initializes the controller by setting up the game environment, configuring the canvas,
      * and preparing the game engine.
      *
-     * @param url The location used to resolve relative paths for the root object, or null if the location is not known.
-     * @param resourceBundle The resources used to localize the root object, or null if the root object was not localized.
+     * @param url relative paths for the root object, or null if the location is not known.
+     * @param resourceBundle localize the root object, or null if the root object was not localized.
      */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {

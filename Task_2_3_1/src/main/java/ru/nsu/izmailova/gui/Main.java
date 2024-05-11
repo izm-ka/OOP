@@ -21,8 +21,8 @@ public final class Main extends Application {
     //primaryStage - главное окно приложения
     public void start(final Stage primaryStage) throws Exception {
 
-        FXMLLoader loader = new FXMLLoader(getClass().
-                getResource("/ru/nsu/izmailova/snake.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass()
+                .getResource("/ru/nsu/izmailova/snake.fxml"));
         Parent root = loader.load();
 
         Scene scene = new Scene(root);
