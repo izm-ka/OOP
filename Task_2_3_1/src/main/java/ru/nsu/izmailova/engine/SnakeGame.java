@@ -30,8 +30,8 @@ public class SnakeGame extends Game {
         this.playfield = new Playfield(width, height, false);
         this.snakeLobby = new SnakeLobby(this.playfield, BOT_CNT, 0);
         this.painter = painter;
-        painter.setPlayfield(this.playfield);
-        painter.setSnakeLobby(this.snakeLobby);
+        painter.setPlayfield(this.playfield); //painter узнает какие участки поля обновить и как они должны выглядеть
+        painter.setSnakeLobby(this.snakeLobby); //для инфы о состоянии змей в игре
         reset();
     }
 
@@ -54,6 +54,7 @@ public class SnakeGame extends Game {
 
     /**
      * Get snakeLobby.
+      для доступа к информации о состоянии змей
      *
      * @return snakeLobby
      */

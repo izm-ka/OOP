@@ -8,12 +8,12 @@ import ru.nsu.izmailova.mechanic.Point;
  * Snake class.
  */
 public class Snake {
-    int length;
+    public int length;
     private boolean safe;
     private final ArrayList<Point> points;
     Point head;
-    int xVelocity;
-    int yVelocity;
+    public int xVelocity;
+    public int yVelocity;
 
     /**
      * The constructor of the snake. It takes the initial point, for the head.

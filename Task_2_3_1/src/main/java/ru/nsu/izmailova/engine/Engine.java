@@ -24,12 +24,13 @@ public class Engine {
     public Engine(int frameRate, Game game) {
         this.frameRate = frameRate;
         this.game = game;
-        game.setEngine(this);
+        game.setEngine(this); //экзмепляр движка для игры
         gameLoop = createLoop();
     }
 
     /**
      * Handles a run cycle of the game.
+     * выполняет один цикл игры, вызывается на кажом кадре цикла
      *
      * @param e the event that triggered this run cycle
      */
@@ -42,7 +43,7 @@ public class Engine {
      * Starts or restarts the game.
      */
     public void start() {
-        gameLoop.playFromStart();
+        gameLoop.playFromStart(); //j,]trn nbgf Timeline (animation)
         game.setPause(false);
     }
 
